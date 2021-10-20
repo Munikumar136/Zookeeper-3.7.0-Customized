@@ -335,7 +335,7 @@ public abstract class X509Util implements Closeable, AutoCloseable {
 
         String keyStoreLocationProp = config.getProperty(sslKeystoreLocationProperty, "");
         String keyStorePasswordProp = config.getProperty(sslKeystorePasswdProperty, "");
-        String keyStoreTypeProp = config.getProperty(sslKeystoreTypeProperty);
+        String keyStoreTypeProp = config.getProperty(sslKeystoreTypeProperty, "jks");
 
         // There are legal states in some use cases for null KeyManager or TrustManager.
         // But if a user wanna specify one, location is required. Password defaults to empty string if it is not
@@ -350,16 +350,17 @@ public abstract class X509Util implements Closeable, AutoCloseable {
                 throw new SSLContextException("Failed to create KeyManager", keyManagerException);
             } catch (IllegalArgumentException e) {
                 throw new SSLContextException("Bad value for " + sslKeystoreTypeProperty + ": " + keyStoreTypeProp, e);
+
             }
         }
 
         String trustStoreLocationProp = config.getProperty(sslTruststoreLocationProperty, "");
         String trustStorePasswordProp = config.getProperty(sslTruststorePasswdProperty, "");
-        String trustStoreTypeProp = config.getProperty(sslTruststoreTypeProperty);
+        String trustStoreTypeProp = config.getProperty(sslTruststoreTypeProperty, "jks");
 
         boolean sslCrlEnabled = config.getBoolean(this.sslCrlEnabledProperty);
         boolean sslOcspEnabled = config.getBoolean(this.sslOcspEnabledProperty);
-        boolean sslServerHostnameVerificationEnabled = config.getBoolean(this.getSslHostnameVerificationEnabledProperty(), true);
+        boolean sslServerHostnameVerificationEnabled = config.getBoolean(this.getSslHostnameVerificationEnabledProperty(), false);
         boolean sslClientHostnameVerificationEnabled = sslServerHostnameVerificationEnabled && shouldVerifyClientHostname();
 
         if (trustStoreLocationProp.isEmpty()) {

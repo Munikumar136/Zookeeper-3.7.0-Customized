@@ -50,7 +50,7 @@ abstract class StandardTypeFileKeyStoreLoader extends FileKeyStoreLoader {
 
     @Override
     public KeyStore loadKeyStore() throws IOException, GeneralSecurityException {
-        try (InputStream inputStream = new FileInputStream(new File(keyStorePath))) {
+      try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(keyStorePath)) {
             KeyStore ks = keyStoreInstance();
             ks.load(inputStream, passwordStringToCharArray(keyStorePassword));
             return ks;
@@ -59,7 +59,7 @@ abstract class StandardTypeFileKeyStoreLoader extends FileKeyStoreLoader {
 
     @Override
     public KeyStore loadTrustStore() throws IOException, GeneralSecurityException {
-        try (InputStream inputStream = new FileInputStream(new File(trustStorePath))) {
+      try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(trustStorePath)) {
             KeyStore ts = keyStoreInstance();
             ts.load(inputStream, passwordStringToCharArray(trustStorePassword));
             return ts;

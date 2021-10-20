@@ -68,11 +68,11 @@ public class X509AuthenticationProvider implements AuthenticationProvider {
         try (X509Util x509Util = new ClientX509Util()) {
             String keyStoreLocation = config.getProperty(x509Util.getSslKeystoreLocationProperty(), "");
             String keyStorePassword = config.getProperty(x509Util.getSslKeystorePasswdProperty(), "");
-            String keyStoreTypeProp = config.getProperty(x509Util.getSslKeystoreTypeProperty());
+            String keyStoreTypeProp = config.getProperty(x509Util.getSslKeystoreTypeProperty(),"jks");
 
             boolean crlEnabled = Boolean.parseBoolean(config.getProperty(x509Util.getSslCrlEnabledProperty()));
             boolean ocspEnabled = Boolean.parseBoolean(config.getProperty(x509Util.getSslOcspEnabledProperty()));
-            boolean hostnameVerificationEnabled = Boolean.parseBoolean(config.getProperty(x509Util.getSslHostnameVerificationEnabledProperty()));
+            boolean hostnameVerificationEnabled = config.getBoolean(x509Util.getSslHostnameVerificationEnabledProperty(), false);
 
             X509KeyManager km = null;
             X509TrustManager tm = null;
@@ -88,7 +88,7 @@ public class X509AuthenticationProvider implements AuthenticationProvider {
 
             String trustStoreLocation = config.getProperty(x509Util.getSslTruststoreLocationProperty(), "");
             String trustStorePassword = config.getProperty(x509Util.getSslTruststorePasswdProperty(), "");
-            String trustStoreTypeProp = config.getProperty(x509Util.getSslTruststoreTypeProperty());
+            String trustStoreTypeProp = config.getProperty(x509Util.getSslTruststoreTypeProperty(), "jks");
 
             if (trustStoreLocation.isEmpty()) {
                 LOG.warn("Truststore not specified for client connection");
