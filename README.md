@@ -1,3 +1,11 @@
+October-2021: TP customization to set default cert types ("jks") and set HostNameVerification to false, if no provided by clients.
+
+____________________________________________________________________________________________________________________________________________
+
+
+
+
+
 # Apache ZooKeeper [![GitHub Actions CI][ciBadge]][ciLink] [![Travis CI][trBadge]][trLink] [![Maven Central][mcBadge]][mcLink] [![License][liBadge]][liLink]
 ![alt text](https://zookeeper.apache.org/images/zookeeper_small.gif "ZooKeeper")
 
