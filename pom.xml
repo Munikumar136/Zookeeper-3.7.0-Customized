@@ -65,19 +65,19 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<!-- <distributionManagement>
+	<distributionManagement>
 		<repository>
-			<id>tvlprt.nexus.repo.releases</id>
-			<name>Travelport ESB Release Repository</name>
-			<url>${tvlprt.nexus.repository.url}/maven-public</url>
-		</repository>
-		<snapshotRepository>
-			<id>tvlprt.nexus.repo.snapshots</id>
-			<name>Travelport ESB Snapshot Repository</name>
-			<url>${tvlprt.nexus.repository.url}/ODTeamSnapshot</url>
-		</snapshotRepository>
+      <id>tvlprt.nexus.repo.releases</id>
+      <name>Travelport ESB Release Repository</name>
+      <url>${tvlprt.nexus.repository.url}/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>tvlprt.nexus.repo.snapshots</id>
+      <name>Travelport ESB Snapshot Repository</name>
+      <url>${tvlprt.nexus.repository.url}/ODTeamSnapshot</url>
+    </snapshotRepository>
 	</distributionManagement>
- -->
+ 
 	<profiles>
 		<profile>
 			<id>full-build</id>
