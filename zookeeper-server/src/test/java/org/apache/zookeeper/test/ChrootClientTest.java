@@ -18,17 +18,17 @@
 
 package org.apache.zookeeper.test;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ChrootClientTest extends ClientTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ChrootClientTest.class);
+    private static final Logger LOG = LogManager.getLogger(ChrootClientTest.class);
 
     @BeforeEach
     @Override

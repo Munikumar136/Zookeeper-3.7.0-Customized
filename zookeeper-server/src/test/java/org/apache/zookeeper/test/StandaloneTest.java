@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.test;
 
@@ -25,6 +25,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.Watcher;
@@ -38,27 +40,25 @@ import org.apache.zookeeper.server.quorum.QuorumPeerTestBase;
 import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
+*//**
  * Standalone server tests.
- */
+ *//*
 public class StandaloneTest extends QuorumPeerTestBase implements Watcher {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(StandaloneTest.class);
+    protected static final Logger LOG = LogManager.getLogger(StandaloneTest.class);
 
     @BeforeEach
     public void setup() {
-        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU="/* password is 'test'*/);
+        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU=" password is 'test');
         QuorumPeerConfig.setReconfigEnabled(true);
     }
 
-    /**
+    *//**
      * This test wouldn't create any dynamic config.
      * However, it adds a "clientPort=xxx" in static config file.
      * It checks the standard way of standalone mode.
-     */
+     *//*
     @Test
     public void testNoDynamicConfig() throws Exception {
         ClientBase.setupTestEnv();
@@ -68,14 +68,14 @@ public class StandaloneTest extends QuorumPeerTestBase implements Watcher {
         verifyStandalone(mt, CLIENT_PORT);
     }
 
-    /**
+    *//**
      * This test creates a dynamic config of new format.
      * The dynamic config is written in dynamic config file.
      * It checks that the client port will be read from the dynamic config.
      *
      * This handles the case of HBase, which adds a single server line to the config.
      * Maintain b/w compatibility.
-     */
+     *//*
     @Test
     public void testClientPortInDynamicFile() throws Exception {
         ClientBase.setupTestEnv();
@@ -87,11 +87,11 @@ public class StandaloneTest extends QuorumPeerTestBase implements Watcher {
         verifyStandalone(mt, CLIENT_PORT);
     }
 
-    /**
+    *//**
      * This test creates a dynamic config of new format.
      * The dynamic config is written in static config file.
      * It checks that the client port will be read from the dynamic config.
-     */
+     *//*
     @Test
     public void testClientPortInStaticFile() throws Exception {
         ClientBase.setupTestEnv();
@@ -114,10 +114,10 @@ public class StandaloneTest extends QuorumPeerTestBase implements Watcher {
         }
     }
 
-    /**
+    *//**
      * Verify that reconfiguration in standalone mode fails with
      * KeeperException.UnimplementedException.
-     */
+     *//*
     @Test
     public void testStandaloneReconfigFails() throws Exception {
         ClientBase.setupTestEnv();
@@ -155,3 +155,4 @@ public class StandaloneTest extends QuorumPeerTestBase implements Watcher {
     }
 
 }
+*/

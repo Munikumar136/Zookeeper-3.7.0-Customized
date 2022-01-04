@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /*
  * This code is originally from HDFS, see the similarly named files there

@@ -26,13 +26,13 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import org.apache.yetus.audience.InterfaceAudience;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 @InterfaceAudience.Public
 public class ServerAdminClient {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ServerAdminClient.class);
+    private static final Logger LOG = LogManager.getLogger(ServerAdminClient.class);
 
     public static void ruok(String host, int port) {
         Socket s = null;

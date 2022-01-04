@@ -18,8 +18,8 @@
 
 package org.apache.zookeeper.server;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Represents critical thread. When there is an uncaught exception thrown by the
@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ZooKeeperCriticalThread extends ZooKeeperThread {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperCriticalThread.class);
+    private static final Logger LOG = LogManager.getLogger(ZooKeeperCriticalThread.class);
     private final ZooKeeperServerListener listener;
 
     public ZooKeeperCriticalThread(String threadName, ZooKeeperServerListener listener) {

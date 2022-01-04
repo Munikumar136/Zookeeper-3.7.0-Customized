@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -55,7 +55,7 @@ public class QuorumPeerMainMultiAddressTest extends QuorumPeerTestBase {
   public void setUp() throws Exception {
     System.setProperty(QuorumPeer.CONFIG_KEY_MULTI_ADDRESS_ENABLED, "true");
     ClientBase.setupTestEnv();
-    System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU="/* password is 'test'*/);
+    System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU=" password is 'test');
     QuorumPeerConfig.setReconfigEnabled(true);
 
     // just to get rid of the unrelated 'InstanceAlreadyExistsException' in the logs
@@ -332,3 +332,4 @@ public class QuorumPeerMainMultiAddressTest extends QuorumPeerTestBase {
 
 
 }
+*/

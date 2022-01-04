@@ -21,6 +21,8 @@ package org.apache.zookeeper.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs;
@@ -30,8 +32,6 @@ import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * When request are route incorrectly, both follower and the leader will perform
@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public class DuplicateLocalSessionUpgradeTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(DuplicateLocalSessionUpgradeTest.class);
+    protected static final Logger LOG = LogManager.getLogger(DuplicateLocalSessionUpgradeTest.class);
 
     private final QuorumBase qb = new QuorumBase();
 

@@ -66,8 +66,8 @@ import org.apache.zookeeper.txn.SetDataTxn;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class is the superclass of two of the three main actors in a ZK
@@ -109,7 +109,7 @@ public class Learner {
     private static final int BUFFERED_MESSAGE_SIZE = 10;
     protected final MessageTracker messageTracker = new MessageTracker(BUFFERED_MESSAGE_SIZE);
 
-    protected static final Logger LOG = LoggerFactory.getLogger(Learner.class);
+    protected static final Logger LOG = LogManager.getLogger(Learner.class);
 
     /**
      * Time to wait after connection attempt with the Leader or LearnerMaster before this

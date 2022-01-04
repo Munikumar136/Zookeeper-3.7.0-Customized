@@ -19,7 +19,7 @@
 package org.apache.zookeeper.server;
 
 import org.apache.zookeeper.common.Time;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * This logs the message once in the beginning and once every LOG_INTERVAL.

@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -45,7 +45,7 @@ public class ReconfigFailureCasesTest extends QuorumPeerTestBase {
     @BeforeEach
     public void setup() {
         QuorumPeerConfig.setReconfigEnabled(true);
-        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU="/* password is 'test'*/);
+        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU=" password is 'test');
     }
 
     @AfterEach
@@ -55,9 +55,9 @@ public class ReconfigFailureCasesTest extends QuorumPeerTestBase {
         }
     }
 
-    /*
+    
      * Tests that an incremental reconfig fails if the current config is hiearchical.
-     */
+     
     @Test
     public void testIncrementalReconfigInvokedOnHiearchicalQS() throws Exception {
         qu = new QuorumUtil(2); // create 5 servers
@@ -102,13 +102,13 @@ public class ReconfigFailureCasesTest extends QuorumPeerTestBase {
         ReconfigTest.closeAllHandles(zkArr, zkAdminArr);
     }
 
-    /*
+    
      * Test that a reconfiguration fails if the proposed change would leave the
      * cluster with less than 2 participants (StandaloneEnabled = true).
      * StandaloneDisabledTest.java (startSingleServerTest) checks that if
      * StandaloneEnabled = false its legal to remove all but one remaining
      * server.
-     */
+     
     @Test
     public void testTooFewRemainingPariticipants() throws Exception {
         qu = new QuorumUtil(1); // create 3 servers
@@ -132,10 +132,10 @@ public class ReconfigFailureCasesTest extends QuorumPeerTestBase {
         ReconfigTest.closeAllHandles(zkArr, zkAdminArr);
     }
 
-    /*
+    
      * Tests that a conditional reconfig fails if the specified version doesn't correspond
      * to the version of the current config.
-     */
+     
     @Test
     public void testReconfigVersionConditionFails() throws Exception {
         qu = new QuorumUtil(1); // create 3 servers
@@ -158,7 +158,7 @@ public class ReconfigFailureCasesTest extends QuorumPeerTestBase {
         ReconfigTest.closeAllHandles(zkArr, zkAdminArr);
     }
 
-    /*
+    
      * Converting an observer into a participant may sometimes fail with a
      * NewConfigNoQuorum exception. This test-case demonstrates the scenario.
      * Current configuration is (A, B, C, D), where A, B and C are participant
@@ -174,7 +174,7 @@ public class ReconfigFailureCasesTest extends QuorumPeerTestBase {
      * second command to add it back as a participant (follower). During the
      * intermediate state D is a non-voting follower and can ACK the state
      * transfer performed during the second reconfig command.
-     */
+     
     @Test
     public void testObserverToParticipantConversionFails() throws Exception {
         ClientBase.setupTestEnv();
@@ -238,3 +238,4 @@ public class ReconfigFailureCasesTest extends QuorumPeerTestBase {
     }
 
 }
+*/

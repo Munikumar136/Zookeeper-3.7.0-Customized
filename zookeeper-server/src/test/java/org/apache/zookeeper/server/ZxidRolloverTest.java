@@ -22,6 +22,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.KeeperException.ConnectionLossException;
@@ -36,15 +38,13 @@ import org.apache.zookeeper.test.QuorumUtil.PeerStruct;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Verify ZOOKEEPER-1277 - ensure that we handle epoch rollover correctly.
  */
 public class ZxidRolloverTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ZxidRolloverTest.class);
+    private static final Logger LOG = LogManager.getLogger(ZxidRolloverTest.class);
 
     private QuorumUtil qu;
     private ZooKeeperServer zksLeader;

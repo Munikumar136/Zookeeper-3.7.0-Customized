@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -54,7 +54,7 @@ import org.apache.zookeeper.common.Time;
  *               running. it will have the report string from the instance.
  */
 public class InstanceManager implements AsyncCallback.ChildrenCallback, Watcher {
-    final private static Logger LOG = LoggerFactory.getLogger(InstanceManager.class);
+    final private static Logger LOG = LogManager.getLogger(InstanceManager.class);
     private ZooKeeper zk;
     private String prefixNode;
     private String reportsNode = "reports";

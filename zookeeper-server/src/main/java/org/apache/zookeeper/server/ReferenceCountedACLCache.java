@@ -31,12 +31,12 @@ import org.apache.jute.InputArchive;
 import org.apache.jute.OutputArchive;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.data.ACL;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ReferenceCountedACLCache {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ReferenceCountedACLCache.class);
+    private static final Logger LOG = LogManager.getLogger(ReferenceCountedACLCache.class);
 
     final Map<Long, List<ACL>> longKeyMap = new HashMap<Long, List<ACL>>();
 

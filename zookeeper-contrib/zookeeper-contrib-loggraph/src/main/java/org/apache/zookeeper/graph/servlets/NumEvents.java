@@ -22,12 +22,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.apache.zookeeper.graph.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class NumEvents extends JsonServlet
 {
-    private static final Logger LOG = LoggerFactory.getLogger(NumEvents.class);
+    private static final Logger LOG = LogManager.getLogger(NumEvents.class);
     private static final int DEFAULT_PERIOD = 1000;
 
     private LogSource source = null;

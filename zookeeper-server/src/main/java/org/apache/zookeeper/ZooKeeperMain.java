@@ -48,8 +48,8 @@ import org.apache.zookeeper.client.ZKClientConfig;
 import org.apache.zookeeper.server.ExitCode;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * The command line client to ZooKeeper.
@@ -58,7 +58,7 @@ import org.slf4j.LoggerFactory;
 @InterfaceAudience.Public
 public class ZooKeeperMain {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperMain.class);
+    private static final Logger LOG = LogManager.getLogger(ZooKeeperMain.class);
     static final Map<String, String> commandMap = new HashMap<String, String>();
     static final Map<String, CliCommand> commandMapCli = new HashMap<String, CliCommand>();
 

@@ -55,8 +55,8 @@ import org.apache.zookeeper.server.RateLogger;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * A Metrics Provider implementation based on https://prometheus.io.
@@ -65,7 +65,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PrometheusMetricsProvider implements MetricsProvider {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PrometheusMetricsProvider.class);
+    private static final Logger LOG = LogManager.getLogger(PrometheusMetricsProvider.class);
     private static final String LABEL = "key";
     private static final String[] LABELS = {LABEL};
 

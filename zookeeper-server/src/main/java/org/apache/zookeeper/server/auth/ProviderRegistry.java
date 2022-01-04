@@ -22,12 +22,12 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.zookeeper.server.ZooKeeperServer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ProviderRegistry {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ProviderRegistry.class);
+    private static final Logger LOG = LogManager.getLogger(ProviderRegistry.class);
 
     public static final String AUTHPROVIDER_PROPERTY_PREFIX = "zookeeper.authProvider.";
 

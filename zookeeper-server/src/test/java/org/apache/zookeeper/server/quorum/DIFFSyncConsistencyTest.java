@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -242,12 +242,12 @@ public class DIFFSyncConsistencyTest extends QuorumPeerTestBase {
 
                 @Override
                 void readPacket(QuorumPacket pp) throws IOException {
-                    /**
+                    *//**
                      * In real scenario got SocketTimeoutException while reading
                      * the packet from leader because of network problem, but
                      * here throwing SocketTimeoutException based on whether
                      * error is injected or not
-                     */
+                     *//*
                     super.readPacket(pp);
                     if (injectError && pp.getType() == Leader.UPTODATE) {
                         String type = LearnerHandler.packetToString(pp);
@@ -292,3 +292,4 @@ public class DIFFSyncConsistencyTest extends QuorumPeerTestBase {
         return -1;
     }
 }
+*/

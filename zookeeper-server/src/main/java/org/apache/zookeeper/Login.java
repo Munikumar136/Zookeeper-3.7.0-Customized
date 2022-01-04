@@ -40,13 +40,13 @@ import org.apache.zookeeper.client.ZKClientConfig;
 import org.apache.zookeeper.common.Time;
 import org.apache.zookeeper.common.ZKConfig;
 import org.apache.zookeeper.server.ZooKeeperSaslServer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class Login {
 
     private static final String KINIT_COMMAND_DEFAULT = "/usr/bin/kinit";
-    private static final Logger LOG = LoggerFactory.getLogger(Login.class);
+    private static final Logger LOG = LogManager.getLogger(Login.class);
     public static final String SYSTEM_USER = System.getProperty("user.name", "<NA>");
     public CallbackHandler callbackHandler;
 

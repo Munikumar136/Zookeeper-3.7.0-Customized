@@ -27,8 +27,8 @@ import org.apache.zookeeper.jmx.MBeanRegistry;
 import org.apache.zookeeper.jmx.ZKMBeanInfo;
 import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class is intented to ensure the correct functionality of
@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public class QuorumUtilTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(QuorumUtilTest.class);
+    private static final Logger LOG = LogManager.getLogger(QuorumUtilTest.class);
 
     /**
      * <p>

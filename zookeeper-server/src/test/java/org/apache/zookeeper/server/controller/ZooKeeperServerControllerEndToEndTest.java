@@ -23,6 +23,8 @@ import java.util.LinkedList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -34,11 +36,9 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ZooKeeperServerControllerEndToEndTest extends ControllerTestBase {
-    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerControllerEndToEndTest.class);
+    private static final Logger LOG = LogManager.getLogger(ZooKeeperServerControllerEndToEndTest.class);
     private ZooKeeper zkClient;
     private static final String AnyPath = "/Any";
     private static final byte[] AnyData = new byte[] {0x0, 0x1};

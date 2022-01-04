@@ -29,8 +29,8 @@ import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * A leader election support library implementing the ZooKeeper election recipe.
@@ -88,7 +88,7 @@ import org.slf4j.LoggerFactory;
  */
 public class LeaderElectionSupport implements Watcher {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LeaderElectionSupport.class);
+    private static final Logger LOG = LogManager.getLogger(LeaderElectionSupport.class);
 
     private ZooKeeper zooKeeper;
 

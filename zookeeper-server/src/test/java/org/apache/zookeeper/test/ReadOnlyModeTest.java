@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.test;
 
@@ -29,10 +29,8 @@ import java.io.LineNumberReader;
 import java.io.StringReader;
 import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
-import org.apache.log4j.Layout;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.WriterAppender;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.KeeperException.NotReadOnlyException;
@@ -47,11 +45,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.LoggerFactory;
 
 public class ReadOnlyModeTest extends ZKTestCase {
 
-    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(ReadOnlyModeTest.class);
+    private static final Logger LOG = LogManager.getLogger(ReadOnlyModeTest.class);
     private static int CONNECTION_TIMEOUT = QuorumBase.CONNECTION_TIMEOUT;
     private QuorumUtil qu = new QuorumUtil(1);
 
@@ -66,9 +63,9 @@ public class ReadOnlyModeTest extends ZKTestCase {
         qu.tearDown();
     }
 
-    /**
+    *//**
      * Test write operations using multi request.
-     */
+     *//*
     @Test
     @Timeout(value = 90)
     public void testMultiTransaction() throws Exception {
@@ -109,10 +106,10 @@ public class ReadOnlyModeTest extends ZKTestCase {
         assertNull(zk.exists(node2, false), "Should have created the znode:" + node2);
     }
 
-    /**
+    *//**
      * Basic test of read-only client functionality. Tries to read and write
      * during read-only mode, then regains a quorum and tries to write again.
-     */
+     *//*
     @Test
     @Timeout(value = 90)
     public void testReadOnlyClient() throws Exception {
@@ -163,10 +160,10 @@ public class ReadOnlyModeTest extends ZKTestCase {
         zk.close();
     }
 
-    /**
+    *//**
      * Ensures that upon connection to a read-only server client receives
      * ConnectedReadOnly state notification.
-     */
+     *//*
     @Test
     @Timeout(value = 90)
     public void testConnectionEvents() throws Exception {
@@ -206,11 +203,11 @@ public class ReadOnlyModeTest extends ZKTestCase {
         zk.close();
     }
 
-    /**
+    *//**
      * Tests a situation when client firstly connects to a read-only server and
      * then connects to a majority server. Transition should be transparent for
      * the user.
-     */
+     *//*
     @Test
     @Timeout(value = 90)
     public void testSessionEstablishment() throws Exception {
@@ -283,10 +280,10 @@ public class ReadOnlyModeTest extends ZKTestCase {
         zk.close();
     }
 
-    /**
+    *//**
      * Ensures that client seeks for r/w servers while it's connected to r/o
      * server.
-     */
+     *//*
     @SuppressWarnings("deprecation")
     @Test
     @Timeout(value = 90)
@@ -342,3 +339,4 @@ public class ReadOnlyModeTest extends ZKTestCase {
     }
 
 }
+*/

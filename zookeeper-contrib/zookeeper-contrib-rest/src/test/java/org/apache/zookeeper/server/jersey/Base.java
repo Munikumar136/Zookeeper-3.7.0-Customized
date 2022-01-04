@@ -20,8 +20,8 @@ package org.apache.zookeeper.server.jersey;
 
 import java.io.ByteArrayInputStream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.JUnit4ZKTestRunner;
 import org.apache.zookeeper.ZooKeeper;
@@ -41,7 +41,7 @@ import com.sun.jersey.api.client.WebResource;
  */
 @RunWith(JUnit4ZKTestRunner.class)
 public class Base {
-   protected static final Logger LOG = LoggerFactory.getLogger(Base.class);
+   protected static final Logger LOG = LogManager.getLogger(Base.class);
 
    protected static final String CONTEXT_PATH = "/zk";
    protected static final int GRIZZLY_PORT = 10104;

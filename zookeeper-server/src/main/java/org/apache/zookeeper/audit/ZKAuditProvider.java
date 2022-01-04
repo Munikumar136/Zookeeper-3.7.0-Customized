@@ -21,13 +21,13 @@ import static org.apache.zookeeper.audit.AuditEvent.FieldName;
 import java.lang.reflect.Constructor;
 import org.apache.zookeeper.audit.AuditEvent.Result;
 import org.apache.zookeeper.server.ServerCnxnFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ZKAuditProvider {
     static final String AUDIT_ENABLE = "zookeeper.audit.enable";
     static final String AUDIT_IMPL_CLASS = "zookeeper.audit.impl.class";
-    private static final Logger LOG = LoggerFactory.getLogger(ZKAuditProvider.class);
+    private static final Logger LOG = LogManager.getLogger(ZKAuditProvider.class);
     // By default audit logging is disabled
     private static boolean auditEnabled;
     private static AuditLogger auditLogger;

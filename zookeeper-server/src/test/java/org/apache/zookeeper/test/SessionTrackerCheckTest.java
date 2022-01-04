@@ -14,12 +14,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.test;
 
 import static org.junit.jupiter.api.Assertions.fail;
 import java.util.concurrent.ConcurrentHashMap;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.KeeperException.SessionExpiredException;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.SessionTracker.Session;
@@ -30,16 +31,14 @@ import org.apache.zookeeper.server.quorum.LearnerSessionTracker;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
+*//**
  * Validate various type of sessions against leader session tracker and learner
  * session tracker
- */
+ *//*
 public class SessionTrackerCheckTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(SessionTrackerCheckTest.class);
+    protected static final Logger LOG = LogManager.getLogger(SessionTrackerCheckTest.class);
     public static final int TICK_TIME = 1000;
     public static final int CONNECTION_TIMEOUT = TICK_TIME * 10;
 
@@ -219,3 +218,4 @@ public class SessionTrackerCheckTest extends ZKTestCase {
     }
 
 }
+*/

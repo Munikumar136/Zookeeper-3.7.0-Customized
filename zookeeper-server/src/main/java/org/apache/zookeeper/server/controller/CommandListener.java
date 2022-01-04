@@ -26,15 +26,15 @@ import org.apache.zookeeper.util.ServiceUtils;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.AbstractHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * An HTTP server listening to incoming controller commands sent from CommandClient (or any of your favorite REST client
  * ) and dispatching the command to the ZooKeeperServerController for execution.
  */
 public class CommandListener {
-    private static final Logger LOG = LoggerFactory.getLogger(CommandListener.class);
+    private static final Logger LOG = LogManager.getLogger(CommandListener.class);
 
     private ZooKeeperServerController controller;
     private Server server;

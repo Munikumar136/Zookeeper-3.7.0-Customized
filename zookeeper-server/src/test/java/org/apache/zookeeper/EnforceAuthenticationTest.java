@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 package org.apache.zookeeper;
 
 import static org.apache.zookeeper.test.ClientBase.CONNECTION_TIMEOUT;
@@ -25,6 +25,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.client.ZKClientConfig;
 import org.apache.zookeeper.server.AuthenticationHelper;
@@ -35,11 +37,9 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class EnforceAuthenticationTest extends QuorumPeerTestBase {
-    protected static final Logger LOG = LoggerFactory.getLogger(EnforceAuthenticationTest.class);
+    protected static final Logger LOG = LogManager.getLogger(EnforceAuthenticationTest.class);
     private Servers servers;
     private int clientPort;
 
@@ -60,10 +60,10 @@ public class EnforceAuthenticationTest extends QuorumPeerTestBase {
         System.clearProperty(AuthenticationHelper.ENFORCE_AUTH_SCHEMES);
     }
 
-    /**
+    *//**
      * When AuthenticationHelper.ENFORCE_AUTH_ENABLED is not set or set to false, behaviour should
      * be same as the old ie. clients without authentication are allowed to do operations
-     */
+     *//*
     @Test
     public void testEnforceAuthenticationOldBehaviour() throws Exception {
         Map<String, String> prop = new HashMap<>();
@@ -98,10 +98,10 @@ public class EnforceAuthenticationTest extends QuorumPeerTestBase {
         client.close();
     }
 
-    /**
+    *//**
      * Server start should fail when ZooKeeperServer.ENFORCE_AUTH_ENABLED is set to true  but
      * AuthenticationHelper.ENFORCE_AUTH_SCHEME is not configured
-     */
+     *//*
     @Test
     public void testServerStartShouldFailWhenEnforceAuthSchemeIsNotConfigured() throws Exception {
         Map<String, String> prop = new HashMap<>();
@@ -109,11 +109,11 @@ public class EnforceAuthenticationTest extends QuorumPeerTestBase {
         testServerCannotStart(prop);
     }
 
-    /**
+    *//**
      * Server start should fail when AuthenticationHelper.ENFORCE_AUTH_ENABLED is set to true,
      * AuthenticationHelper.ENFORCE_AUTH_SCHEME is configured but authentication provider is not
      * configured.
-     */
+     *//*
     @Test
     public void testServerStartShouldFailWhenAuthProviderIsNotConfigured() throws Exception {
         Map<String, String> prop = new HashMap<>();
@@ -157,9 +157,9 @@ public class EnforceAuthenticationTest extends QuorumPeerTestBase {
         testEnforceAuthNewBehaviour(true);
     }
 
-    /**
+    *//**
      * Client operations are allowed only after the authentication is done
-     */
+     *//*
     private void testEnforceAuthNewBehaviour(boolean netty) throws Exception {
         ZKClientConfig config = new ZKClientConfig();
         if (netty) {
@@ -264,3 +264,4 @@ public class EnforceAuthenticationTest extends QuorumPeerTestBase {
         };
     }
 }
+*/

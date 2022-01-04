@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -26,6 +26,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZooDefs;
@@ -42,18 +44,16 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ReconfigDuringLeaderSyncTest.class);
+    private static final Logger LOG = LogManager.getLogger(ReconfigDuringLeaderSyncTest.class);
     private static int SERVER_COUNT = 3;
     private MainThread[] mt;
     private static boolean bakAsyncSending;
 
     public void setup(boolean asyncSending) {
-        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU="/* password is 'test'*/);
+        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU=" password is 'test');
         Learner.setAsyncSending(asyncSending);
         QuorumPeerConfig.setReconfigEnabled(true);
     }
@@ -68,7 +68,7 @@ public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
         Learner.setAsyncSending(bakAsyncSending);
     }
 
-    /**
+    *//**
      * <pre>
      * Test case for https://issues.apache.org/jira/browse/ZOOKEEPER-2172.
      * Cluster crashes when reconfig a new node as a participant.
@@ -78,7 +78,7 @@ public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
      * between the snapshot and the UPTODATE. In this case processReconfig was
      * not invoked on the newly added node, and zoo.cfg.dynamic.next wasn't
      * deleted.
-     */
+     *//*
 
     @ParameterizedTest
     @ValueSource(booleans = {true, false})
@@ -136,7 +136,7 @@ public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
         sb = new StringBuilder();
         sb.append(serverConfig[leaderId] + "\n").append(serverConfig[joinerId] + "\n");
 
-        /**
+        *//**
          * This server will delay the response to a NEWLEADER message, and run
          * reconfig command so that message at this processed in bellow order
          *
@@ -146,7 +146,7 @@ public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
          * reconfig's COMMITANDACTIVATE
          * UPTODATE
          * </pre>
-         */
+         *//*
         mt[joinerId] = new MainThread(joinerId, clientPorts[joinerId], sb.toString(), false) {
             @Override
             public TestQPMain getTestQPMain() {
@@ -230,11 +230,11 @@ public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
             super(quorumPeers, snapDir, logDir, electionAlg, myid, tickTime, initLimit, syncLimit, connectToLearnerMasterLimit, false, ServerCnxnFactory.createFactory(new InetSocketAddress(clientPort), -1), new QuorumMaj(quorumPeers));
         }
 
-        /**
+        *//**
          * If true, after 100 millisecond NEWLEADER response is send to leader
          *
          * @return
-         */
+         *//*
         public boolean isNewLeaderMessage() {
             return newLeaderMessage;
         }
@@ -249,12 +249,12 @@ public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
                     if (pp != null && pp.getType() == Leader.ACK) {
                         newLeaderMessage = true;
                         try {
-                            /**
+                            *//**
                              * Delaying the ACK message, a follower sends as
                              * response to a NEWLEADER message, so that the
                              * leader has a chance to send the reconfig and only
                              * then the UPTODATE message.
-                             */
+                             *//*
                             Thread.sleep(100);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -284,3 +284,4 @@ public class ReconfigDuringLeaderSyncTest extends QuorumPeerTestBase {
     }
 
 }
+*/

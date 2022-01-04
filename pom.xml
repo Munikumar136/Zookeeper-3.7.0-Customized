@@ -24,7 +24,7 @@
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
 	<!-- to change version: mvn -B release:update-versions -DdevelopmentVersion=3.6.0-SNAPSHOT -->
-	<version>3.7.0-TP</version>
+	<version>3.7.0-TP1</version>
 	<name>Apache ZooKeeper</name>
 	<description>
     ZooKeeper is a centralized service for maintaining configuration information, naming,
@@ -65,7 +65,7 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<distributionManagement>
+	<!-- <distributionManagement>
 		<repository>
 			<id>tvlprt.nexus.repo.releases</id>
 			<name>Travelport ESB Release Repository</name>
@@ -77,12 +77,12 @@
 			<url>${tvlprt.nexus.repository.url}/ODTeamSnapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
-
+ -->
 	<profiles>
 		<profile>
 			<id>full-build</id>
 			<modules>
-				<module>zookeeper-contrib</module>
+				<!-- <module>zookeeper-contrib</module> -->
 				<!-- zookeeper-it needed by fatjar contrib -->
 				<module>zookeeper-it</module>
 			</modules>
@@ -92,7 +92,7 @@
 				its pom -->
 			<id>fatjar</id>
 			<modules>
-				<module>zookeeper-contrib</module>
+				<!-- <module>zookeeper-contrib</module> -->
 				<!-- zookeeper-it needed by fatjar contrib -->
 				<module>zookeeper-it</module>
 			</modules>
@@ -252,12 +252,12 @@
 		<redirectTestOutputToFile>true</redirectTestOutputToFile>
 
 		<!-- dependency versions -->
-		<slf4j.version>1.7.30</slf4j.version>
+		<slf4j.version>1.7.32</slf4j.version>
 		<audience-annotations.version>0.12.0</audience-annotations.version>
 		<jmockit.version>1.48</jmockit.version>
 		<junit.version>5.6.2</junit.version>
 		<junit-platform.version>1.6.2</junit-platform.version>
-		<log4j.version>1.2.17</log4j.version>
+		<log4j.version>2.17.1</log4j.version>
 		<mockito.version>3.6.28</mockito.version>
 		<hamcrest.version>2.2</hamcrest.version>
 		<commons-cli.version>1.4</commons-cli.version>
@@ -355,21 +355,10 @@
 				<version>${slf4j.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${slf4j.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>*</groupId>
-						<artifactId>*</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>${log4j.version}</version>
-			</dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-api</artifactId>
+		    <version>${log4j.version}</version>
+		  </dependency>
 			<dependency>
 				<groupId>org.jmockit</groupId>
 				<artifactId>jmockit</artifactId>

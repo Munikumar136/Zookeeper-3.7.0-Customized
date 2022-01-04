@@ -32,8 +32,8 @@ import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.server.ServerCnxn;
 import org.apache.zookeeper.server.ServerMetrics;
 import org.apache.zookeeper.server.ZooTrace;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class manages watches. It allows watches to be associated with a string
@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public class WatchManager implements IWatchManager {
 
-    private static final Logger LOG = LoggerFactory.getLogger(WatchManager.class);
+    private static final Logger LOG = LogManager.getLogger(WatchManager.class);
 
     private final Map<String, Set<Watcher>> watchTable = new HashMap<>();
 

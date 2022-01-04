@@ -47,12 +47,12 @@ import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class FollowerResyncConcurrencyTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(FollowerResyncConcurrencyTest.class);
+    private static final Logger LOG = LogManager.getLogger(FollowerResyncConcurrencyTest.class);
     public static final long CONNECTION_TIMEOUT = ClientTest.CONNECTION_TIMEOUT;
 
     private AtomicInteger counter = new AtomicInteger(0);

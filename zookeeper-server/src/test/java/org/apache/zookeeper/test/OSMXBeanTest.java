@@ -24,15 +24,15 @@ import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.util.OSMXBean;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class OSMXBeanTest extends ZKTestCase {
 
     private OSMXBean osMbean;
     private Long ofdc = 0L;
     private Long mfdc = 0L;
-    protected static final Logger LOG = LoggerFactory.getLogger(OSMXBeanTest.class);
+    protected static final Logger LOG = LogManager.getLogger(OSMXBeanTest.class);
 
     @BeforeEach
     public void initialize() {

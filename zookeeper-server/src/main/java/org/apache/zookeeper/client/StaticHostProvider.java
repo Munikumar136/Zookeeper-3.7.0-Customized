@@ -28,8 +28,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import org.apache.yetus.audience.InterfaceAudience;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Most simple HostProvider, resolves on every next() call.
@@ -48,7 +48,7 @@ public final class StaticHostProvider implements HostProvider {
 
     }
 
-    private static final Logger LOG = LoggerFactory.getLogger(StaticHostProvider.class);
+    private static final Logger LOG = LogManager.getLogger(StaticHostProvider.class);
 
     private List<InetSocketAddress> serverAddresses = new ArrayList<InetSocketAddress>(5);
 

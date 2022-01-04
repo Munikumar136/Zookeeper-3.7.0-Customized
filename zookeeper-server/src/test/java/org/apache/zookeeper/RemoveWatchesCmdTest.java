@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.Watcher.Event.EventType;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.test.ClientBase;
@@ -33,15 +35,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Testing remove watches using command line
  */
 public class RemoveWatchesCmdTest extends ClientBase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(RemoveWatchesCmdTest.class);
+    private static final Logger LOG = LogManager.getLogger(RemoveWatchesCmdTest.class);
     private ZooKeeper zk;
     private ZooKeeperMain zkMain;
 

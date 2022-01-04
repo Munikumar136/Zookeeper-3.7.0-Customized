@@ -26,6 +26,8 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -38,12 +40,10 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class RequestThrottlerTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(RequestThrottlerTest.class);
+    private static final Logger LOG = LogManager.getLogger(RequestThrottlerTest.class);
 
     private static String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
     private static String GLOBAL_OUTSTANDING_LIMIT = "1";

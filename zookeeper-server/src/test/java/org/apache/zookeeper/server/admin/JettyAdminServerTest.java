@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.admin;
 
@@ -37,6 +37,8 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.common.KeyStoreFileType;
@@ -51,12 +53,10 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class JettyAdminServerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(JettyAdminServerTest.class);
+    protected static final Logger LOG = LogManager.getLogger(JettyAdminServerTest.class);
 
     private static final String URL_FORMAT = "http://localhost:%d/commands";
     private static final String HTTPS_URL_FORMAT = "https://localhost:%d/commands";
@@ -148,9 +148,9 @@ public class JettyAdminServerTest extends ZKTestCase {
         System.clearProperty("zookeeper.admin.forceHttps");
     }
 
-    /**
+    *//**
      * Tests that we can start and query a JettyAdminServer.
-     */
+     *//*
     @Test
     public void testJettyAdminServer() throws AdminServerException, IOException, SSLContextException, GeneralSecurityException {
         JettyAdminServer server = new JettyAdminServer();
@@ -163,9 +163,9 @@ public class JettyAdminServerTest extends ZKTestCase {
         }
     }
 
-    /**
+    *//**
      * Starts a standalone server and tests that we can query its AdminServer.
-     */
+     *//*
     @Test
     public void testStandalone() throws Exception {
         ClientBase.setupTestEnv();
@@ -186,9 +186,9 @@ public class JettyAdminServerTest extends ZKTestCase {
                 "waiting for server down");
     }
 
-    /**
+    *//**
      * Starts a quorum of two servers and tests that we can query both AdminServers.
-     */
+     *//*
     @Test
     public void testQuorum() throws Exception {
         ClientBase.setupTestEnv();
@@ -267,18 +267,18 @@ public class JettyAdminServerTest extends ZKTestCase {
         assertTrue(httpsPassed);
     }
 
-    /**
+    *//**
      * Check that we can load the commands page of an AdminServer running at
      * localhost:port. (Note that this should work even if no zk server is set.)
-     */
+     *//*
     private void queryAdminServer(int port) throws IOException, SSLContextException {
         queryAdminServer(String.format(URL_FORMAT, port), false);
         queryAdminServer(String.format(HTTPS_URL_FORMAT, port), true);
     }
 
-    /**
+    *//**
      * Check that loading urlStr results in a non-zero length response.
-     */
+     *//*
     private void queryAdminServer(String urlStr, boolean encrypted) throws IOException, SSLContextException {
         URL url = new URL(urlStr);
         BufferedReader dis;
@@ -292,17 +292,17 @@ public class JettyAdminServerTest extends ZKTestCase {
         assertTrue(line.length() > 0);
     }
 
-    /**
+    *//**
      * Using TRACE method to visit admin server
-     */
+     *//*
     private void traceAdminServer(int port) throws IOException {
       traceAdminServer(String.format(URL_FORMAT, port));
       traceAdminServer(String.format(HTTPS_URL_FORMAT, port));
     }
 
-    /**
+    *//**
      * Using TRACE method to visit admin server, the response should be 403 forbidden
-     */
+     *//*
     private void traceAdminServer(String urlStr) throws IOException {
         HttpURLConnection conn = (HttpURLConnection) new URL(urlStr).openConnection();
         conn.setRequestMethod("TRACE");
@@ -310,3 +310,4 @@ public class JettyAdminServerTest extends ZKTestCase {
         assertEquals(HttpURLConnection.HTTP_FORBIDDEN, conn.getResponseCode());
     }
 }
+*/

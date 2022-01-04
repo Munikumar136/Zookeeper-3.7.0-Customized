@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -25,6 +25,8 @@ import java.io.IOException;
 import java.net.SocketException;
 import java.nio.ByteBuffer;
 import javax.security.sasl.SaslException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.common.X509Exception;
@@ -40,23 +42,21 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
+*//**
  * This test class contains test cases related to race condition in complete
  * ZooKeeper
- */
+ *//*
 public class RaceConditionTest extends QuorumPeerTestBase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(RaceConditionTest.class);
+    protected static final Logger LOG = LogManager.getLogger(RaceConditionTest.class);
     private static int SERVER_COUNT = 3;
     private MainThread[] mt;
 
-    /**
+    *//**
      * Test case for https://issues.apache.org/jira/browse/ZOOKEEPER-2380.
      * Deadlock while shutting down the ZooKeeper
-     */
+     *//*
 
     @Test
     @Timeout(value = 30)
@@ -69,14 +69,14 @@ public class RaceConditionTest extends QuorumPeerTestBase {
         // shutdown 2 followers so that leader does not have majority and goes
         // into looking state or following/leading state.
         shutdownFollowers(mt);
-        /**
+        *//**
          * <pre>
          * Verify that there is no deadlock in following ways:
          * 1) If leader is in LOOKING or FOLLOWING, we are sure there is no deadlock.
          * 2) If leader in in LEADING state then we have to check that this LEADING state is
          * after the leader election, not the old LEADING state.
          * </pre>
-         */
+         *//*
         boolean leaderStateChanged = ClientBase
             .waitForServerState(leader, 15000, QuorumStats.Provider.LOOKING_STATE, QuorumStats.Provider.FOLLOWING_STATE);
         // Wait for the old leader to start completely
@@ -187,10 +187,10 @@ public class RaceConditionTest extends QuorumPeerTestBase {
             LeaderZooKeeperServer zk = new LeaderZooKeeperServer(logFactory, this, this.getZkDb()) {
                 @Override
                 protected void setupRequestProcessors() {
-                    /**
+                    *//**
                      * This method is overridden to make a place to inject
                      * MockSyncRequestProcessor
-                     */
+                     *//*
                     RequestProcessor finalProcessor = new FinalRequestProcessor(this);
                     RequestProcessor toBeAppliedProcessor = new Leader.ToBeAppliedRequestProcessor(finalProcessor, getLeader());
                     commitProcessor = new CommitProcessor(toBeAppliedProcessor, Long.toString(getServerId()), false, getZooKeeperServerListener());
@@ -216,10 +216,10 @@ public class RaceConditionTest extends QuorumPeerTestBase {
 
         @Override
         public void shutdown() {
-            /**
+            *//**
              * Add a request so that something is there for SyncRequestProcessor
              * to process, while we are in shutdown flow
-             */
+             *//*
             Request request = new Request(null, 0, 0, ZooDefs.OpCode.delete, ByteBuffer.wrap("/deadLockIssue".getBytes()), null);
             processRequest(request);
             super.shutdown();
@@ -232,10 +232,10 @@ public class RaceConditionTest extends QuorumPeerTestBase {
         public MockProposalRequestProcessor(LeaderZooKeeperServer zks, RequestProcessor nextProcessor) {
             super(zks, nextProcessor);
 
-            /**
+            *//**
              * The only purpose here is to inject the mocked
              * SyncRequestProcessor
-             */
+             *//*
             AckRequestProcessor ackProcessor = new AckRequestProcessor(zks.getLeader());
             syncProcessor = new MockSyncRequestProcessor(zks, ackProcessor);
         }
@@ -252,3 +252,4 @@ public class RaceConditionTest extends QuorumPeerTestBase {
     }
 
 }
+*/

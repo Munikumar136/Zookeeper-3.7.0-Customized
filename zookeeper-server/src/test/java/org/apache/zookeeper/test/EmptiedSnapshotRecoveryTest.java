@@ -27,6 +27,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.WatchedEvent;
@@ -39,8 +41,6 @@ import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.ZooKeeperServer;
 import org.apache.zookeeper.server.persistence.FileTxnSnapLog;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /** If snapshots are corrupted to the empty file or deleted, Zookeeper should
  *  not proceed to read its transaction log files
@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
  */
 public class EmptiedSnapshotRecoveryTest extends ZKTestCase implements Watcher {
 
-    private static final Logger LOG = LoggerFactory.getLogger(RestoreCommittedLogTest.class);
+    private static final Logger LOG = LogManager.getLogger(RestoreCommittedLogTest.class);
     private static String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
     private static final int CONNECTION_TIMEOUT = 3000;
     private static final int N_TRANSACTIONS = 150;

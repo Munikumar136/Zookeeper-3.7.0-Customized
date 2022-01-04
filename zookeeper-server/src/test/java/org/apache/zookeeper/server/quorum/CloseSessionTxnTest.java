@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ *//*
 
 package org.apache.zookeeper.server.quorum;
 
@@ -30,10 +30,10 @@ import org.junit.jupiter.api.Test;
 
 public class CloseSessionTxnTest extends QuorumPeerTestBase {
 
-    /**
+    *//**
      * Test leader/leader compatibility with/without CloseSessionTxn, so that
      * we can gradually rollout this code and rollback if there is problem.
-     */
+     *//*
     @Test
     public void testCloseSessionTxnCompatile() throws Exception {
         // Test 4 cases:
@@ -95,3 +95,4 @@ public class CloseSessionTxnTest extends QuorumPeerTestBase {
         }
     }
  }
+*/

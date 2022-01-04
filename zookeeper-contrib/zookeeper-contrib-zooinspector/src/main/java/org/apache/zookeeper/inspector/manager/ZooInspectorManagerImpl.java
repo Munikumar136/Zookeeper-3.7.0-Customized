@@ -48,7 +48,7 @@ import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.inspector.encryption.BasicDataEncryptionManager;
 import org.apache.zookeeper.inspector.encryption.DataEncryptionManager;
-import org.apache.zookeeper.inspector.logger.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
 import org.apache.zookeeper.retry.ZooKeeperRetry;
 
 /**
@@ -213,7 +213,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                 return true;
             }
         } catch (Exception e) {
-            LoggerFactory.getLogger().error(
+            LogManager.getLogger().error(
                     "Error occurred while disconnecting from ZooKeeper server",
                     e);
         }
@@ -253,7 +253,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                             .getData(nodePath, false, s));
                 }
             } catch (Exception e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred getting data for node: " + nodePath, e);
             }
         }
@@ -361,11 +361,11 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                     }
                 }
             } catch (InterruptedException e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred retrieving ACLs of node: " + nodePath,
                         e);
             } catch (KeeperException e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred retrieving ACLs of node: " + nodePath,
                         e);
             }
@@ -404,7 +404,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                     nodeMeta.put(VERSION, String.valueOf(s.getVersion()));
                 }
             } catch (Exception e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred retrieving meta data for node: "
                                 + nodePath, e);
             }
@@ -426,7 +426,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                     return s.getNumChildren();
                 }
             } catch (Exception e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred getting the number of children of node: "
                                 + nodePath, e);
             }
@@ -458,7 +458,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                     return s.getEphemeralOwner() == 0;
                 }
             } catch (Exception e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred determining whether node is allowed children: "
                                 + nodePath, e);
             }
@@ -486,7 +486,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                         .valueOf(this.sessionTimeout));
             }
         } catch (Exception e) {
-            LoggerFactory.getLogger().error(
+            LogManager.getLogger().error(
                     "Error occurred retrieving session meta data.", e);
         }
         return sessionMeta;
@@ -515,7 +515,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                 }
                 return true;
             } catch (Exception e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred creating node: " + parent + "/"
                                 + nodeName, e);
             }
@@ -545,7 +545,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                 }
                 return true;
             } catch (Exception e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred deleting node: " + nodePath, e);
             }
         }
@@ -566,7 +566,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                         .encryptData(data), -1);
                 return true;
             } catch (Exception e) {
-                LoggerFactory.getLogger().error(
+                LogManager.getLogger().error(
                         "Error occurred setting data for node: " + nodePath, e);
             }
         }
@@ -620,7 +620,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                         watchers.put(node, new NodeWatcher(node, nodeListener,
                                 zooKeeper));
                     } catch (Exception e) {
-                        LoggerFactory.getLogger().error(
+                        LogManager.getLogger().error(
                                 "Error occurred adding node watcher for node: "
                                         + node, e);
                     }
@@ -695,7 +695,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
                         }
                     }
                 } catch (Exception e) {
-                    LoggerFactory.getLogger().error(
+                    LogManager.getLogger().error(
                             "Error occurred re-adding node watcherfor node "
                                     + nodePath, e);
                 }
@@ -849,7 +849,7 @@ public class ZooInspectorManagerImpl implements ZooInspectorManager {
     public List<String> getDefaultNodeViewerConfiguration() throws IOException {
         List<String> defaultNodeViewers = loadNodeViewersFile(defaultNodeViewersFile);
         if (defaultNodeViewers.isEmpty()) {
-            LoggerFactory.getLogger().warn("List of default node viewers is empty");
+            LogManager.getLogger().warn("List of default node viewers is empty");
         }
         return defaultNodeViewers;
     }

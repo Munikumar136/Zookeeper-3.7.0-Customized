@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum.auth;
 
@@ -27,15 +27,15 @@ import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
-/*
+
  * This code is originally from HDFS, see the similarly named file there
  * in case of bug fixing, history, etc.
  *
  * Branch : trunk
  * Github Revision: 1d1ab587e4e92ce3aea4cb144811f69145cb3b33
- */
+ 
 
-/**
+*//**
  * KerberosSecurityTestcase provides a base class for using MiniKdc with other
  * test cases. KerberosSecurityTestcase starts the MiniKdc (@Before) before
  * running tests, and stop the MiniKdc (@After) after the testcases, using
@@ -44,7 +44,7 @@ import org.junit.jupiter.api.BeforeAll;
  * Users can directly inherit this class and implement their own test functions
  * using the default settings, or override functions getTestDir() and
  * createMiniKdcConf() to provide new settings.
- */
+ *//*
 public class KerberosSecurityTestcase extends QuorumAuthTestBase {
 
     private static MiniKdc kdc;
@@ -70,13 +70,13 @@ public class KerberosSecurityTestcase extends QuorumAuthTestBase {
         kdc.start();
     }
 
-    /**
+    *//**
      * Create a working directory, it should be the build directory. Under this
      * directory an ApacheDS working directory will be created, this directory
      * will be deleted when the MiniKdc stops.
      *
      * @throws IOException
-     */
+     *//*
     public static void createTestDir() throws IOException {
         workDir = createTmpDir(new File(System.getProperty("build.test.dir", "build")));
     }
@@ -92,9 +92,9 @@ public class KerberosSecurityTestcase extends QuorumAuthTestBase {
         return tmpDir;
     }
 
-    /**
+    *//**
      * Create a Kdc configuration
-     */
+     *//*
     public static void createMiniKdcConf() {
         conf = MiniKdc.createConf();
     }
@@ -118,3 +118,4 @@ public class KerberosSecurityTestcase extends QuorumAuthTestBase {
     }
 
 }
+*/

@@ -32,8 +32,8 @@ import org.apache.zookeeper.common.X509Util;
 import org.apache.zookeeper.common.ZKConfig;
 import org.apache.zookeeper.data.Id;
 import org.apache.zookeeper.server.ServerCnxn;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * An AuthenticationProvider backed by an X509TrustManager and an X509KeyManager
@@ -51,7 +51,7 @@ import org.slf4j.LoggerFactory;
 public class X509AuthenticationProvider implements AuthenticationProvider {
 
     static final String ZOOKEEPER_X509AUTHENTICATIONPROVIDER_SUPERUSER = "zookeeper.X509AuthenticationProvider.superUser";
-    private static final Logger LOG = LoggerFactory.getLogger(X509AuthenticationProvider.class);
+    private static final Logger LOG = LogManager.getLogger(X509AuthenticationProvider.class);
     private final X509TrustManager trustManager;
     private final X509KeyManager keyManager;
 

@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum.auth;
 
@@ -37,7 +37,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
-/**
+*//**
  * Rolling upgrade should do in three steps:
  *
  * step-1) Stop the server and set the flags and restart the server.
@@ -51,7 +51,7 @@ import org.junit.jupiter.api.Timeout;
  * step-3) Stop the server one by one and change the flags and restart the server.
  * quorum.auth.enableSasl=true, quorum.auth.learnerRequireSasl=true and quorum.auth.serverRequireSasl=true
  * Now, all the servers are fully upgraded and running in secured mode.
- */
+ *//*
 public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
 
     static {
@@ -79,11 +79,11 @@ public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
         cleanupJaasConfig();
     }
 
-    /**
+    *//**
      * Test to verify that servers are able to start without any authentication.
      * peer0 -&gt; quorum.auth.enableSasl=false
      * peer1 -&gt; quorum.auth.enableSasl=false
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testNullAuthLearnerServer() throws Exception {
@@ -98,11 +98,11 @@ public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
         zk.close();
     }
 
-    /**
+    *//**
      * Test to verify that servers are able to form quorum.
      * peer0 -&gt; quorum.auth.enableSasl=true, quorum.auth.learnerRequireSasl=false, quorum.auth.serverRequireSasl=false
      * peer1 -&gt; quorum.auth.enableSasl=false, quorum.auth.learnerRequireSasl=false, quorum.auth.serverRequireSasl=false
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testAuthLearnerAgainstNullAuthServer() throws Exception {
@@ -117,11 +117,11 @@ public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
         zk.close();
     }
 
-    /**
+    *//**
      * Test to verify that servers are able to form quorum.
      * peer0 -&gt; quorum.auth.enableSasl=true, quorum.auth.learnerRequireSasl=false, quorum.auth.serverRequireSasl=false
      * peer1 -&gt; quorum.auth.enableSasl=true, quorum.auth.learnerRequireSasl=false, quorum.auth.serverRequireSasl=false
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testAuthLearnerAgainstNoAuthRequiredServer() throws Exception {
@@ -136,11 +136,11 @@ public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
         zk.close();
     }
 
-    /**
+    *//**
      * Test to verify that servers are able to form quorum.
      * peer0 -&gt; quorum.auth.enableSasl=true, quorum.auth.learnerRequireSasl=true, quorum.auth.serverRequireSasl=true
      * peer1 -&gt; quorum.auth.enableSasl=true, quorum.auth.learnerRequireSasl=true, quorum.auth.serverRequireSasl=true
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testAuthLearnerServer() throws Exception {
@@ -157,7 +157,7 @@ public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
         zk.close();
     }
 
-    /**
+    *//**
      * Rolling upgrade should do in three steps:
      *
      * step-1) Stop the server and set the flags and restart the server.
@@ -171,7 +171,7 @@ public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
      * step-3) Stop the server one by one and change the flags and restart the server.
      * quorum.auth.enableSasl=true, quorum.auth.learnerRequireSasl=true and quorum.auth.serverRequireSasl=true
      * Now, all the servers are fully upgraded and running in secured mode.
-     */
+     *//*
     @Test
     @Timeout(value = 90)
     public void testRollingUpgrade() throws Exception {
@@ -239,3 +239,4 @@ public class QuorumAuthUpgradeTest extends QuorumAuthTestBase {
     }
 
 }
+*/

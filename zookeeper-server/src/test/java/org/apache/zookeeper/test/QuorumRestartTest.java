@@ -25,12 +25,12 @@ import org.apache.zookeeper.server.ServerCnxnFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class QuorumRestartTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(QuorumRestartTest.class);
+    private static final Logger LOG = LogManager.getLogger(QuorumRestartTest.class);
     private QuorumUtil qu;
 
     @BeforeEach

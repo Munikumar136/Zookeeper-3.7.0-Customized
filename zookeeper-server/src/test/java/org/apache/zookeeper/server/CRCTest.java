@@ -34,6 +34,8 @@ import java.util.zip.Adler32;
 import java.util.zip.CheckedInputStream;
 import org.apache.jute.BinaryInputArchive;
 import org.apache.jute.InputArchive;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
@@ -44,12 +46,10 @@ import org.apache.zookeeper.server.persistence.FileTxnLog;
 import org.apache.zookeeper.server.persistence.TxnLog.TxnIterator;
 import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CRCTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CRCTest.class);
+    private static final Logger LOG = LogManager.getLogger(CRCTest.class);
 
     private static final String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
     /**

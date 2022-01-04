@@ -32,6 +32,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.apache.jute.BinaryOutputArchive;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooDefs.OpCode;
@@ -46,8 +48,6 @@ import org.apache.zookeeper.server.ZooKeeperServer;
 import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * The following are invariant regardless of the particular implementation
@@ -70,7 +70,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CommitProcessorTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(CommitProcessorTest.class);
+    protected static final Logger LOG = LogManager.getLogger(CommitProcessorTest.class);
 
     // The amount of ms each test case should run
     static final int TEST_RUN_TIME_IN_MS = 5000;

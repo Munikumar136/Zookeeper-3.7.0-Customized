@@ -56,8 +56,8 @@ import org.apache.zookeeper.client.ZKClientConfig;
 import org.apache.zookeeper.common.ClientX509Util;
 import org.apache.zookeeper.common.NettyUtils;
 import org.apache.zookeeper.common.X509Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * ClientCnxnSocketNetty implements ClientCnxnSocket abstract methods.
@@ -66,7 +66,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClientCnxnSocketNetty extends ClientCnxnSocket {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ClientCnxnSocketNetty.class);
+    private static final Logger LOG = LogManager.getLogger(ClientCnxnSocketNetty.class);
 
     private final EventLoopGroup eventLoopGroup;
     private Channel channel;

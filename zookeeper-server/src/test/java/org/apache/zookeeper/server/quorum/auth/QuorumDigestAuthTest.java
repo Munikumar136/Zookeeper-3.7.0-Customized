@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum.auth;
 
@@ -75,9 +75,9 @@ public class QuorumDigestAuthTest extends QuorumAuthTestBase {
         cleanupJaasConfig();
     }
 
-    /**
+    *//**
      * Test to verify that server is able to start with valid credentials
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testValidCredentials() throws Exception {
@@ -96,10 +96,10 @@ public class QuorumDigestAuthTest extends QuorumAuthTestBase {
         zk.close();
     }
 
-    /**
+    *//**
      * Test to verify that server is able to start with valid credentials
      * when using multiple Quorum / Election addresses
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testValidCredentialsWithMultiAddresses() throws Exception {
@@ -118,11 +118,11 @@ public class QuorumDigestAuthTest extends QuorumAuthTestBase {
         zk.close();
     }
 
-    /**
+    *//**
      * Test to verify that server is able to start with invalid credentials if
      * the configuration is set to quorum.auth.serverRequireSasl=false.
      * Quorum will talk each other even if the authentication is not succeeded
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testSaslNotRequiredWithInvalidCredentials() throws Exception {
@@ -140,11 +140,11 @@ public class QuorumDigestAuthTest extends QuorumAuthTestBase {
         zk.close();
     }
 
-    /**
+    *//**
      * Test to verify that server shouldn't start with invalid credentials
      * if the configuration is set to quorum.auth.serverRequireSasl=true,
      * quorum.auth.learnerRequireSasl=true
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testSaslRequiredInvalidCredentials() throws Exception {
@@ -161,11 +161,11 @@ public class QuorumDigestAuthTest extends QuorumAuthTestBase {
         }
     }
 
-    /**
+    *//**
      * If quorumpeer learner is not auth enabled then self won't be able to join
      * quorum. So this test is ensuring that the quorumpeer learner is also auth
      * enabled while enabling quorum server require sasl.
-     */
+     *//*
     @Test
     @Timeout(value = 10)
     public void testEnableQuorumServerRequireSaslWithoutQuorumLearnerRequireSasl() throws Exception {
@@ -190,11 +190,11 @@ public class QuorumDigestAuthTest extends QuorumAuthTestBase {
         }
     }
 
-    /**
+    *//**
      * If quorumpeer learner is not auth enabled then self won't be able to join
      * quorum. So this test is ensuring that the quorumpeer learner is also auth
      * enabled while enabling quorum server require sasl.
-     */
+     *//*
     @Test
     @Timeout(value = 10)
     public void testEnableQuorumAuthenticationConfigurations() throws Exception {
@@ -237,3 +237,4 @@ public class QuorumDigestAuthTest extends QuorumAuthTestBase {
     }
 
 }
+*/

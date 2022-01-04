@@ -39,8 +39,8 @@ import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.apache.zookeeper.server.quorum.QuorumPeer.LearnerType;
 import org.apache.zookeeper.server.quorum.QuorumPeer.QuorumServer;
 import org.apache.zookeeper.server.util.OSMXBean;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Utility for quorum testing. Setups 2n+1 peers and allows to start/stop all
@@ -52,7 +52,7 @@ public class QuorumUtil {
 
     // TODO refactor QuorumBase to be special case of this
 
-    private static final Logger LOG = LoggerFactory.getLogger(QuorumUtil.class);
+    private static final Logger LOG = LogManager.getLogger(QuorumUtil.class);
     private static final Set<QuorumPeer.ServerState> CONNECTED_STATES = new TreeSet<>(
         Arrays.asList(QuorumPeer.ServerState.LEADING, QuorumPeer.ServerState.FOLLOWING, QuorumPeer.ServerState.OBSERVING));
 

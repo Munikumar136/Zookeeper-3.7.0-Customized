@@ -18,12 +18,12 @@
 package org.apache.zookeeper.graph.servlets;
 
 import org.apache.zookeeper.graph.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class GraphData extends JsonServlet
 {
-    private static final Logger LOG = LoggerFactory.getLogger(GraphData.class);
+    private static final Logger LOG = LogManager.getLogger(GraphData.class);
     private static final int DEFAULT_PERIOD = 1000;
 
     private LogSource source = null;

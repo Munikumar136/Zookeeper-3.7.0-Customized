@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -47,10 +47,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
 import javax.security.sasl.SaslException;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.WriterAppender;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.PortAssignment;
@@ -68,15 +64,15 @@ import org.apache.zookeeper.server.quorum.Leader.Proposal;
 import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.Test;
 
-/**
+*//**
  * Test stand-alone server.
  *
- */
+ *//*
 public class QuorumPeerMainTest extends QuorumPeerTestBase {
 
-    /**
+    *//**
      * Verify the ability to start a cluster.
-     */
+     *//*
     public void testQuorumInternal(String addr) throws Exception {
         ClientBase.setupTestEnv();
 
@@ -126,25 +122,25 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
                 "waiting for server 2 down");
     }
 
-    /**
+    *//**
      * Verify the ability to start a cluster.
-     */
+     *//*
     @Test
     public void testQuorum() throws Exception {
         testQuorumInternal("127.0.0.1");
     }
 
-    /**
+    *//**
      * Verify the ability to start a cluster. IN V6!!!!
-     */
+     *//*
     @Test
     public void testQuorumV6() throws Exception {
         testQuorumInternal("[::1]");
     }
 
-    /**
+    *//**
      * Test early leader abandonment.
-     */
+     *//*
     @Test
     public void testEarlyLeaderAbandonment() throws Exception {
         ClientBase.setupTestEnv();
@@ -246,11 +242,11 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Test the case of server with highest zxid not present at leader election and joining later.
      * This test case is for reproducing the issue and fixing the bug mentioned in ZOOKEEPER-1154
      * and ZOOKEEPER-1156.
-     */
+     *//*
     @Test
     public void testHighestZxidJoinLate() throws Exception {
         numServers = 3;
@@ -331,13 +327,13 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertEquals(output[0], 2, "Validating that the deposed leader caught up on changes it missed");
     }
 
-    /**
+    *//**
      * This test validates that if a quorum member determines that it is leader without the support of the rest of the
      * quorum (the other members do not believe it to be the leader) it will stop attempting to lead and become a follower.
      *
      * @throws IOException
      * @throws InterruptedException
-     */
+     *//*
     @Test
     public void testElectionFraud() throws IOException, InterruptedException {
         // capture QuorumPeer logging
@@ -420,9 +416,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(foundFollowing, "falseLeader never rejoins the quorum");
     }
 
-    /**
+    *//**
      * Verify handling of bad quorum address
-     */
+     *//*
     @Test
     public void testBadPeerAddressInQuorum() throws Exception {
         ClientBase.setupTestEnv();
@@ -469,9 +465,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(found, "complains about host");
     }
 
-    /**
+    *//**
      * Verify handling of inconsistent peer type
-     */
+     *//*
     @Test
     public void testInconsistentPeerType() throws Exception {
         ClientBase.setupTestEnv();
@@ -542,11 +538,11 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(warningPresent && defaultedToObserver, "Should warn about inconsistent peer type");
     }
 
-    /**
+    *//**
      * verify if bad packets are being handled properly
      * at the quorum port
      * @throws Exception
-     */
+     *//*
     @Test
     public void testBadPackets() throws Exception {
         ClientBase.setupTestEnv();
@@ -589,10 +585,10 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         q2.shutdown();
     }
 
-    /**
+    *//**
      * Verify handling of quorum defaults
      * * default electionAlg is fast leader election
-     */
+     *//*
     @Test
     public void testQuorumDefaults() throws Exception {
         ClientBase.setupTestEnv();
@@ -646,9 +642,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(found, "fastleaderelection used");
     }
 
-    /**
+    *//**
      * Verifies that QuorumPeer exits immediately
-     */
+     *//*
     @Test
     public void testQuorumPeerExitTime() throws Exception {
         long maxwait = 3000;
@@ -667,10 +663,10 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Test verifies that the server is able to redefine the min/max session
      * timeouts
-     */
+     *//*
     @Test
     public void testMinMaxSessionTimeOut() throws Exception {
         ClientBase.setupTestEnv();
@@ -702,10 +698,10 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertEquals(maxSessionTimeOut, quorumPeer.getMaxSessionTimeout(), "maximumSessionTimeOut is not considered");
     }
 
-    /**
+    *//**
      * Test verifies that the server is able to redefine if user configured only
      * minSessionTimeout limit
-     */
+     *//*
     @Test
     public void testWithOnlyMinSessionTimeout() throws Exception {
         ClientBase.setupTestEnv();
@@ -845,9 +841,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Verify that a node without the leader in its view will not attempt to connect to the leader.
-     */
+     *//*
     @Test
     public void testLeaderOutOfView() throws Exception {
         ClientBase.setupTestEnv();
@@ -1036,7 +1032,7 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         return null;
     }
 
-    /**
+    *//**
      * Currently, in SNAP sync, the leader will start queuing the
      * proposal/commits and the NEWLEADER packet before sending
      * over the snapshot over wire. So it's possible that the zxid
@@ -1055,7 +1051,7 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
      *
      * This test case is going to cover and simulate this scenario
      * and make sure there is no data inconsistency issue after fix.
-     */
+     *//*
     @Test
     public void testInconsistentDueToNewLeaderOrder() throws Exception {
 
@@ -1211,24 +1207,24 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Test leader election finished  with 1 disloyal voter and without
      * majority followers, expecting to see the quorum stablized only
      * after waiting for maxTimeToWaitForEpoch.
-     */
+     *//*
     @Test
     public void testLeaderElectionWithDisloyalVoter() throws IOException {
         testLeaderElection(5, 3, 1000, 10000);
     }
 
-    /**
+    *//**
      * Test leader election finished  with 1 disloyal voter and majority
      * followers, expecting to see the quorum stablized immediately even
      * there is 1 disloyal voter.
      *
      * Set the maxTimeToWaitForEpoch to 3s and maxTimeWaitForServerUp to
      * 2s to confirm this.
-     */
+     *//*
     @Test
     public void testLeaderElectionWithDisloyalVoter_stillHasMajority() throws IOException {
         testLeaderElection(5, 5, 3000, 20000);
@@ -1283,9 +1279,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Verify boot works configuring a MetricsProvider
-     */
+     *//*
     @Test
     public void testMetricsProviderLifecycle() throws Exception {
         ClientBase.setupTestEnv();
@@ -1336,9 +1332,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(BaseTestMetricsProvider.MetricsProviderCapturingLifecycle.stopCalled.get(), "metrics provider lifecycle error");
     }
 
-    /**
+    *//**
      * Test verifies that configuration is passed to the MetricsProvider.
-     */
+     *//*
     @Test
     public void testMetricsProviderConfiguration() throws Exception {
         ClientBase.setupTestEnv();
@@ -1388,9 +1384,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertEquals(1234, BaseTestMetricsProvider.MetricsProviderWithConfiguration.httpPort.get());
     }
 
-    /**
+    *//**
      * Test verifies that the server shouldn't be affected but runtime errors on stop()
-     */
+     *//*
     @Test
     public void testFaultyMetricsProviderOnStop() throws Exception {
         ClientBase.setupTestEnv();
@@ -1452,9 +1448,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(found, "complains about metrics provider");
     }
 
-    /**
+    *//**
      * Verify boot fails with a bad MetricsProvider
-     */
+     *//*
     @Test
     public void testInvalidMetricsProvider() throws Exception {
         ClientBase.setupTestEnv();
@@ -1501,9 +1497,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(found, "complains about metrics provider");
     }
 
-    /**
+    *//**
      * Verify boot fails with a MetricsProvider with fails to start
-     */
+     *//*
     @Test
     public void testFaultyMetricsProviderOnStart() throws Exception {
         ClientBase.setupTestEnv();
@@ -1551,9 +1547,9 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(found, "complains about metrics provider MetricsProviderLifeCycleException");
     }
 
-    /**
+    *//**
      * Verify boot fails with a MetricsProvider with fails to start
-     */
+     *//*
     @Test
     public void testFaultyMetricsProviderOnConfigure() throws Exception {
         ClientBase.setupTestEnv();
@@ -1601,10 +1597,10 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         assertTrue(found, "complains about metrics provider MetricsProviderLifeCycleException");
     }
 
-    /**
+    *//**
      * Test the behavior to skip processing the learner forwarded requests in
      * Leader's CommitProcessor.
-     */
+     *//*
     @Test
     public void testLearnerRequestForwardBehavior() throws Exception {
         System.setProperty(ProposalRequestProcessor.FORWARD_LEARNER_REQUESTS_TO_COMMIT_PROCESSOR_DISABLED, "true");
@@ -1635,14 +1631,14 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * If learner failed to do SNAP sync with leader before it's writing
      * the snapshot to disk, it's possible that it might have DIFF sync
      * with new leader or itself being elected as a leader.
      *
      * This test is trying to guarantee there is no data inconsistency for
      * this case.
-     */
+     *//*
     @Test
     public void testDiffSyncAfterSnap() throws Exception {
         final int ENSEMBLE_SERVERS = 3;
@@ -1897,3 +1893,4 @@ public class QuorumPeerMainTest extends QuorumPeerTestBase {
     }
 
 }
+*/

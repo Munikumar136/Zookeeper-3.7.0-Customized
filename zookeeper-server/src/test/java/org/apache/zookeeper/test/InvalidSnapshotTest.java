@@ -32,12 +32,12 @@ import org.apache.zookeeper.server.SnapshotFormatter;
 import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.ZooKeeperServer;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class InvalidSnapshotTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(InvalidSnapshotTest.class);
+    private static final Logger LOG = LogManager.getLogger(InvalidSnapshotTest.class);
     private static final String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
 
     private static final File testData = new File(System.getProperty("test.data.dir", "src/test/resources/data"));

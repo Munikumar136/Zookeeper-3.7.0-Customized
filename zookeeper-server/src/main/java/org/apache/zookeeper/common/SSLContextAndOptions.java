@@ -32,8 +32,8 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLParameters;
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLSocket;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Wrapper class for an SSLContext + some config options that can't be set on the context when it is created but
@@ -44,7 +44,7 @@ import org.slf4j.LoggerFactory;
  */
 public class SSLContextAndOptions {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SSLContextAndOptions.class);
+    private static final Logger LOG = LogManager.getLogger(SSLContextAndOptions.class);
 
     private final X509Util x509Util;
     private final String[] enabledProtocols;

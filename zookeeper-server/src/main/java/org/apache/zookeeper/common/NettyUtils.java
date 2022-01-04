@@ -35,15 +35,15 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Helper methods for netty code.
  */
 public class NettyUtils {
 
-    private static final Logger LOG = LoggerFactory.getLogger(NettyUtils.class);
+    private static final Logger LOG = LogManager.getLogger(NettyUtils.class);
 
     private static final int DEFAULT_INET_ADDRESS_COUNT = 1;
 

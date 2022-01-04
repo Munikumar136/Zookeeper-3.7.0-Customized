@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -39,10 +39,10 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         QuorumPeerConfig.setReconfigEnabled(true);
     }
 
-    /**
+    *//**
      * Reconfiguration recovery - test that a reconfiguration is completed if
      * leader has .next file during startup and new config is not running yet
-     */
+     *//*
     @Test
     public void testNextConfigCompletion() throws Exception {
         ClientBase.setupTestEnv();
@@ -118,11 +118,11 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Reconfiguration recovery - current config servers discover .next file,
      * but they're both observers and their ports change in next config. Suppose
      * that next config wasn't activated yet. Should complete reconfiguration.
-     */
+     *//*
     @Test
     public void testCurrentServersAreObserversInNextConfig() throws Exception {
         ClientBase.setupTestEnv();
@@ -219,12 +219,12 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Reconfiguration recovery - test that if servers in old config have a
      * .next file but no quorum of new config is up then no progress should be
      * possible (no progress will happen to ensure safety as the new config
      * might be actually up but partitioned from old config)
-     */
+     *//*
     @Test
     public void testNextConfigUnreachable() throws Exception {
         ClientBase.setupTestEnv();
@@ -278,10 +278,10 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Reconfiguration recovery - test that old config members will join the new
      * config if its already active, and not try to complete the reconfiguration
-     */
+     *//*
     @Test
     public void testNextConfigAlreadyActive() throws Exception {
         ClientBase.setupTestEnv();
@@ -358,14 +358,14 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Tests conversion of observer to participant AFTER new config was already
      * committed. Old config: servers 0 (participant), 1 (participant), 2
      * (observer) New config: servers 2 (participant), 3 (participant) We start
      * server 2 with old config and start server 3 with new config. All other
      * servers are down. In order to terminate FLE, server 3 must 'convince'
      * server 2 to adopt the new config and turn into a participant.
-     */
+     *//*
     @Test
     public void testObserverConvertedToParticipantDuringFLE() throws Exception {
         ClientBase.setupTestEnv();
@@ -425,7 +425,7 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Tests conversion of observer to participant during reconfig recovery, new
      * config was not committed yet. Old config: servers 0 (participant), 1
      * (participant), 2 (observer) New config: servers 2 (participant), 3
@@ -436,7 +436,7 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
      * configurations, only about committed ones. This tests that new config can
      * be completed, which requires server 2's ack for the newleader message,
      * even though its an observer.
-     */
+     *//*
     @Test
     public void testCurrentObserverIsParticipantInNewConfig() throws Exception {
         ClientBase.setupTestEnv();
@@ -519,9 +519,9 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         }
     }
 
-    /*
+    
      * Generates 3 ports per server
-     */
+     
     public static int[][] generatePorts(int numServers) {
         int[][] ports = new int[numServers][];
         for (int i = 0; i < numServers; i++) {
@@ -533,10 +533,10 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
         return ports;
     }
 
-    /*
+    
      * Creates a configuration string for servers 0..numServers-1 Ids in
      * observerIds correspond to observers, other ids are for participants.
-     */
+     
     public static StringBuilder generateConfig(int numServers, int[][] ports, Set<Integer> observerIds) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < numServers; i++) {
@@ -549,3 +549,4 @@ public class ReconfigRecoveryTest extends QuorumPeerTestBase {
     }
 
 }
+*/

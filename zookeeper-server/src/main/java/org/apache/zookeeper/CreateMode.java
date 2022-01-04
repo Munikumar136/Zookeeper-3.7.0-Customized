@@ -19,8 +19,8 @@
 package org.apache.zookeeper;
 
 import org.apache.yetus.audience.InterfaceAudience;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /***
  *  CreateMode value determines how the znode is created on ZooKeeper.
@@ -70,7 +70,7 @@ public enum CreateMode {
      */
     PERSISTENT_SEQUENTIAL_WITH_TTL(6, false, true, false, true);
 
-    private static final Logger LOG = LoggerFactory.getLogger(CreateMode.class);
+    private static final Logger LOG = LogManager.getLogger(CreateMode.class);
 
     private boolean ephemeral;
     private boolean sequential;

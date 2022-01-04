@@ -37,8 +37,8 @@ import org.apache.zookeeper.server.WorkerService;
 import org.apache.zookeeper.server.ZooKeeperCriticalThread;
 import org.apache.zookeeper.server.ZooKeeperServerListener;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This RequestProcessor matches the incoming committed requests with the
@@ -76,7 +76,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CommitProcessor extends ZooKeeperCriticalThread implements RequestProcessor {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CommitProcessor.class);
+    private static final Logger LOG = LogManager.getLogger(CommitProcessor.class);
 
     /** Default: numCores */
     public static final String ZOOKEEPER_COMMIT_PROC_NUM_WORKER_THREADS = "zookeeper.commitProcessor.numWorkerThreads";

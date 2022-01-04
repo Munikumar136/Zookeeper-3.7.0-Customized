@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -39,7 +39,7 @@ import org.apache.zookeeper.test.ReconfigTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
-/**
+*//**
  * ReconfigRollingRestartCompatibilityTest - we want to make sure that users
  * can continue using the rolling restart approach when reconfig feature is disabled.
  * It is important to stay compatible with rolling restart because dynamic reconfig
@@ -48,7 +48,7 @@ import org.junit.jupiter.api.Timeout;
  * such that a new quorum with smaller number of nodes can be formed.).
  *
  * See ZOOKEEPER-2819 for more details.
- */
+ *//*
 public class ReconfigRollingRestartCompatibilityTest extends QuorumPeerTestBase {
 
     private static final String ZOO_CFG_BAK_FILE = "zoo.cfg.bak";
@@ -378,3 +378,4 @@ public class ReconfigRollingRestartCompatibilityTest extends QuorumPeerTestBase 
 
 
 
+*/

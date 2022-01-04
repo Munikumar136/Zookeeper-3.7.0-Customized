@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 package org.apache.zookeeper.server.quorum;
 
 import static org.apache.zookeeper.test.ClientBase.CONNECTION_TIMEOUT;
@@ -23,6 +23,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
@@ -30,11 +32,9 @@ import org.apache.zookeeper.common.AtomicFileOutputStream;
 import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CurrentEpochWriteFailureTest extends QuorumPeerTestBase {
-    protected static final Logger LOG = LoggerFactory.getLogger(CurrentEpochWriteFailureTest.class);
+    protected static final Logger LOG = LogManager.getLogger(CurrentEpochWriteFailureTest.class);
     private Servers servers;
     private int clientPort;
 
@@ -45,7 +45,7 @@ public class CurrentEpochWriteFailureTest extends QuorumPeerTestBase {
         }
     }
 
-    /*
+    
      * ZOOKEEPER-4269:
      * accepted epoch is first written to temporary file acceptedEpoch.tmp then this file is
      * renamed to acceptedEpoch.
@@ -53,7 +53,7 @@ public class CurrentEpochWriteFailureTest extends QuorumPeerTestBase {
      * will cause server startup error with message "The current epoch, x, is older than the last
      * zxid y"
      * To handle this scenario we should read accepted epoch from this temp file as well.
-     */
+     
     @Test
     public void testReadCurrentEpochFromAcceptedEpochTmpFile() throws Exception {
         startServers();
@@ -116,3 +116,4 @@ public class CurrentEpochWriteFailureTest extends QuorumPeerTestBase {
         clientPort = servers.clientPorts[0];
     }
 }
+*/

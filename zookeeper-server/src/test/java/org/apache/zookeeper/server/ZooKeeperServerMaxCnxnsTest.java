@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ *//*
 package org.apache.zookeeper.server;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,22 +34,22 @@ import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ZooKeeperServerMaxCnxnsTest extends QuorumPeerTestBase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerMaxCnxnsTest.class);
+    protected static final Logger LOG = LogManager.getLogger(ZooKeeperServerMaxCnxnsTest.class);
     private static int SERVER_COUNT = 3;
     private MainThread[] mt;
     private ZooKeeper[] clients;
 
-    /**
+    *//**
      * <pre>
      * Test case for https://issues.apache.org/jira/browse/ZOOKEEPER-2238.
      * Support limiting the maximum number of connections/clients to a ZooKeeper server.
      * </pre>
-     */
+     *//*
 
     @Test
     @Timeout(value = 120)
@@ -177,4 +177,4 @@ public class ZooKeeperServerMaxCnxnsTest extends QuorumPeerTestBase {
             }
         }
     }
-}
+}*/

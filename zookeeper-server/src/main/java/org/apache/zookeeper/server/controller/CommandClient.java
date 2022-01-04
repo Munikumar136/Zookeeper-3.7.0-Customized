@@ -24,8 +24,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.client.api.ContentResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * A convenient helper to send controller command to ControllerService.
@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 public class CommandClient {
     private final int requestTimeoutInMs;
     private static final int DEFAULT_TIMEOUT = 10000;
-    private static final Logger LOG = LoggerFactory.getLogger(CommandClient.class);
+    private static final Logger LOG = LogManager.getLogger(CommandClient.class);
     private final int hostPort;
     private final String hostName;
     private HttpClient client;

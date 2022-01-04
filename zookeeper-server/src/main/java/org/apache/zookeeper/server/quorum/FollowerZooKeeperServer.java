@@ -36,8 +36,8 @@ import org.apache.zookeeper.server.persistence.FileTxnSnapLog;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Just like the standard ZooKeeperServer. We just replace the request
@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
  */
 public class FollowerZooKeeperServer extends LearnerZooKeeperServer {
 
-    private static final Logger LOG = LoggerFactory.getLogger(FollowerZooKeeperServer.class);
+    private static final Logger LOG = LogManager.getLogger(FollowerZooKeeperServer.class);
 
     /*
      * Pending sync requests

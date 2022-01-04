@@ -45,8 +45,8 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.security.Constraint;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class encapsulates a Jetty server for running Commands.
@@ -63,7 +63,7 @@ import org.slf4j.LoggerFactory;
  */
 public class JettyAdminServer implements AdminServer {
 
-    static final Logger LOG = LoggerFactory.getLogger(JettyAdminServer.class);
+    static final Logger LOG = LogManager.getLogger(JettyAdminServer.class);
 
     public static final int DEFAULT_PORT = 8080;
     public static final int DEFAULT_IDLE_TIMEOUT = 30000;

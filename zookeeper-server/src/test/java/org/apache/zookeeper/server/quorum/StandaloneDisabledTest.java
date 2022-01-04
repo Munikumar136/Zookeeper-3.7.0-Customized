@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -50,10 +50,10 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
     private ArrayList<String> serverStrings;
     private ArrayList<String> reconfigServers;
 
-    /**
+    *//**
      * Test normal quorum operations work cleanly
      * with just a single server.
-     */
+     *//*
     @Test
     @Timeout(value = 10, unit = TimeUnit.MINUTES)
     public void startSingleServerTest() throws Exception {
@@ -117,9 +117,9 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
         shutDownData();
     }
 
-    /**
+    *//**
      * Initialize private data for test.
-     */
+     *//*
     private void setUpData() throws Exception {
         ClientBase.setupTestEnv();
         QuorumPeerConfig.setStandaloneEnabled(false);
@@ -130,12 +130,12 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
         clientPorts = new int[NUM_SERVERS];
         serverStrings = buildServerStrings();
         reconfigServers = new ArrayList<String>();
-        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU="/* password is 'test'*/);
+        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU=" password is 'test');
     }
 
-    /**
+    *//**
      * Stop server threads.
-     */
+     *//*
     private void shutDownData() throws Exception {
         for (int i = 0; i < NUM_SERVERS; i++) {
             zkHandles[i].close();
@@ -146,10 +146,10 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Create config strings that will be used for
      * the test servers.
-     */
+     *//*
     private ArrayList<String> buildServerStrings() {
         ArrayList<String> serverStrings = new ArrayList<String>();
 
@@ -162,11 +162,11 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
         return serverStrings;
     }
 
-    /**
+    *//**
      * Starts a single server in replicated mode,
      * initializes its client, and waits for it
      * to be connected.
-     */
+     *//*
     private void startServer(int id, String config) throws Exception {
         peers[id] = new MainThread(id, clientPorts[id], config);
         peers[id].start();
@@ -181,22 +181,22 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
         LOG.info("Started server id {} with config:\n{}\nStat output:\n{}", id, config, statCommandOut);
     }
 
-    /**
+    *//**
      * Shuts down a server, waits for it to disconnect,
      * and gives enough time for the learner handler
      * in its ensemble to realize it's been shut down.
-     */
+     *//*
     private void shutDownServer(int id) throws Exception {
         peers[id].shutdown();
         ClientBase.waitForServerDown("127.0.0.1:" + clientPorts[id], CONNECTION_TIMEOUT);
         TimeUnit.SECONDS.sleep(25);
     }
 
-    /**
+    *//**
      * Starts servers 1 and 2 as participants and
      * adds them to the list to be reconfigured
      * into the ensemble.
-     */
+     *//*
     private void startFollowers() throws Exception {
         reconfigServers.clear();
         for (int i = 1; i <= 2; i++) {
@@ -210,13 +210,13 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
             reconfigServers.add(serverStrings.get(i));
         }
     }
-    /**
+    *//**
      * Starts servers 1 and 2 as participants,
      * adds them to the list to be reconfigured
      * into the ensemble, and adds an observer
      * version of their information to a list
      * so they will be turned into observers later.
-     */
+     *//*
     private void startObservers(ArrayList<String> observerStrings) throws Exception {
         reconfigServers.clear();
         for (int i = observer1; i <= observer2; i++) {
@@ -227,11 +227,11 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Calls reconfig on the client corresponding to id to add or remove
      * the given servers. Tests appropriately to make sure the
      * reconfig succeeded.
-     */
+     *//*
     private void testReconfig(int id, boolean adding, ArrayList<String> servers) throws Exception {
         if (adding) {
             ReconfigTest.reconfig(zkAdminHandles[id], servers, null, null, -1);
@@ -247,9 +247,9 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
 
     }
 
-    /**
+    *//**
      * Ensure observer cannot start by itself
-     **/
+     **//*
     @Test
     public void startObserver() throws Exception {
         int clientPort = PortAssignment.unique();
@@ -263,3 +263,4 @@ public class StandaloneDisabledTest extends QuorumPeerTestBase {
     }
 
 }
+*/

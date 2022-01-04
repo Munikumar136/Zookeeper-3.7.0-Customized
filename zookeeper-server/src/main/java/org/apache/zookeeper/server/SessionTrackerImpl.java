@@ -33,8 +33,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.KeeperException.SessionExpiredException;
 import org.apache.zookeeper.common.Time;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This is a full featured SessionTracker. It tracks session in grouped by tick
@@ -44,7 +44,7 @@ import org.slf4j.LoggerFactory;
  */
 public class SessionTrackerImpl extends ZooKeeperCriticalThread implements SessionTracker {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SessionTrackerImpl.class);
+    private static final Logger LOG = LogManager.getLogger(SessionTrackerImpl.class);
 
     protected final ConcurrentHashMap<Long, SessionImpl> sessionsById = new ConcurrentHashMap<Long, SessionImpl>();
 

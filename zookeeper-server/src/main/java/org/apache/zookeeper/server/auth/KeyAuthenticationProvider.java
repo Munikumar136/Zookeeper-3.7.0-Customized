@@ -25,8 +25,8 @@ import org.apache.zookeeper.data.Id;
 import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.server.ZKDatabase;
 import org.apache.zookeeper.server.ZooKeeperServer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /*
  * This class is a sample implementation of being passed the ZooKeeperServer
@@ -53,7 +53,7 @@ import org.slf4j.LoggerFactory;
  */
 public class KeyAuthenticationProvider extends ServerAuthenticationProvider {
 
-    private static final Logger LOG = LoggerFactory.getLogger(KeyAuthenticationProvider.class);
+    private static final Logger LOG = LogManager.getLogger(KeyAuthenticationProvider.class);
 
     public String getScheme() {
         return "key";

@@ -14,11 +14,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
-/**
+*//**
  *
- */
+ *//*
 
 package org.apache.zookeeper.server.quorum;
 
@@ -32,6 +32,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -42,16 +44,14 @@ import org.apache.zookeeper.server.admin.JettyAdminServer;
 import org.apache.zookeeper.test.ClientBase;
 import org.apache.zookeeper.test.QuorumBase;
 import org.junit.jupiter.api.AfterEach;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
+*//**
  * Has some common functionality for tests that work with QuorumPeers. Override
  * process(WatchedEvent) to implement the Watcher interface
- */
+ *//*
 public class QuorumPeerTestBase extends ZKTestCase implements Watcher {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(QuorumPeerTestBase.class);
+    protected static final Logger LOG = LogManager.getLogger(QuorumPeerTestBase.class);
 
     public static final int TIMEOUT = 5000;
 
@@ -103,7 +103,7 @@ public class QuorumPeerTestBase extends ZKTestCase implements Watcher {
         private String quorumCfgSection;
         private Map<String, String> otherConfigs;
 
-        /**
+        *//**
          * Create a MainThread
          *
          * @param myid
@@ -112,7 +112,7 @@ public class QuorumPeerTestBase extends ZKTestCase implements Watcher {
          * @param otherConfigs
          * @param tickTime initLimit will be 10 and syncLimit will be 5
          * @throws IOException
-         */
+         *//*
         public MainThread(int myid, int clientPort, String quorumCfgSection, Map<String, String> otherConfigs, int tickTime) throws IOException {
             baseDir = ClientBase.createTmpDir();
             this.myid = myid;
@@ -487,7 +487,7 @@ public class QuorumPeerTestBase extends ZKTestCase implements Watcher {
         return LaunchServers(numServers, numObservers, tickTime, new HashMap<>());
     }
 
-    /** * This is a helper function for launching a set of servers
+    *//** * This is a helper function for launching a set of servers
      *
      * @param numServers the number of participant servers
      * @param numObservers the number of observer servers
@@ -496,7 +496,7 @@ public class QuorumPeerTestBase extends ZKTestCase implements Watcher {
      * @return
      * @throws IOException
      * @throws InterruptedException
-     */
+     *//*
     protected Servers LaunchServers(int numServers, int numObservers, Integer tickTime,
         Map<String, String> otherConfigs) throws IOException, InterruptedException {
         int SERVER_COUNT = numServers + numObservers;
@@ -574,3 +574,4 @@ public class QuorumPeerTestBase extends ZKTestCase implements Watcher {
     }
 
 }
+*/

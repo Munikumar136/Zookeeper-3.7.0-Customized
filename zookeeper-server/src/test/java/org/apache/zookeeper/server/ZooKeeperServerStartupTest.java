@@ -27,6 +27,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooKeeper;
@@ -36,15 +38,13 @@ import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This class tests the startup behavior of ZooKeeper server.
  */
 public class ZooKeeperServerStartupTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerStartupTest.class);
+    private static final Logger LOG = LogManager.getLogger(ZooKeeperServerStartupTest.class);
     private static int PORT = PortAssignment.unique();
     private static String HOST = "127.0.0.1";
     private static String HOSTPORT = HOST + ":" + PORT;

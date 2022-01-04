@@ -26,6 +26,8 @@ import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.metrics.MetricsUtils;
@@ -36,12 +38,10 @@ import org.apache.zookeeper.server.WorkerService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CommitProcessorMetricsTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(CommitProcessorMetricsTest.class);
+    protected static final Logger LOG = LogManager.getLogger(CommitProcessorMetricsTest.class);
     CommitProcessor commitProcessor;
     DummyFinalProcessor finalProcessor;
 

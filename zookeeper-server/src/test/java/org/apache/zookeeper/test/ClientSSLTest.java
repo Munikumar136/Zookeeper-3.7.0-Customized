@@ -14,11 +14,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
-/**
+*//**
  *
- */
+ *//*
 
 package org.apache.zookeeper.test;
 
@@ -72,19 +72,19 @@ public class ClientSSLTest extends QuorumPeerTestBase {
         clientX509Util.close();
     }
 
-    /**
+    *//**
      * This test checks that client SSL connections work in the absence of a
      * secure port when port unification is set up for the plaintext port.
      *
      * This single client port will be tested for handling both plaintext
      * and SSL traffic.
-     */
+     *//*
     @Test
     public void testClientServerUnifiedPort() throws Exception {
         testClientServerSSL(false);
     }
 
-    /**
+    *//**
      * This test checks that client - server SSL works in cluster setup of ZK servers, which includes:
      * 1. setting "secureClientPort" in "zoo.cfg" file.
      * 2. setting jvm flags for serverCnxn, keystore, truststore.
@@ -92,7 +92,7 @@ public class ClientSSLTest extends QuorumPeerTestBase {
      * communicate with server via secure connection.
      * <p>
      * Note that in this test a ZK server has two ports -- clientPort and secureClientPort.
-     */
+     *//*
     @Test
     public void testClientServerSSL() throws Exception {
         testClientServerSSL(true);
@@ -142,12 +142,12 @@ public class ClientSSLTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * Developers might use standalone mode (which is the default for one server).
      * This test checks SSL works in standalone mode of ZK server.
      * <p>
      * Note that in this test the Zk server has only secureClientPort
-     */
+     *//*
     @Test
     public void testSecureStandaloneServer() throws Exception {
         Integer secureClientPort = PortAssignment.unique();
@@ -184,3 +184,4 @@ public class ClientSSLTest extends QuorumPeerTestBase {
         }
     }
 }
+*/

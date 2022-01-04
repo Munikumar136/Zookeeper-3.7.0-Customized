@@ -29,8 +29,8 @@ import javax.management.MBeanServer;
 import javax.management.MBeanServerFactory;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class provides a unified interface for registering/unregistering of
@@ -42,7 +42,7 @@ public class MBeanRegistry {
 
     public static final String DOMAIN = "org.apache.ZooKeeperService";
 
-    private static final Logger LOG = LoggerFactory.getLogger(MBeanRegistry.class);
+    private static final Logger LOG = LogManager.getLogger(MBeanRegistry.class);
     private static volatile MBeanRegistry instance = new MBeanRegistry();
 
     private final Object LOCK = new Object();

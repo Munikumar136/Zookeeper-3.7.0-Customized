@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
 Generic skip list for holding a rough index of a log file. When the log file is loaded, this 
@@ -31,7 +31,7 @@ from the file, a point at most n-1 entries before the time position can be jumpe
 
 */
 public class LogSkipList {
-    private static final Logger LOG = LoggerFactory.getLogger(LogSkipList.class);
+    private static final Logger LOG = LogManager.getLogger(LogSkipList.class);
     
     private LinkedList<Mark> marks;
 
