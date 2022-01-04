@@ -65,7 +65,7 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<!-- <distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>tvlprt.nexus.repo.releases</id>
 			<name>Travelport ESB Release Repository</name>
@@ -77,7 +77,7 @@
 			<url>${tvlprt.nexus.repository.url}/ODTeamSnapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
- -->
+ 
 	<profiles>
 		<profile>
 			<id>full-build</id>
