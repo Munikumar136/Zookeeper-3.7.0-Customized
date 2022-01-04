@@ -24,8 +24,8 @@ import java.io.File;
 import org.apache.zookeeper.ZKTestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class VerifyingFileFactoryTest extends ZKTestCase {
 
@@ -33,7 +33,7 @@ public class VerifyingFileFactoryTest extends ZKTestCase {
 
     @BeforeEach
     public void setUp() {
-        log = LoggerFactory.getLogger("TODO: Mock Logging");
+        log = LogManager.getLogger("TODO: Mock Logging");
     }
 
     @Test

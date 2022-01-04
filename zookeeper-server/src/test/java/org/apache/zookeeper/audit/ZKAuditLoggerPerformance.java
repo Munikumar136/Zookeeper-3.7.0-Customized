@@ -19,6 +19,8 @@ package org.apache.zookeeper.audit;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs.Ids;
@@ -26,11 +28,9 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.common.Time;
 import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ZKAuditLoggerPerformance {
-    private static final Logger LOG = LoggerFactory
+    private static final Logger LOG = LogManager
             .getLogger(ZKAuditLoggerPerformance.class);
     private ZooKeeper zkClient;
     private String parentPath;

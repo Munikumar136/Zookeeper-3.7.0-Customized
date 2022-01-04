@@ -22,12 +22,12 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.junit.jupiter.api.BeforeEach;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ChrootAsyncTest extends AsyncOpsTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ChrootAsyncTest.class);
+    private static final Logger LOG = LogManager.getLogger(ChrootAsyncTest.class);
 
     @BeforeEach
     @Override

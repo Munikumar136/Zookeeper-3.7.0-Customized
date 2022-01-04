@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -53,12 +53,12 @@ public class ReconfigBackupTest extends QuorumPeerTestBase {
     @BeforeEach
     public void setup() {
         ClientBase.setupTestEnv();
-        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU="/* password is 'test'*/);
+        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU=" password is 'test');
     }
 
-    /**
+    *//**
      * This test checks that it will backup static file on bootup.
-     */
+     *//*
     @Test
     public void testBackupStatic() throws Exception {
         final int SERVER_COUNT = 3;
@@ -101,11 +101,11 @@ public class ReconfigBackupTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * This test checks that on reconfig, a new dynamic file will be created with
      * current version appended to file name. Meanwhile, the dynamic file pointer
      * in static config file should also be changed.
-     */
+     *//*
     @Test
     public void testReconfigCreateNewVersionFile() throws Exception {
         final int SERVER_COUNT = 3;
@@ -221,14 +221,14 @@ public class ReconfigBackupTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * This test checks that if a version is appended to dynamic file,
      * then peer should use that version as quorum config version.
      * <p>
      * The scenario: one server has an older version of 3 servers, and
      * four others have newer version of 5 servers. Finally, the lag-off one
      * should have server config of 5 servers.
-     */
+     *//*
     @Test
     public void testVersionOfDynamicFilename() throws Exception {
         final int SERVER_COUNT = 5;
@@ -324,3 +324,4 @@ public class ReconfigBackupTest extends QuorumPeerTestBase {
     }
 
 }
+*/

@@ -13,7 +13,7 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Random;
 import org.apache.jute.InputArchive;
 import org.apache.jute.OutputArchive;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.ClientCnxn;
 import org.apache.zookeeper.MockPacket;
 import org.apache.zookeeper.ZooDefs;
@@ -59,15 +60,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
+*//**
  * Demonstrate ZOOKEEPER-1382 : Watches leak on expired session
- */
+ *//*
 public class WatchLeakTest {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(WatchLeakTest.class);
+    protected static final Logger LOG = LogManager.getLogger(WatchLeakTest.class);
 
     final long SESSION_ID = 0xBABEL;
 
@@ -76,9 +75,9 @@ public class WatchLeakTest {
         System.setProperty("zookeeper.admin.enableServer", "false");
     }
 
-    /**
+    *//**
      * Check that if session has expired then no watch can be set
-     */
+     *//*
 
     @ParameterizedTest
     @ValueSource(booleans = {true, false})
@@ -149,17 +148,17 @@ public class WatchLeakTest {
         }
     }
 
-    /**
+    *//**
      * A follower with no real leader connection
-     */
+     *//*
     public static class MyFollower extends Follower {
 
-        /**
+        *//**
          * Create a follower with a mocked leader connection
          *
          * @param self
          * @param zk
-         */
+         *//*
         MyFollower(QuorumPeer self, FollowerZooKeeperServer zk) {
             super(self, zk);
             leaderOs = mock(OutputArchive.class);
@@ -169,9 +168,9 @@ public class WatchLeakTest {
 
     }
 
-    /**
+    *//**
      * Simulate the behavior of a real selection key
-     */
+     *//*
     private static class FakeSK extends SelectionKey {
 
         @Override
@@ -222,11 +221,11 @@ public class WatchLeakTest {
 
     }
 
-    /**
+    *//**
      * Create a watches message with a single watch on /
      *
      * @return a message that attempts to set 1 watch on /
-     */
+     *//*
     private ByteBuffer createWatchesMessage() {
         List<String> dataWatches = new ArrayList<String>(1);
         dataWatches.add("/");
@@ -240,17 +239,17 @@ public class WatchLeakTest {
         return p.createAndReturnBB();
     }
 
-    /**
+    *//**
      * This is the secret that we use to generate passwords, for the moment it
      * is more of a sanity check.
-     */
+     *//*
     private static final long superSecret = 0XB3415C00L;
 
-    /**
+    *//**
      * Create a connection request
      *
      * @return a serialized connection request
-     */
+     *//*
     private ByteBuffer createConnRequest() {
         Random r = new Random(SESSION_ID ^ superSecret);
         byte[] p = new byte[16];
@@ -260,13 +259,13 @@ public class WatchLeakTest {
         return packet.createAndReturnBB();
     }
 
-    /**
+    *//**
      * Mock a client channel with a connection request and a watches message
      * inside.
      *
      * @return a socket channel
      * @throws IOException
-     */
+     *//*
     private SocketChannel createClientSocketChannel() throws IOException {
 
         SocketChannel socketChannel = mock(SocketChannel.class);
@@ -300,13 +299,13 @@ public class WatchLeakTest {
         return socketChannel;
     }
 
-    /**
+    *//**
      * Forge an invalid session packet as a LEADER do
      *
      * @param valid <code>true</code> to create a valid session message
      *
      * @throws Exception
-     */
+     *//*
     private QuorumPacket createValidateSessionPacketResponse(boolean valid) throws Exception {
         QuorumPacket qp = createValidateSessionPacket();
         ByteArrayInputStream bis = new ByteArrayInputStream(qp.getData());
@@ -321,12 +320,12 @@ public class WatchLeakTest {
         return qp;
     }
 
-    /**
+    *//**
      * Forge an validate session packet as a LEARNER do
      *
      * @return
      * @throws Exception
-     */
+     *//*
     private QuorumPacket createValidateSessionPacket() throws Exception {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(baos);
@@ -338,3 +337,4 @@ public class WatchLeakTest {
     }
 
 }
+*/

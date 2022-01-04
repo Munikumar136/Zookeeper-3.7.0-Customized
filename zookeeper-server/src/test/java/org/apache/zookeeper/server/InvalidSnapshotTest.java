@@ -21,13 +21,13 @@ package org.apache.zookeeper.server;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.io.RandomAccessFile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This test checks that the server works even if the last snapshot is
@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public class InvalidSnapshotTest extends ClientBase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(InvalidSnapshotTest.class);
+    private static final Logger LOG = LogManager.getLogger(InvalidSnapshotTest.class);
 
     public InvalidSnapshotTest() {
         SyncRequestProcessor.setSnapCount(100);

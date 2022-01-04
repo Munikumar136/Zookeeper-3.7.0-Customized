@@ -24,8 +24,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class contains constants for all the four letter commands
@@ -149,7 +149,7 @@ public class FourLetterCommands {
 
     private static final String ZOOKEEPER_4LW_COMMANDS_WHITELIST = "zookeeper.4lw.commands.whitelist";
 
-    private static final Logger LOG = LoggerFactory.getLogger(FourLetterCommands.class);
+    private static final Logger LOG = LogManager.getLogger(FourLetterCommands.class);
 
     private static final Map<Integer, String> cmd2String = new HashMap<Integer, String>();
 

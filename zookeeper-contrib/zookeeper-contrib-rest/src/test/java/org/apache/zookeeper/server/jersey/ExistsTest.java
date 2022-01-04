@@ -23,8 +23,8 @@ import java.util.Collection;
 
 import javax.ws.rs.core.MediaType;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,7 +40,7 @@ import com.sun.jersey.api.client.ClientResponse;
  */
 @RunWith(Parameterized.class)
 public class ExistsTest extends Base {
-    protected static final Logger LOG = LoggerFactory.getLogger(ExistsTest.class);
+    protected static final Logger LOG = LogManager.getLogger(ExistsTest.class);
 
     private String path;
     private ClientResponse.Status expectedStatus;

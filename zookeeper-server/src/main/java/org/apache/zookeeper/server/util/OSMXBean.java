@@ -26,8 +26,8 @@ import java.lang.management.ManagementFactory;
 import java.lang.management.OperatingSystemMXBean;
 import java.lang.management.RuntimeMXBean;
 import java.lang.reflect.Method;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class is a wrapper for the implementation of
@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class OSMXBean {
 
-    private static final Logger LOG = LoggerFactory.getLogger(OSMXBean.class);
+    private static final Logger LOG = LogManager.getLogger(OSMXBean.class);
 
     private OperatingSystemMXBean osMbean;
 

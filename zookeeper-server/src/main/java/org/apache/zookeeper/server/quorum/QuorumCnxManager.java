@@ -72,9 +72,8 @@ import org.apache.zookeeper.server.quorum.flexible.QuorumVerifier;
 import org.apache.zookeeper.server.util.ConfigUtils;
 import org.apache.zookeeper.util.CircularBlockingQueue;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class implements a connection manager for leader election using TCP. It
@@ -98,7 +97,7 @@ import org.slf4j.LoggerFactory;
 
 public class QuorumCnxManager {
 
-    private static final Logger LOG = LoggerFactory.getLogger(QuorumCnxManager.class);
+    private static final Logger LOG = LogManager.getLogger(QuorumCnxManager.class);
 
     /*
      * Maximum capacity of thread queues

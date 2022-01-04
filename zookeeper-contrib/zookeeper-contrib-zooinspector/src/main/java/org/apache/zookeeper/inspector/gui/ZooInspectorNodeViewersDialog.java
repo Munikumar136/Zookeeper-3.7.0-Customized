@@ -56,7 +56,7 @@ import javax.swing.event.ListSelectionListener;
 
 import org.apache.zookeeper.inspector.gui.Toolbar.Button;
 import org.apache.zookeeper.inspector.gui.nodeviewer.ZooInspectorNodeViewer;
-import org.apache.zookeeper.inspector.logger.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
 import org.apache.zookeeper.inspector.manager.ZooInspectorManager;
 
 /**
@@ -169,7 +169,7 @@ public class ZooInspectorNodeViewersDialog extends JDialog implements
                     }
                     return true;
                 } catch (Exception e) {
-                    LoggerFactory.getLogger().error(
+                    LogManager.getLogger().error(
                             "Error instantiating class: " + data, e);
                     return false;
                 }
@@ -348,7 +348,7 @@ public class ZooInspectorNodeViewersDialog extends JDialog implements
                             listModel.addElement(viewer);
                         }
                     } catch (Exception ex) {
-                        LoggerFactory
+                        LogManager
                                 .getLogger()
                                 .error(
                                         "An error occurred while instaniating the node viewer. ",
@@ -433,7 +433,7 @@ public class ZooInspectorNodeViewersDialog extends JDialog implements
                             manager.saveNodeViewersFile(selectedFile,
                                     nodeViewersClassNames);
                         } catch (IOException ex) {
-                            LoggerFactory
+                            LogManager
                                     .getLogger()
                                     .error(
                                             "Error saving node viewer configuration from file.",
@@ -473,7 +473,7 @@ public class ZooInspectorNodeViewersDialog extends JDialog implements
                         panel.revalidate();
                         panel.repaint();
                     } catch (Exception ex) {
-                        LoggerFactory
+                        LogManager
                                 .getLogger()
                                 .error(
                                         "Error loading node viewer configuration from file.",
@@ -510,7 +510,7 @@ public class ZooInspectorNodeViewersDialog extends JDialog implements
                         manager
                                 .setDefaultNodeViewerConfiguration(nodeViewersClassNames);
                     } catch (IOException ex) {
-                        LoggerFactory
+                        LogManager
                                 .getLogger()
                                 .error(
                                         "Error setting default node viewer configuration.",

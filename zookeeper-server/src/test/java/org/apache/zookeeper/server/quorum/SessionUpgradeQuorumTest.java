@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -46,12 +46,12 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class SessionUpgradeQuorumTest extends QuorumPeerTestBase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(SessionUpgradeQuorumTest.class);
+    protected static final Logger LOG = LogManager.getLogger(SessionUpgradeQuorumTest.class);
     public static final int CONNECTION_TIMEOUT = ClientBase.CONNECTION_TIMEOUT;
 
     public static final int SERVER_COUNT = 3;
@@ -362,3 +362,4 @@ public class SessionUpgradeQuorumTest extends QuorumPeerTestBase {
     }
 
 }
+*/

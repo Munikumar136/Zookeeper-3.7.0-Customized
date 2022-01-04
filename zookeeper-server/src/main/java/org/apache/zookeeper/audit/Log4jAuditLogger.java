@@ -18,14 +18,14 @@
 package org.apache.zookeeper.audit;
 
 import org.apache.zookeeper.audit.AuditEvent.Result;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Log4j based audit logger
  */
 public class Log4jAuditLogger implements AuditLogger {
-    private static final Logger LOG = LoggerFactory.getLogger(Log4jAuditLogger.class);
+    private static final Logger LOG = LogManager.getLogger(Log4jAuditLogger.class);
 
     @Override
     public void logAuditEvent(AuditEvent auditEvent) {

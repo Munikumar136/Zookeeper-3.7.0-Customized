@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -674,11 +674,11 @@ public class QuorumSSLTest extends QuorumPeerTestBase {
         testHostnameVerification(badhostnameKeystorePath, true);
     }
 
-    /**
+    *//**
      * @param keystorePath The keystore to use
      * @param expectSuccess True for expecting the keystore to pass hostname verification, false for expecting failure
      * @throws Exception
-     */
+     *//*
     private void testHostnameVerification(String keystorePath, boolean expectSuccess) throws Exception {
         System.setProperty(quorumX509Util.getSslHostnameVerificationEnabledProperty(), "false");
 
@@ -929,3 +929,4 @@ public class QuorumSSLTest extends QuorumPeerTestBase {
     }
 
 }
+*/

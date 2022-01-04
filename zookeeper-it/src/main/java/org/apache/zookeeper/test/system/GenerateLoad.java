@@ -41,8 +41,8 @@ import java.util.Random;
 import java.util.Set;
 
 import org.apache.zookeeper.server.ExitCode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.apache.zookeeper.AsyncCallback.DataCallback;
 import org.apache.zookeeper.AsyncCallback.StatCallback;
 import org.apache.zookeeper.KeeperException;
@@ -58,7 +58,7 @@ import org.apache.zookeeper.common.Time;
 
 
 public class GenerateLoad {
-    protected static final Logger LOG = LoggerFactory.getLogger(GenerateLoad.class);
+    protected static final Logger LOG = LogManager.getLogger(GenerateLoad.class);
 
     static ServerSocket ss;
 

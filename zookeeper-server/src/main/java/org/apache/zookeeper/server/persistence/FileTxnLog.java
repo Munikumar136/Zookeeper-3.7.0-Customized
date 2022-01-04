@@ -50,8 +50,8 @@ import org.apache.zookeeper.server.TxnLogEntry;
 import org.apache.zookeeper.server.util.SerializeUtils;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class implements the TxnLog interface. It provides api's
@@ -127,7 +127,7 @@ public class FileTxnLog implements TxnLog, Closeable {
     private static long txnLogSizeLimit = -1;
 
     static {
-        LOG = LoggerFactory.getLogger(FileTxnLog.class);
+        LOG = LogManager.getLogger(FileTxnLog.class);
 
         /** Local variable to read fsync.warningthresholdms into */
         Long fsyncWarningThreshold;

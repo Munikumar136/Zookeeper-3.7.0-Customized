@@ -18,8 +18,8 @@
 
 package org.apache.zookeeper.server;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This is the main class for catching all the uncaught exceptions thrown by the
@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ZooKeeperThread extends Thread {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperThread.class);
+    private static final Logger LOG = LogManager.getLogger(ZooKeeperThread.class);
 
     private UncaughtExceptionHandler uncaughtExceptionalHandler = (t, e) -> handleException(t.getName(), e);
 

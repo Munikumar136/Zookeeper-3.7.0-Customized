@@ -37,6 +37,8 @@ import java.security.cert.X509Certificate;
 import java.security.spec.ECGenParameterSpec;
 import java.security.spec.RSAKeyGenParameterSpec;
 import java.util.Date;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bouncycastle.asn1.DERIA5String;
 import org.bouncycastle.asn1.DEROctetString;
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
@@ -67,8 +69,6 @@ import org.bouncycastle.operator.OutputEncryptor;
 import org.bouncycastle.operator.bc.BcContentSignerBuilder;
 import org.bouncycastle.operator.bc.BcECContentSignerBuilder;
 import org.bouncycastle.operator.bc.BcRSAContentSignerBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This class contains helper methods for creating X509 certificates and key pairs, and for serializing them
@@ -76,7 +76,7 @@ import org.slf4j.LoggerFactory;
  */
 public class X509TestHelpers {
 
-    private static final Logger LOG = LoggerFactory.getLogger(X509TestHelpers.class);
+    private static final Logger LOG = LogManager.getLogger(X509TestHelpers.class);
 
     private static final SecureRandom PRNG = new SecureRandom();
     private static final int DEFAULT_RSA_KEY_SIZE_BITS = 2048;

@@ -51,12 +51,12 @@ import org.apache.zookeeper.server.command.CommandExecutor;
 import org.apache.zookeeper.server.command.FourLetterCommands;
 import org.apache.zookeeper.server.command.NopCommand;
 import org.apache.zookeeper.server.command.SetTraceMaskCommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class NettyServerCnxn extends ServerCnxn {
 
-    private static final Logger LOG = LoggerFactory.getLogger(NettyServerCnxn.class);
+    private static final Logger LOG = LogManager.getLogger(NettyServerCnxn.class);
     private final Channel channel;
     private CompositeByteBuf queuedBuffer;
     private final AtomicBoolean throttled = new AtomicBoolean(false);

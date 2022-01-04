@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -31,6 +31,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.security.sasl.SaslException;
 import org.apache.jute.OutputArchive;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.AsyncCallback.MultiCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException.NoNodeException;
@@ -54,15 +56,13 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
+*//**
  * Test cases used to catch corner cases due to fuzzy snapshot.
- */
+ *//*
 public class FuzzySnapshotRelatedTest extends QuorumPeerTestBase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(FuzzySnapshotRelatedTest.class);
+    private static final Logger LOG = LogManager.getLogger(FuzzySnapshotRelatedTest.class);
 
     MainThread[] mt = null;
     ZooKeeper[] zk = null;
@@ -172,13 +172,13 @@ public class FuzzySnapshotRelatedTest extends QuorumPeerTestBase {
                 new String(zk[followerA].getData(node2, null, null)));
     }
 
-    /**
+    *//**
      * It's possibel during SNAP sync, the parent is serialized before the
      * child get deleted during sending the snapshot over.
      *
      * In which case, we need to make sure the pzxid get correctly updated
      * when applying the txns received.
-     */
+     *//*
     @Test
     public void testPZxidUpdatedDuringSnapSyncing() throws Exception {
         LOG.info("Enable force snapshot sync");
@@ -206,13 +206,13 @@ public class FuzzySnapshotRelatedTest extends QuorumPeerTestBase {
         compareStat(parent, leaderId, followerA);
     }
 
-    /**
+    *//**
      * It's possible during taking fuzzy snapshot, the parent is serialized
      * before the child get deleted in the fuzzy range.
      *
      * In which case, we need to make sure the pzxid get correctly updated
      * when replaying the txns.
-     */
+     *//*
     @Test
     public void testPZxidUpdatedWhenLoadingSnapshot() throws Exception {
 
@@ -554,3 +554,4 @@ public class FuzzySnapshotRelatedTest extends QuorumPeerTestBase {
     }
 
 }
+*/

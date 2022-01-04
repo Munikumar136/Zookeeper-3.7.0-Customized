@@ -56,14 +56,14 @@ import org.apache.zookeeper.server.quorum.flexible.QuorumOracleMaj;
 import org.apache.zookeeper.server.quorum.flexible.QuorumVerifier;
 import org.apache.zookeeper.server.util.JvmPauseMonitor;
 import org.apache.zookeeper.server.util.VerifyingFileFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.slf4j.MDC;
 
 @InterfaceAudience.Public
 public class QuorumPeerConfig {
 
-    private static final Logger LOG = LoggerFactory.getLogger(QuorumPeerConfig.class);
+    private static final Logger LOG = LogManager.getLogger(QuorumPeerConfig.class);
     private static final int UNSET_SERVERID = -1;
     public static final String nextDynamicConfigFileSuffix = ".dynamic.next";
 

@@ -22,12 +22,12 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import org.apache.jute.BinaryInputArchive;
 import org.apache.zookeeper.server.quorum.QuorumAuthPacket;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class QuorumAuth {
 
-    private static final Logger LOG = LoggerFactory.getLogger(QuorumAuth.class);
+    private static final Logger LOG = LogManager.getLogger(QuorumAuth.class);
 
     public static final String QUORUM_SASL_AUTH_ENABLED = "quorum.auth.enableSasl";
     public static final String QUORUM_SERVER_SASL_AUTH_REQUIRED = "quorum.auth.serverRequireSasl";

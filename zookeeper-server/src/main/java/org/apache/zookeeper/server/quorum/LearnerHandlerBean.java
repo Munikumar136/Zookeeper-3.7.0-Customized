@@ -23,12 +23,12 @@ import java.net.Socket;
 import javax.management.ObjectName;
 import org.apache.zookeeper.jmx.MBeanRegistry;
 import org.apache.zookeeper.jmx.ZKMBeanInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class LearnerHandlerBean implements LearnerHandlerMXBean, ZKMBeanInfo {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LearnerHandlerBean.class);
+    private static final Logger LOG = LogManager.getLogger(LearnerHandlerBean.class);
 
     private final LearnerHandler learnerHandler;
     private final String remoteAddr;

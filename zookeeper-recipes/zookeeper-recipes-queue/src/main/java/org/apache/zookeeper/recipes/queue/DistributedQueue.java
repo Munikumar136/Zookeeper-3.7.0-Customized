@@ -30,15 +30,15 @@ import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * A <a href="package.html">protocol to implement a distributed queue</a>.
  */
 public class DistributedQueue {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DistributedQueue.class);
+    private static final Logger LOG = LogManager.getLogger(DistributedQueue.class);
 
     private final String dir;
 

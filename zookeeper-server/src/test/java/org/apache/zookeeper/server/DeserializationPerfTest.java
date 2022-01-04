@@ -24,15 +24,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import org.apache.jute.BinaryInputArchive;
 import org.apache.jute.BinaryOutputArchive;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZKTestCase;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class DeserializationPerfTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(DeserializationPerfTest.class);
+    protected static final Logger LOG = LogManager.getLogger(DeserializationPerfTest.class);
 
     private static void deserializeTree(int depth, int width, int len) throws InterruptedException, IOException, KeeperException.NodeExistsException, KeeperException.NoNodeException {
         BinaryInputArchive ia;

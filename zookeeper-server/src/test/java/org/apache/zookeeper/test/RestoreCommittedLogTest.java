@@ -31,15 +31,15 @@ import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.ZooKeeperServer;
 import org.apache.zookeeper.server.quorum.Leader.Proposal;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /** After a replica starts, it should load commits in its committedLog list.
  *  This test checks if committedLog != 0 after replica restarted.
  */
 public class RestoreCommittedLogTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(RestoreCommittedLogTest.class);
+    private static final Logger LOG = LogManager.getLogger(RestoreCommittedLogTest.class);
     private static final String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
     private static final int CONNECTION_TIMEOUT = 3000;
 

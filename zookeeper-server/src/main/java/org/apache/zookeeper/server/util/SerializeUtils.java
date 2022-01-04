@@ -48,12 +48,12 @@ import org.apache.zookeeper.txn.SetACLTxn;
 import org.apache.zookeeper.txn.SetDataTxn;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class SerializeUtils {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SerializeUtils.class);
+    private static final Logger LOG = LogManager.getLogger(SerializeUtils.class);
 
     public static TxnLogEntry deserializeTxn(byte[] txnBytes) throws IOException {
         TxnHeader hdr = new TxnHeader();

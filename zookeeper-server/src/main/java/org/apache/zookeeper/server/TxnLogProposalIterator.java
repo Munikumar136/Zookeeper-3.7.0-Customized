@@ -25,8 +25,8 @@ import org.apache.zookeeper.server.persistence.Util;
 import org.apache.zookeeper.server.quorum.Leader;
 import org.apache.zookeeper.server.quorum.Leader.Proposal;
 import org.apache.zookeeper.server.quorum.QuorumPacket;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This class provides an iterator interface to access Proposal deserialized
@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TxnLogProposalIterator implements Iterator<Proposal> {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TxnLogProposalIterator.class);
+    private static final Logger LOG = LogManager.getLogger(TxnLogProposalIterator.class);
 
     public static final TxnLogProposalIterator EMPTY_ITERATOR = new TxnLogProposalIterator();
 

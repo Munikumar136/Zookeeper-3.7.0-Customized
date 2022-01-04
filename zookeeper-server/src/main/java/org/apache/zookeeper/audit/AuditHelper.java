@@ -35,14 +35,14 @@ import org.apache.zookeeper.proto.SetDataRequest;
 import org.apache.zookeeper.server.ByteBufferInputStream;
 import org.apache.zookeeper.server.DataTree.ProcessTxnResult;
 import org.apache.zookeeper.server.Request;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Helper class to decouple audit log code.
  */
 public final class AuditHelper {
-    private static final Logger LOG = LoggerFactory.getLogger(AuditHelper.class);
+    private static final Logger LOG = LogManager.getLogger(AuditHelper.class);
 
     public static void addAuditLog(Request request, ProcessTxnResult rc) {
         addAuditLog(request, rc, false);

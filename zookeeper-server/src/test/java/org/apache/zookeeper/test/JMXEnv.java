@@ -36,13 +36,13 @@ import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXConnectorServer;
 import javax.management.remote.JMXConnectorServerFactory;
 import javax.management.remote.JMXServiceURL;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.jmx.MBeanRegistry;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class JMXEnv {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(JMXEnv.class);
+    protected static final Logger LOG = LogManager.getLogger(JMXEnv.class);
 
     private static JMXConnectorServer cs;
     private static JMXConnector cc;

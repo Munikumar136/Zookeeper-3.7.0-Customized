@@ -34,8 +34,8 @@ import org.apache.zookeeper.Login;
 import org.apache.zookeeper.common.ZKConfig;
 import org.apache.zookeeper.jmx.MBeanRegistry;
 import org.apache.zookeeper.server.auth.SaslServerCallbackHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public abstract class ServerCnxnFactory {
 
@@ -43,7 +43,7 @@ public abstract class ServerCnxnFactory {
     private static final String ZOOKEEPER_MAX_CONNECTION = "zookeeper.maxCnxns";
     public static final int ZOOKEEPER_MAX_CONNECTION_DEFAULT = 0;
 
-    private static final Logger LOG = LoggerFactory.getLogger(ServerCnxnFactory.class);
+    private static final Logger LOG = LogManager.getLogger(ServerCnxnFactory.class);
 
     // Tells whether SSL is enabled on this ServerCnxnFactory
     protected boolean secure;

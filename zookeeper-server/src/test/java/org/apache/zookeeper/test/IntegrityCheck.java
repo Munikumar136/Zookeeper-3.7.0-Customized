@@ -43,12 +43,12 @@ import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.server.ExitCode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class IntegrityCheck implements StatCallback, DataCallback {
 
-    private static final Logger LOG = LoggerFactory.getLogger(IntegrityCheck.class);
+    private static final Logger LOG = LogManager.getLogger(IntegrityCheck.class);
 
     ZooKeeper zk;
 

@@ -20,18 +20,18 @@ package org.apache.zookeeper.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.jmx.MBeanRegistry;
 import org.apache.zookeeper.server.quorum.Leader;
 import org.apache.zookeeper.server.quorum.LearnerHandler;
 import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 public class QuorumOracleMajTest extends QuorumBaseOracle_2Nodes {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(QuorumMajorityTest.class);
+    protected static final Logger LOG = LogManager.getLogger(QuorumMajorityTest.class);
     public static final long CONNECTION_TIMEOUT = ClientTest.CONNECTION_TIMEOUT;
 
     /***************************************************************/

@@ -24,6 +24,8 @@ import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.apache.jute.BinaryOutputArchive;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs.Ids;
@@ -37,8 +39,6 @@ import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Due to race condition or bad client code, the leader may get request from
@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
  */
 public class LeaderSessionTrackerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(LeaderSessionTrackerTest.class);
+    protected static final Logger LOG = LogManager.getLogger(LeaderSessionTrackerTest.class);
 
     QuorumUtil qu;
 

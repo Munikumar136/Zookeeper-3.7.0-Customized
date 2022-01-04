@@ -24,6 +24,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
@@ -36,12 +38,10 @@ import org.apache.zookeeper.server.ServerCnxnFactory;
 import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.ZooKeeperServer;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ACLCountTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ACLCountTest.class);
+    private static final Logger LOG = LogManager.getLogger(ACLCountTest.class);
     private static final String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
 
     /**

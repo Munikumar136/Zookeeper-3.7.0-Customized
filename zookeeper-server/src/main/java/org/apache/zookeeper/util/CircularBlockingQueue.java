@@ -26,8 +26,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * A bounded blocking queue backed by an array. This queue orders elements FIFO
@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CircularBlockingQueue<E> implements BlockingQueue<E> {
 
-  private static final Logger LOG = LoggerFactory.getLogger(CircularBlockingQueue.class);
+  private static final Logger LOG = LogManager.getLogger(CircularBlockingQueue.class);
 
   /** Main lock guarding all access */
   private final ReentrantLock lock;

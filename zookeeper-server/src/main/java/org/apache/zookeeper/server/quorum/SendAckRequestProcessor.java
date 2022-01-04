@@ -24,12 +24,12 @@ import org.apache.zookeeper.ZooDefs.OpCode;
 import org.apache.zookeeper.server.Request;
 import org.apache.zookeeper.server.RequestProcessor;
 import org.apache.zookeeper.server.ServerMetrics;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class SendAckRequestProcessor implements RequestProcessor, Flushable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SendAckRequestProcessor.class);
+    private static final Logger LOG = LogManager.getLogger(SendAckRequestProcessor.class);
 
     Learner learner;
 

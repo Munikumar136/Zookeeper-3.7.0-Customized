@@ -20,14 +20,14 @@ package org.apache.zookeeper.server.quorum;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import java.nio.ByteBuffer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.quorum.QuorumPeer.ServerState;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FLETestUtils extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(FLETestUtils.class);
+    protected static final Logger LOG = LogManager.getLogger(FLETestUtils.class);
 
     /*
      * Thread to run an instance of leader election for

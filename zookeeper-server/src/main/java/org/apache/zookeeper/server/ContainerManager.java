@@ -29,8 +29,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.common.Time;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Manages cleanup of container ZNodes. This class is meant to only
@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ContainerManager {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ContainerManager.class);
+    private static final Logger LOG = LogManager.getLogger(ContainerManager.class);
     private final ZKDatabase zkDb;
     private final RequestProcessor requestProcessor;
     private final int checkIntervalMs;

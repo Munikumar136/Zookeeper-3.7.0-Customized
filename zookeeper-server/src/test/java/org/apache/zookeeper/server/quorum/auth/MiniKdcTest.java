@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum.auth;
 
@@ -38,13 +38,13 @@ import org.apache.kerby.kerberos.kerb.type.base.PrincipalName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
-/*
+
  * This code is originally from HDFS, see the file name TestMiniKdc there
  * in case of bug fixing, history, etc.
  *
  * Branch : trunk
  * Github Revision: 916140604ffef59466ba30832478311d3e6249bd
- */
+ 
 public class MiniKdcTest extends KerberosSecurityTestcase {
 
     private static final boolean IBM_JAVA = System.getProperty("java.vendor").contains("IBM");
@@ -172,3 +172,4 @@ public class MiniKdcTest extends KerberosSecurityTestcase {
     }
 
 }
+*/

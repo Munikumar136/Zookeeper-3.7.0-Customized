@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum;
 
@@ -46,15 +46,15 @@ public class ReconfigLegacyTest extends QuorumPeerTestBase {
     public void setup() {
         ClientBase.setupTestEnv();
         QuorumPeerConfig.setReconfigEnabled(true);
-        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU="/* password is 'test'*/);
+        System.setProperty("zookeeper.DigestAuthenticationProvider.superDigest", "super:D/InIHSb7yEEbrWz8b9l71RjZJU=" password is 'test');
     }
 
-    /**
+    *//**
      * This test checks that when started with a single static config file the
      * servers will create a valid dynamic config file. Also checks that when
      * the static config includes a clientPort but the dynamic definition also
      * includes it, the static definition is erased.
-     */
+     *//*
     @Test
     public void testConfigFileBackwardCompatibility() throws Exception {
         final int[] clientPorts = new int[SERVER_COUNT];
@@ -136,14 +136,14 @@ public class ReconfigLegacyTest extends QuorumPeerTestBase {
         }
     }
 
-    /**
+    *//**
      * https://issues.apache.org/jira/browse/ZOOKEEPER-1992
      * 1. When a server starts from old style static config, without a client port in the server
      *    specification, it should keep the client port in static config file.
      * 2. After port reconfig, the old port should be removed from static file
      *    and new port added to dynamic file.
      * @throws Exception
-     */
+     *//*
     @Test
     public void testReconfigRemoveClientFromStatic() throws Exception {
         final int[] clientPorts = new int[SERVER_COUNT];
@@ -240,11 +240,11 @@ public class ReconfigLegacyTest extends QuorumPeerTestBase {
         return cfg;
     }
 
-    /**
+    *//**
      * Test case for https://issues.apache.org/jira/browse/ZOOKEEPER-2244
      *
      * @throws Exception
-     */
+     *//*
     @Test
     @Timeout(value = 120)
     public void testRestartZooKeeperServer() throws Exception {
@@ -279,9 +279,9 @@ public class ReconfigLegacyTest extends QuorumPeerTestBase {
         zk.create(zNodePath, data.getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
         zk.close();
 
-        /**
+        *//**
          * stop two servers out of three and again start them
-         */
+         *//*
         mt[0].shutdown();
         mt[1].shutdown();
         mt[0].start();
@@ -303,3 +303,4 @@ public class ReconfigLegacyTest extends QuorumPeerTestBase {
     }
 
 }
+*/

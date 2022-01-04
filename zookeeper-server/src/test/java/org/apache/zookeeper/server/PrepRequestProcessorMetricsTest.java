@@ -39,6 +39,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.apache.jute.BinaryOutputArchive;
 import org.apache.jute.Record;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -54,12 +56,10 @@ import org.apache.zookeeper.test.QuorumUtil;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class PrepRequestProcessorMetricsTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PrepRequestProcessorMetricsTest.class);
+    private static final Logger LOG = LogManager.getLogger(PrepRequestProcessorMetricsTest.class);
 
     ZooKeeperServer zks;
     RequestProcessor nextProcessor;

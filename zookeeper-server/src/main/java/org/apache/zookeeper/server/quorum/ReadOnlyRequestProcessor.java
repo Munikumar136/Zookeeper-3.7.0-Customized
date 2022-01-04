@@ -28,8 +28,8 @@ import org.apache.zookeeper.server.RequestProcessor;
 import org.apache.zookeeper.server.ZooKeeperCriticalThread;
 import org.apache.zookeeper.server.ZooKeeperServer;
 import org.apache.zookeeper.server.ZooTrace;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This processor is at the beginning of the ReadOnlyZooKeeperServer's
@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ReadOnlyRequestProcessor extends ZooKeeperCriticalThread implements RequestProcessor {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ReadOnlyRequestProcessor.class);
+    private static final Logger LOG = LogManager.getLogger(ReadOnlyRequestProcessor.class);
 
     private final LinkedBlockingQueue<Request> queuedRequests = new LinkedBlockingQueue<Request>();
 

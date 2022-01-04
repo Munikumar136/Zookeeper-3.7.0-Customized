@@ -32,8 +32,8 @@ import org.apache.zookeeper.server.ByteBufferInputStream;
 import org.apache.zookeeper.server.NIOServerCnxn;
 import org.apache.zookeeper.server.NIOServerCnxnFactory;
 import org.apache.zookeeper.server.ZooKeeperServer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Extension of NIOServerCnxn which can inject changes per controller commands.
@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 @SuppressFBWarnings(value = "BC_UNCONFIRMED_CAST", justification = "factory is ControllableConnectionFactory type.")
 public class ControllableConnection extends NIOServerCnxn {
-    private static final Logger LOG = LoggerFactory.getLogger(ControllableConnection.class);
+    private static final Logger LOG = LogManager.getLogger(ControllableConnection.class);
     private final ControllableConnectionFactory controller;
 
     public ControllableConnection(ZooKeeperServer zk, SocketChannel sock, SelectionKey sk, NIOServerCnxnFactory factory,

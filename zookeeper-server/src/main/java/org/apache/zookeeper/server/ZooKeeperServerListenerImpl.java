@@ -19,8 +19,8 @@
 package org.apache.zookeeper.server;
 
 import org.apache.zookeeper.server.ZooKeeperServer.State;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Default listener implementation, which will be used to notify internal
@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 class ZooKeeperServerListenerImpl implements ZooKeeperServerListener {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerListenerImpl.class);
+    private static final Logger LOG = LogManager.getLogger(ZooKeeperServerListenerImpl.class);
 
     private final ZooKeeperServer zkServer;
 

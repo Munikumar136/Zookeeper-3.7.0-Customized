@@ -29,15 +29,15 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.ZKTestCase;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class LearnerSyncThrottlerTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LearnerSyncThrottlerTest.class);
+    private static final Logger LOG = LogManager.getLogger(LearnerSyncThrottlerTest.class);
 
     @ParameterizedTest
     @EnumSource(LearnerSyncThrottler.SyncType.class)

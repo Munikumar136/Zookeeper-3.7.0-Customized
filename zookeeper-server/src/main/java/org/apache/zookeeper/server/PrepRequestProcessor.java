@@ -81,8 +81,8 @@ import org.apache.zookeeper.txn.SetDataTxn;
 import org.apache.zookeeper.txn.Txn;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This request processor is generally at the start of a RequestProcessor
@@ -93,7 +93,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PrepRequestProcessor extends ZooKeeperCriticalThread implements RequestProcessor {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PrepRequestProcessor.class);
+    private static final Logger LOG = LogManager.getLogger(PrepRequestProcessor.class);
 
     /**
      * this is only for testing purposes.

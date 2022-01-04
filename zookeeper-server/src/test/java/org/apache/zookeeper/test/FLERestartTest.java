@@ -27,6 +27,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.quorum.QuorumPeer;
@@ -36,12 +38,10 @@ import org.apache.zookeeper.server.quorum.Vote;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FLERestartTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(FLETest.class);
+    protected static final Logger LOG = LogManager.getLogger(FLETest.class);
 
     private int count;
     private Map<Long, QuorumServer> peers;

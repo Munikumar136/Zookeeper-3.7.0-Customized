@@ -28,8 +28,8 @@
  import java.util.concurrent.locks.ReadWriteLock;
  import java.util.concurrent.locks.ReentrantReadWriteLock;
  import java.util.stream.Stream;
- import org.slf4j.Logger;
- import org.slf4j.LoggerFactory;
+ import org.apache.logging.log4j.Logger;
+ import org.apache.logging.log4j.LogManager;
 
  /**
   * a class that implements prefix matching for
@@ -49,7 +49,7 @@
  public class PathTrie {
 
      /** Logger for this class */
-     private static final Logger LOG = LoggerFactory.getLogger(PathTrie.class);
+     private static final Logger LOG = LogManager.getLogger(PathTrie.class);
 
      /** Root node of PathTrie */
      private final TrieNode rootNode;

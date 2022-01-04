@@ -26,8 +26,8 @@ import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Stat;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * A base class for protocol implementations which provides a number of higher
@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 class ProtocolSupport {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ProtocolSupport.class);
+    private static final Logger LOG = LogManager.getLogger(ProtocolSupport.class);
     private static final int RETRY_COUNT = 10;
 
     protected final ZooKeeper zookeeper;

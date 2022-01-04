@@ -28,12 +28,12 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.test.ClientBase;
 import org.apache.zookeeper.test.QuorumUtil;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class BlueThrottleTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BlueThrottleTest.class);
+    private static final Logger LOG = LogManager.getLogger(BlueThrottleTest.class);
     private static final int RAPID_TIMEOUT = 10000;
 
     class MockRandom extends Random {

@@ -62,12 +62,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class MultiOperationTest extends ClientBase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MultiOperationTest.class);
+    private static final Logger LOG = LogManager.getLogger(MultiOperationTest.class);
     private ZooKeeper zk;
     private ZooKeeper zk_chroot;
 

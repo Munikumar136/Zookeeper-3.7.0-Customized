@@ -25,8 +25,8 @@ import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.sasl.AuthorizeCallback;
 import javax.security.sasl.RealmCallback;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This is used by the SASL mechanisms to get further information to complete
@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
 public class SaslClientCallbackHandler implements CallbackHandler {
 
     private String password = null;
-    private static final Logger LOG = LoggerFactory.getLogger(SaslClientCallbackHandler.class);
+    private static final Logger LOG = LogManager.getLogger(SaslClientCallbackHandler.class);
     private final String entity;
     public SaslClientCallbackHandler(String password, String client) {
         this.password = password;

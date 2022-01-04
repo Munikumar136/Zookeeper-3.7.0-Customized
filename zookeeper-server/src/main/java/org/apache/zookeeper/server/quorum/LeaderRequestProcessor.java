@@ -24,8 +24,8 @@ import org.apache.zookeeper.ZooDefs.OpCode;
 import org.apache.zookeeper.server.Request;
 import org.apache.zookeeper.server.RequestProcessor;
 import org.apache.zookeeper.txn.ErrorTxn;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Responsible for performing local session upgrade. Only request submitted
@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class LeaderRequestProcessor implements RequestProcessor {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LeaderRequestProcessor.class);
+    private static final Logger LOG = LogManager.getLogger(LeaderRequestProcessor.class);
 
     private final LeaderZooKeeperServer lzks;
 

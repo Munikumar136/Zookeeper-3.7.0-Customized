@@ -37,6 +37,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.zip.CheckedOutputStream;
 import org.apache.jute.BinaryOutputArchive;
 import org.apache.jute.OutputArchive;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
@@ -52,12 +54,10 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class PurgeTxnTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PurgeTxnTest.class);
+    private static final Logger LOG = LogManager.getLogger(PurgeTxnTest.class);
     private static String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
     private static final int CONNECTION_TIMEOUT = 3000;
     private static final long OP_TIMEOUT_IN_MILLIS = 120000;

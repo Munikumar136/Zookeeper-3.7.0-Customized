@@ -28,15 +28,15 @@ import org.apache.zookeeper.KeeperException.SessionMovedException;
 import org.apache.zookeeper.KeeperException.UnknownSessionException;
 import org.apache.zookeeper.server.SessionTrackerImpl;
 import org.apache.zookeeper.server.ZooKeeperServerListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * The leader session tracker tracks local and global sessions on the leader.
  */
 public class LeaderSessionTracker extends UpgradeableSessionTracker {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LeaderSessionTracker.class);
+    private static final Logger LOG = LogManager.getLogger(LeaderSessionTracker.class);
 
     private final SessionTrackerImpl globalSessionTracker;
 

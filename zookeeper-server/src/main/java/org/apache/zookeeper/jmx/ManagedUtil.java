@@ -22,15 +22,15 @@ import java.util.Enumeration;
 import javax.management.JMException;
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Shared utilities
  */
 public class ManagedUtil {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ManagedUtil.class);
+    private static final Logger LOG = LogManager.getLogger(ManagedUtil.class);
 
     private static boolean isLog4jJmxEnabled() {
         boolean enabled = false;

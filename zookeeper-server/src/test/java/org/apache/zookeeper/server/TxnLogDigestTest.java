@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ *//*
 
 package org.apache.zookeeper.server;
 
@@ -28,10 +28,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import mockit.Invocation;
-import mockit.Mock;
-import mockit.MockUp;
 import org.apache.jute.Record;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.Op;
 import org.apache.zookeeper.ZooDefs;
@@ -48,13 +47,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import mockit.Invocation;
+import mockit.Mock;
+import mockit.MockUp;
 
 public class TxnLogDigestTest extends ClientBase {
 
     private static final Logger LOG =
-            LoggerFactory.getLogger(TxnLogDigestTest.class);
+            LogManager.getLogger(TxnLogDigestTest.class);
 
     private ZooKeeper zk;
     private ZooKeeperServer server;
@@ -92,10 +92,10 @@ public class TxnLogDigestTest extends ClientBase {
         new MockedFileTxnLog();
     }
 
-    /**
+    *//**
      * Check that the digest stored in the txn matches the digest calculated
      * from DataTree.
-     */
+     *//*
     @Test
     public void digestFromTxnLogsMatchesTree() throws Exception {
         // reset the mismatch metrics
@@ -115,14 +115,14 @@ public class TxnLogDigestTest extends ClientBase {
                 lastDigest.getTreeDigest());
     }
 
-    /**
+    *//**
      * Test the compatible when enable/disable digest:
      *
      * * check that txns which were written with digest can be read when
      *   digest is disabled
      * * check that txns which were written without digest can be read
      *   when digest is enabled.
-     */
+     *//*
     @Test
     public void checkTxnCompatibleWithAndWithoutDigest() throws Exception {
         // 1. start server with digest disabled
@@ -154,10 +154,10 @@ public class TxnLogDigestTest extends ClientBase {
         checkNodes(expectedNodes1);
     }
 
-    /**
+    *//**
      * Simulate the scenario where txn is missing, and make sure the
      * digest code can catch this issue.
-     */
+     *//*
     @Test
     public void testTxnMissing() throws Exception {
         // updated MockedFileTxnLog to skip append txn on specific txn
@@ -208,9 +208,9 @@ public class TxnLogDigestTest extends ClientBase {
          client.create(path, path.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, mode);
     }
 
-    /**
+    *//**
      * Helper method to trigger various write ops inside ZK.
-     */
+     *//*
     public static Map<String, String> performOperations(
             ZooKeeper client, String prefix) throws Exception {
         Map<String, String> nodes = new HashMap<>();
@@ -276,3 +276,4 @@ public class TxnLogDigestTest extends ClientBase {
         }
     };
 }
+*/

@@ -32,15 +32,15 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Test for {@link LeaderElectionSupport}.
  */
 public class LeaderElectionSupportTest extends ClientBase {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LeaderElectionSupportTest.class);
+    private static final Logger LOGGER = LogManager.getLogger(LeaderElectionSupportTest.class);
     private static final String TEST_ROOT_NODE = "/" + System.currentTimeMillis() + "_";
 
     private ZooKeeper zooKeeper;

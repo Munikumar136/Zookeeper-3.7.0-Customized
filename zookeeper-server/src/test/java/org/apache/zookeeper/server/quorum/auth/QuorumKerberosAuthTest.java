@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.server.quorum.auth;
 
@@ -106,9 +106,9 @@ public class QuorumKerberosAuthTest extends KerberosSecurityTestcase {
         cleanupJaasConfig();
     }
 
-    /**
+    *//**
      * Test to verify that server is able to start with valid credentials
-     */
+     *//*
     @Test
     @Timeout(value = 120)
     public void testValidCredentials() throws Exception {
@@ -129,10 +129,10 @@ public class QuorumKerberosAuthTest extends KerberosSecurityTestcase {
         zk.close();
     }
 
-    /**
+    *//**
      * Test to verify that server is able to start with valid credentials
      * when using multiple Quorum / Election addresses
-     */
+     *//*
     @Test
     @Timeout(value = 120)
     public void testValidCredentialsWithMultiAddresses() throws Exception {
@@ -154,3 +154,4 @@ public class QuorumKerberosAuthTest extends KerberosSecurityTestcase {
     }
 
 }
+*/

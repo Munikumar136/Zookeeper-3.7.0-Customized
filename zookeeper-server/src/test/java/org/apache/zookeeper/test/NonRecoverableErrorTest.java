@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.test;
 
@@ -39,18 +39,18 @@ import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
-/**
+*//**
  * This class tests the non-recoverable error behavior of quorum server.
- */
+ *//*
 public class NonRecoverableErrorTest extends QuorumPeerTestBase {
 
     private static final String NODE_PATH = "/noLeaderIssue";
 
-    /**
+    *//**
      * Test case for https://issues.apache.org/jira/browse/ZOOKEEPER-2247.
      * Test to verify that even after non recoverable error (error while
      * writing transaction log), ZooKeeper is still available.
-     */
+     *//*
     @Test
     @Timeout(value = 30)
     public void testZooKeeperServiceAvailableOnLeader() throws Exception {
@@ -176,3 +176,4 @@ public class NonRecoverableErrorTest extends QuorumPeerTestBase {
     }
 
 }
+*/

@@ -23,6 +23,8 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.quorum.QuorumPeer.QuorumServer;
@@ -31,12 +33,10 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FLEBackwardElectionRoundTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(FLELostMessageTest.class);
+    protected static final Logger LOG = LogManager.getLogger(FLELostMessageTest.class);
 
     int count;
     Map<Long, QuorumServer> peers;

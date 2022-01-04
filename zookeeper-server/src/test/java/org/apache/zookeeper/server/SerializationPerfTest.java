@@ -21,15 +21,15 @@ package org.apache.zookeeper.server;
 import java.io.IOException;
 import java.io.OutputStream;
 import org.apache.jute.BinaryOutputArchive;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZKTestCase;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SerializationPerfTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(SerializationPerfTest.class);
+    protected static final Logger LOG = LogManager.getLogger(SerializationPerfTest.class);
 
     private static class NullOutputStream extends OutputStream {
 

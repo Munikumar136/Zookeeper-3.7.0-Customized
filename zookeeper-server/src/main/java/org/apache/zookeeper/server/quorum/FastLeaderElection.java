@@ -37,8 +37,8 @@ import org.apache.zookeeper.server.quorum.QuorumPeerConfig.ConfigException;
 import org.apache.zookeeper.server.quorum.flexible.QuorumOracleMaj;
 import org.apache.zookeeper.server.quorum.flexible.QuorumVerifier;
 import org.apache.zookeeper.server.util.ZxidUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Implementation of leader election using TCP. It uses an object of the class
@@ -52,7 +52,7 @@ import org.slf4j.LoggerFactory;
 
 public class FastLeaderElection implements Election {
 
-    private static final Logger LOG = LoggerFactory.getLogger(FastLeaderElection.class);
+    private static final Logger LOG = LogManager.getLogger(FastLeaderElection.class);
 
     /**
      * Determine how much time a process has to wait

@@ -41,6 +41,8 @@ import org.apache.jute.BinaryInputArchive;
 import org.apache.jute.BinaryOutputArchive;
 import org.apache.jute.InputArchive;
 import org.apache.jute.Record;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.KeeperException.NoNodeException;
 import org.apache.zookeeper.KeeperException.NodeExistsException;
 import org.apache.zookeeper.Quotas;
@@ -53,12 +55,10 @@ import org.apache.zookeeper.txn.CreateTxn;
 import org.apache.zookeeper.txn.TxnHeader;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class DataTreeTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(DataTreeTest.class);
+    protected static final Logger LOG = LogManager.getLogger(DataTreeTest.class);
 
     /**
      * For ZOOKEEPER-1755 - Test race condition when taking dumpEphemerals and

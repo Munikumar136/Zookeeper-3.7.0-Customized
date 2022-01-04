@@ -23,8 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import io.netty.channel.Channel;
-import io.netty.channel.EventLoop;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -35,6 +33,8 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooKeeper;
@@ -42,12 +42,12 @@ import org.apache.zookeeper.metrics.MetricsUtils;
 import org.apache.zookeeper.test.ClientBase;
 import org.apache.zookeeper.test.QuorumUtil;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.netty.channel.Channel;
+import io.netty.channel.EventLoop;
 
 public class ConnectionMetricsTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(ConnectionMetricsTest.class);
+    protected static final Logger LOG = LogManager.getLogger(ConnectionMetricsTest.class);
 
     @Test
     public void testRevalidateCount() throws Exception {

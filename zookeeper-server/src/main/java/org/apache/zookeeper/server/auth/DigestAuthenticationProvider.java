@@ -24,12 +24,12 @@ import java.security.NoSuchAlgorithmException;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.data.Id;
 import org.apache.zookeeper.server.ServerCnxn;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class DigestAuthenticationProvider implements AuthenticationProvider {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DigestAuthenticationProvider.class);
+    private static final Logger LOG = LogManager.getLogger(DigestAuthenticationProvider.class);
 
     private static final String DEFAULT_DIGEST_ALGORITHM = "SHA1";
 

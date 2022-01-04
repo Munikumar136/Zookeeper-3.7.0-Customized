@@ -26,12 +26,12 @@ import org.apache.zookeeper.server.quorum.BufferStats;
 import org.apache.zookeeper.server.quorum.Leader;
 import org.apache.zookeeper.server.quorum.LeaderZooKeeperServer;
 import org.apache.zookeeper.server.quorum.ReadOnlyZooKeeperServer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class StatCommand extends AbstractFourLetterCommand {
 
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractFourLetterCommand.class);
+    private static final Logger LOG = LogManager.getLogger(AbstractFourLetterCommand.class);
     private int len;
     public StatCommand(PrintWriter pw, ServerCnxn serverCnxn, int len) {
         super(pw, serverCnxn);

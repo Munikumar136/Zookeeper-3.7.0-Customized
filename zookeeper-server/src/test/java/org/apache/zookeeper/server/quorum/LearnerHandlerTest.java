@@ -32,6 +32,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.TxnLogProposalIterator;
 import org.apache.zookeeper.server.ZKDatabase;
@@ -43,12 +45,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class LearnerHandlerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(LearnerHandlerTest.class);
+    protected static final Logger LOG = LogManager.getLogger(LearnerHandlerTest.class);
 
     class MockLearnerHandler extends LearnerHandler {
 

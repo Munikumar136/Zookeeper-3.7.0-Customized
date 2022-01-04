@@ -21,17 +21,17 @@ package org.apache.zookeeper.test;
 import static org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.TestableZooKeeper;
 import org.apache.zookeeper.common.X509Exception.SSLContextException;
 import org.apache.zookeeper.server.command.FourLetterCommands;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FourLetterWordsWhiteListTest extends ClientBase {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(FourLetterWordsWhiteListTest.class);
+    protected static final Logger LOG = LogManager.getLogger(FourLetterWordsWhiteListTest.class);
 
     /*
      * ZOOKEEPER-2693: test white list of four letter words.

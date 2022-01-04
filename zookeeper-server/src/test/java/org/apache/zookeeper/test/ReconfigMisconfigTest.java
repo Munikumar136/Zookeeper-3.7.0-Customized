@@ -14,7 +14,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.apache.zookeeper.test;
 
@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
@@ -34,12 +35,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ReconfigMisconfigTest extends ZKTestCase {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ReconfigMisconfigTest.class);
+    private static final Logger LOG = LogManager.getLogger(ReconfigMisconfigTest.class);
     private QuorumUtil qu;
     private ZooKeeperAdmin zkAdmin;
     private static String errorMsg = "Reconfig should fail without configuring the super "
@@ -123,14 +122,15 @@ public class ReconfigMisconfigTest extends ZKTestCase {
         int followerId = leaderId == 1 ? 2 : 1;
         joiningServers.add("server." + followerId
                            + "=localhost:"
-                           + qu.getPeer(followerId).peer.getQuorumAddress().getAllPorts().get(0) /*quorum port*/
+                           + qu.getPeer(followerId).peer.getQuorumAddress().getAllPorts().get(0) quorum port
                            + ":"
-                           + qu.getPeer(followerId).peer.getElectionAddress().getAllPorts().get(0) /*election port*/
+                           + qu.getPeer(followerId).peer.getElectionAddress().getAllPorts().get(0) election port
                            + ":participant;localhost:"
-                           + PortAssignment.unique()/* new client port */);
+                           + PortAssignment.unique() new client port );
         zkAdmin.reconfigure(joiningServers, null, null, -1, new Stat());
         return true;
     }
 
 }
 
+*/

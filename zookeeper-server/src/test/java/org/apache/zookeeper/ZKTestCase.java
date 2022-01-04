@@ -22,13 +22,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import java.io.File;
 import java.time.LocalDateTime;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.util.ServiceUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Base class for a non-parameterized ZK test.
@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
 public class ZKTestCase {
 
     protected static final File testBaseDir = new File(System.getProperty("build.test.dir", "build"));
-    private static final Logger LOG = LoggerFactory.getLogger(ZKTestCase.class);
+    private static final Logger LOG = LogManager.getLogger(ZKTestCase.class);
 
     static {
         // Disable System.exit in tests.
