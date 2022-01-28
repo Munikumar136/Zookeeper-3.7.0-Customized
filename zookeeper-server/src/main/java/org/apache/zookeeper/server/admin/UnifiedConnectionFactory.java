@@ -28,8 +28,8 @@ import org.eclipse.jetty.server.AbstractConnectionFactory;
 import org.eclipse.jetty.server.ConnectionFactory;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The purpose of this class is to dynamically determine whether to create
@@ -39,7 +39,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class UnifiedConnectionFactory extends AbstractConnectionFactory {
 
-    private static final Logger LOG = LogManager.getLogger(UnifiedConnectionFactory.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UnifiedConnectionFactory.class);
 
     private final SslContextFactory sslContextFactory;
     private final String nextProtocol;

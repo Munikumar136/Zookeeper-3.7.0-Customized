@@ -53,15 +53,15 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.server.Request;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class holds the requests path ( up till a certain depth) stats per request type
  */
 public class RequestPathMetricsCollector {
 
-    private static final Logger LOG = LogManager.getLogger(RequestPathMetricsCollector.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RequestPathMetricsCollector.class);
     // How many seconds does each slot represent, default is 15 seconds.
     private final int REQUEST_STATS_SLOT_DURATION;
     // How many slots we keep, default is 60 so it's 15 minutes total history.

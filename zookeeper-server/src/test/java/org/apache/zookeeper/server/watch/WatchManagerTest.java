@@ -30,8 +30,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.Watcher.Event.EventType;
 import org.apache.zookeeper.ZKTestCase;
@@ -47,7 +47,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class WatchManagerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(WatchManagerTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(WatchManagerTest.class);
 
     private static final String PATH_PREFIX = "/path";
 

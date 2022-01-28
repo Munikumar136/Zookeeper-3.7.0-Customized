@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import org.apache.jute.Record;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.KeeperException.Code;
 import org.apache.zookeeper.ZooDefs.OpCode;
@@ -39,6 +37,8 @@ import org.apache.zookeeper.server.persistence.TxnLog.TxnIterator;
 import org.apache.zookeeper.txn.CreateSessionTxn;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is a helper class above the implementations of txnlog and snapshot classes
@@ -58,7 +58,7 @@ public class FileTxnSnapLog {
   public static final int VERSION = 2;
   public static final String version = "version-";
 
-  private static final Logger LOG = LogManager.getLogger(FileTxnSnapLog.class);
+  private static final Logger LOG = LoggerFactory.getLogger(FileTxnSnapLog.class);
 
   public static final String ZOOKEEPER_DATADIR_AUTOCREATE = "zookeeper.datadir.autocreate";
 

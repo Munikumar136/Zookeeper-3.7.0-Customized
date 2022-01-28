@@ -36,8 +36,8 @@ import org.apache.kerby.kerberos.kerb.server.SimpleKdcServer;
 import org.apache.kerby.util.IOUtil;
 import org.apache.kerby.util.NetworkUtil;
 import org.apache.zookeeper.server.ExitCode;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mini KDC based on Apache Directory Server that can be embedded in testcases
@@ -140,7 +140,7 @@ public class MiniKdc {
         }
     }
 
-    private static final Logger LOG = LogManager.getLogger(MiniKdc.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MiniKdc.class);
 
     public static final String ORG_NAME = "org.name";
     public static final String ORG_DOMAIN = "org.domain";

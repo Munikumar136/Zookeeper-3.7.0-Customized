@@ -18,12 +18,12 @@
 
 package org.apache.zookeeper;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class ZooKeeperTestable implements Testable {
 
-    private static final Logger LOG = LogManager.getLogger(ZooKeeperTestable.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperTestable.class);
 
     private final ClientCnxn clientCnxn;
 

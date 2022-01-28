@@ -31,8 +31,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.apache.jute.BinaryOutputArchive;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.Op;
@@ -51,7 +51,7 @@ import org.junit.jupiter.api.Test;
 
 public class MultiOpSessionUpgradeTest extends QuorumBase {
 
-    protected static final Logger LOG = LogManager.getLogger(MultiOpSessionUpgradeTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(MultiOpSessionUpgradeTest.class);
 
     @BeforeEach
     @Override

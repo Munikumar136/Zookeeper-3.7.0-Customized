@@ -26,8 +26,9 @@ import java.security.cert.X509Certificate;
 import javax.net.ssl.SSLEngine;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.X509ExtendedTrustManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * A custom TrustManager that supports hostname verification via org.apache.http.conn.ssl.DefaultHostnameVerifier.
  *
@@ -36,7 +37,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class ZKTrustManager extends X509ExtendedTrustManager {
 
-    private static final Logger LOG = LogManager.getLogger(ZKTrustManager.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ZKTrustManager.class);
 
     private X509ExtendedTrustManager x509ExtendedTrustManager;
     private boolean serverHostnameVerificationEnabled;

@@ -26,8 +26,8 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.Statement;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The sole responsibility of this class is to print to the log when a test
@@ -35,7 +35,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class JUnit4ZKTestRunner extends BlockJUnit4ClassRunner {
 
-    private static final Logger LOG = LogManager.getLogger(JUnit4ZKTestRunner.class);
+    private static final Logger LOG = LoggerFactory.getLogger(JUnit4ZKTestRunner.class);
 
     public JUnit4ZKTestRunner(Class<?> klass) throws InitializationError {
         super(klass);

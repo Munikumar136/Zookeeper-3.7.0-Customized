@@ -27,8 +27,8 @@ import org.apache.zookeeper.server.RateLogger;
 import org.apache.zookeeper.server.ServerMetrics;
 import org.apache.zookeeper.server.WorkerService;
 import org.apache.zookeeper.server.WorkerService.WorkRequest;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Thread used to lazily clean up the closed watcher, it will trigger the
@@ -44,7 +44,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class WatcherCleaner extends Thread {
 
-    private static final Logger LOG = LogManager.getLogger(WatcherCleaner.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WatcherCleaner.class);
     private final RateLogger RATE_LOGGER = new RateLogger(LOG);
 
     private volatile boolean stopped = false;

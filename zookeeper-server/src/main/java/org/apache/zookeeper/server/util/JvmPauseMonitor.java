@@ -30,8 +30,8 @@ import java.util.Set;
 import org.apache.zookeeper.server.ServerConfig;
 import org.apache.zookeeper.server.ServerMetrics;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This code is originally from hadoop-common, see:
@@ -45,7 +45,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class JvmPauseMonitor {
 
-    private static final Logger LOG = LogManager.getLogger(JvmPauseMonitor.class);
+    private static final Logger LOG = LoggerFactory.getLogger(JvmPauseMonitor.class);
 
     public static final String JVM_PAUSE_MONITOR_FEATURE_SWITCH_KEY = "jvm.pause.monitor";
 

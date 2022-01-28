@@ -42,12 +42,12 @@ import org.apache.zookeeper.client.ZKClientConfig;
 import org.apache.zookeeper.data.Stat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WatcherTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(WatcherTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(WatcherTest.class);
 
     private long timeOfLastWatcherInvocation;
 

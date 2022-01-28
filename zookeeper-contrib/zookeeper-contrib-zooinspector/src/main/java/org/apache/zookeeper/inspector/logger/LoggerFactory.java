@@ -17,8 +17,8 @@
  */
 package org.apache.zookeeper.inspector.logger;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Provides a {@link Logger} for use across the entire application
@@ -26,7 +26,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class LoggerFactory
 {
-	private static final Logger logger = LogManager.getLogger("org.apache.zookeeper.inspector"); //$NON-NLS-1$
+	private static final Logger logger = LoggerFactory.getLogger("org.apache.zookeeper.inspector"); //$NON-NLS-1$
 
 	/**
 	 * @return {@link Logger} for ZooInspector

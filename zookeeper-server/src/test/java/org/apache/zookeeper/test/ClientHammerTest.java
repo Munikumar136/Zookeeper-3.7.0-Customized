@@ -28,12 +28,12 @@ import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.common.Time;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ClientHammerTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(ClientHammerTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ClientHammerTest.class);
 
     private static final long HAMMERTHREAD_LATENCY = 5;
 

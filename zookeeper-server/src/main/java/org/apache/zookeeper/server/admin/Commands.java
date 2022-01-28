@@ -27,8 +27,8 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.Environment;
 import org.apache.zookeeper.Environment.Entry;
 import org.apache.zookeeper.Version;
@@ -61,7 +61,7 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
  */
 public class Commands {
 
-  static final Logger LOG = LogManager.getLogger(Commands.class);
+  static final Logger LOG = LoggerFactory.getLogger(Commands.class);
 
   /** Maps command names to Command instances */
   private static Map<String, Command> commands = new HashMap<String, Command>();

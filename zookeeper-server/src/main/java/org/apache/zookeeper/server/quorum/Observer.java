@@ -34,8 +34,8 @@ import org.apache.zookeeper.server.util.SerializeUtils;
 import org.apache.zookeeper.txn.SetDataTxn;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Observers are peers that do not take part in the atomic broadcast protocol.
@@ -48,7 +48,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class Observer extends Learner {
 
-    private static final Logger LOG = LogManager.getLogger(Observer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Observer.class);
 
     /**
      * When observer lost its connection with the leader, it waits for 0 to the

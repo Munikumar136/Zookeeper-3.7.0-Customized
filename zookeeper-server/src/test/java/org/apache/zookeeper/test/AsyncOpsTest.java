@@ -19,8 +19,8 @@
 package org.apache.zookeeper.test;
 
 import java.util.concurrent.CountDownLatch;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.test.AsyncOps.ACLCB;
 import org.apache.zookeeper.test.AsyncOps.Children2CB;
@@ -37,7 +37,7 @@ import org.junit.jupiter.api.Test;
 
 public class AsyncOpsTest extends ClientBase {
 
-    private static final Logger LOG = LogManager.getLogger(AsyncOpsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AsyncOpsTest.class);
 
     private ZooKeeper zk;
 

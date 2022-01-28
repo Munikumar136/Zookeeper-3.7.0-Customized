@@ -33,8 +33,8 @@ import org.apache.zookeeper.common.Time;
 import org.apache.zookeeper.common.ZKConfig;
 import org.apache.zookeeper.proto.ConnectResponse;
 import org.apache.zookeeper.server.ByteBufferInputStream;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A ClientCnxnSocket does the lower level communication with a socket
@@ -46,7 +46,7 @@ import org.apache.logging.log4j.LogManager;
  */
 abstract class ClientCnxnSocket {
 
-    private static final Logger LOG = LogManager.getLogger(ClientCnxnSocket.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ClientCnxnSocket.class);
 
     protected boolean initialized;
 

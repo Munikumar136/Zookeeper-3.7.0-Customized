@@ -31,13 +31,13 @@ import javax.security.auth.login.Configuration;
 import javax.security.sasl.AuthorizeCallback;
 import javax.security.sasl.RealmCallback;
 import org.apache.zookeeper.server.ZooKeeperSaslServer;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SaslServerCallbackHandler implements CallbackHandler {
 
     private static final String USER_PREFIX = "user_";
-    private static final Logger LOG = LogManager.getLogger(SaslServerCallbackHandler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SaslServerCallbackHandler.class);
     private static final String SYSPROP_SUPER_PASSWORD = "zookeeper.SASLAuthenticationProvider.superPassword";
     private static final String SYSPROP_REMOVE_HOST = "zookeeper.kerberos.removeHostFromPrincipal";
     private static final String SYSPROP_REMOVE_REALM = "zookeeper.kerberos.removeRealmFromPrincipal";

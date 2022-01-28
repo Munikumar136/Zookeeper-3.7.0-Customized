@@ -31,8 +31,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.quorum.FastLeaderElection;
@@ -43,10 +41,12 @@ import org.apache.zookeeper.server.quorum.Vote;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FLETest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(FLETest.class);
+  protected static final Logger LOG = LoggerFactory.getLogger(FLETest.class);
     private final int MAX_LOOP_COUNTER = 300;
     private FLETest.LEThread leThread;
 

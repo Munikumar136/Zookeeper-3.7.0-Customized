@@ -23,8 +23,8 @@ import org.apache.zookeeper.server.RequestProcessor;
 import org.apache.zookeeper.server.ServerMetrics;
 import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.quorum.Leader.XidRolloverException;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This RequestProcessor simply forwards requests to an AckRequestProcessor and
@@ -32,7 +32,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class ProposalRequestProcessor implements RequestProcessor {
 
-    private static final Logger LOG = LogManager.getLogger(ProposalRequestProcessor.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProposalRequestProcessor.class);
 
     LeaderZooKeeperServer zks;
 

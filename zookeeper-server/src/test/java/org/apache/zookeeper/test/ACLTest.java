@@ -43,12 +43,12 @@ import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.ZooKeeperServer;
 import org.apache.zookeeper.server.auth.IPAuthenticationProvider;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ACLTest extends ZKTestCase implements Watcher {
 
-    private static final Logger LOG = LogManager.getLogger(ACLTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ACLTest.class);
     private static final String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
     private volatile CountDownLatch startSignal;
 

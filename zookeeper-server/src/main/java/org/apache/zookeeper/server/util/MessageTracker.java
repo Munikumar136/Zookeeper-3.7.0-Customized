@@ -21,8 +21,8 @@ package org.apache.zookeeper.server.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.apache.zookeeper.server.quorum.Leader;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -33,7 +33,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class MessageTracker {
 
-    private static final Logger LOG = LogManager.getLogger(MessageTracker.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MessageTracker.class);
 
     private final CircularBuffer<BufferedMessage> sentBuffer;
     private final CircularBuffer<BufferedMessage> receivedBuffer;

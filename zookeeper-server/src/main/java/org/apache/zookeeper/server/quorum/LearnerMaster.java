@@ -24,15 +24,15 @@ import java.net.SocketAddress;
 import org.apache.zookeeper.server.Request;
 import org.apache.zookeeper.server.ZKDatabase;
 import org.apache.zookeeper.server.quorum.auth.QuorumAuthServer;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * interface for keeping Observers in sync
  */
 public abstract class LearnerMaster {
 
-    private static final Logger LOG = LogManager.getLogger(LearnerMaster.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LearnerMaster.class);
 
     // Throttle when there are too many concurrent snapshots being sent to observers
     private static final String MAX_CONCURRENT_SNAPSYNCS = "zookeeper.leader.maxConcurrentSnapSyncs";

@@ -42,8 +42,8 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 import javax.security.auth.x500.X500Principal;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Note: copied from Apache httpclient with some modifications. We want host verification, but depending
@@ -141,7 +141,7 @@ final class ZKHostnameVerifier implements HostnameVerifier {
 
     }
 
-    private final Logger log = LogManager.getLogger(ZKHostnameVerifier.class);
+    private final Logger log = LoggerFactory.getLogger(ZKHostnameVerifier.class);
 
     @Override
     public boolean verify(final String host, final SSLSession session) {

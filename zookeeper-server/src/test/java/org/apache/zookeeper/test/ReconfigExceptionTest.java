@@ -38,12 +38,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ReconfigExceptionTest extends ZKTestCase {
 
-    private static final Logger LOG = LogManager.getLogger(ReconfigExceptionTest.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ReconfigExceptionTest.class);
     private static String authProvider = "zookeeper.DigestAuthenticationProvider.superDigest";
     // Use DigestAuthenticationProvider.base64Encode or
     // run ZooKeeper jar with org.apache.zookeeper.server.auth.DigestAuthenticationProvider to generate password.

@@ -37,8 +37,8 @@ import org.apache.zookeeper.server.persistence.FileTxnSnapLog.DatadirException;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig.ConfigException;
 import org.apache.zookeeper.server.util.JvmPauseMonitor;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class starts and runs a standalone ZooKeeperServer.
@@ -46,7 +46,7 @@ import org.apache.logging.log4j.LogManager;
 @InterfaceAudience.Public
 public class ZooKeeperServerMain {
 
-    private static final Logger LOG = LogManager.getLogger(ZooKeeperServerMain.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerMain.class);
 
     private static final String USAGE = "Usage: ZooKeeperServerMain configfile | port datadir [ticktime] [maxcnxns]";
 

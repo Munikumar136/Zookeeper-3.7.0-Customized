@@ -34,8 +34,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import org.apache.jute.BinaryOutputArchive;
 import org.apache.jute.Record;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.Quotas;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -54,7 +54,7 @@ public abstract class ServerCnxn implements Stats, Watcher {
   // This is just an arbitrary object to represent requests issued by
   // (aka owned by) this class
   public static final Object me = new Object();
-  private static final Logger LOG = LogManager.getLogger(ServerCnxn.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ServerCnxn.class);
 
   private Set<Id> authInfo = Collections.newSetFromMap(new ConcurrentHashMap<Id, Boolean>());
 

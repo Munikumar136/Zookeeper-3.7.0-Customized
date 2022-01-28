@@ -33,8 +33,8 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooKeeper;
@@ -47,7 +47,7 @@ import io.netty.channel.EventLoop;
 
 public class ConnectionMetricsTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(ConnectionMetricsTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ConnectionMetricsTest.class);
 
     @Test
     public void testRevalidateCount() throws Exception {

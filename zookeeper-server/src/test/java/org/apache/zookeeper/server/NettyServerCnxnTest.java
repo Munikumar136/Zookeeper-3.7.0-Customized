@@ -39,8 +39,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.AsyncCallback.DataCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -71,7 +71,7 @@ import io.netty.util.Attribute;
  */
 public class NettyServerCnxnTest extends ClientBase {
 
-    private static final Logger LOG = LogManager.getLogger(NettyServerCnxnTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NettyServerCnxnTest.class);
 
     @BeforeEach
     @Override

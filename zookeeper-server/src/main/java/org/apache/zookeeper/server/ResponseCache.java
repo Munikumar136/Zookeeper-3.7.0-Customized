@@ -22,12 +22,12 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.apache.zookeeper.data.Stat;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("serial")
 public class ResponseCache {
-    private static final Logger LOG = LogManager.getLogger(ResponseCache.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ResponseCache.class);
 
     // Magic number chosen to be "big enough but not too big"
     public static final int DEFAULT_RESPONSE_CACHE_SIZE = 400;

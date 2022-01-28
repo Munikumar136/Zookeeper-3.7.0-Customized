@@ -25,12 +25,12 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import java.io.IOException;
 import java.io.PrintWriter;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JsonOutputter implements CommandOutputter {
 
-    static final Logger LOG = LogManager.getLogger(JsonOutputter.class);
+    static final Logger LOG = LoggerFactory.getLogger(JsonOutputter.class);
 
     public static final String ERROR_RESPONSE = "{\"error\": \"Exception writing command response to JSON\"}";
 

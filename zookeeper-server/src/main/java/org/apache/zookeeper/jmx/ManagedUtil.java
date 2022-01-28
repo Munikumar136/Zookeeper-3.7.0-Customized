@@ -22,15 +22,15 @@ import java.util.Enumeration;
 import javax.management.JMException;
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Shared utilities
  */
 public class ManagedUtil {
 
-    private static final Logger LOG = LogManager.getLogger(ManagedUtil.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ManagedUtil.class);
 
     private static boolean isLog4jJmxEnabled() {
         boolean enabled = false;
@@ -87,8 +87,8 @@ public class ManagedUtil {
                 // Get each logger from the Log4J Repository and add it to the
                 // Hierarchy MBean created above.
                 // org.apache.log4j.spi.LoggerRepository r =
-                // org.apache.log4j.LogManager.getLoggerRepository();
-                Object r = Class.forName("org.apache.log4j.LogManager")
+                // org.apache.log4j.LoggerFactory.getLoggerRepository();
+                Object r = Class.forName("org.slf4j.LoggerFactory")
                                 .getMethod("getLoggerRepository", (Class<?>[]) null)
                                 .invoke(null, (Object[]) null);
 

@@ -89,8 +89,8 @@ import org.apache.zookeeper.txn.CreateSessionTxn;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class implements a simple standalone ZooKeeperServer. It sets up the
@@ -128,7 +128,7 @@ public class ZooKeeperServer implements SessionExpirer, ServerStats.Provider {
     private static boolean closeSessionTxnEnabled = true;
 
     static {
-        LOG = LogManager.getLogger(ZooKeeperServer.class);
+        LOG = LoggerFactory.getLogger(ZooKeeperServer.class);
 
         RATE_LOGGER = new RateLogger(LOG);
 

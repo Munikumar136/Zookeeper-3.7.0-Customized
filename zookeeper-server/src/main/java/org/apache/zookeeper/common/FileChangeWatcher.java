@@ -24,8 +24,8 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.util.function.Consumer;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.server.ZooKeeperThread;
 
 /**
@@ -41,7 +41,7 @@ import org.apache.zookeeper.server.ZooKeeperThread;
  */
 public final class FileChangeWatcher {
 
-  private static final Logger LOG = LogManager.getLogger(FileChangeWatcher.class);
+  private static final Logger LOG = LoggerFactory.getLogger(FileChangeWatcher.class);
 
   public enum State {
     NEW, // object created but start() not called yet

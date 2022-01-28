@@ -34,12 +34,12 @@ import org.apache.zookeeper.AsyncCallback.VoidCallback;
 import org.apache.zookeeper.KeeperException.Code;
 import org.apache.zookeeper.common.PathUtils;
 import org.apache.zookeeper.data.ACL;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ZKUtil {
 
-    private static final Logger LOG = LogManager.getLogger(ZKUtil.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ZKUtil.class);
     private static final Map<Integer, String> permCache = new ConcurrentHashMap<Integer, String>();
     /**
      * Recursively delete the node with the given path.

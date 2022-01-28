@@ -29,8 +29,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -51,7 +51,7 @@ import org.junit.jupiter.api.Test;
 
 public class SessionTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(SessionTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(SessionTest.class);
 
     private static final String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
 

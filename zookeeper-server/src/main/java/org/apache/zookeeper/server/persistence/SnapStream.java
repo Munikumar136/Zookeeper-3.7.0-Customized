@@ -38,8 +38,8 @@ import java.util.zip.GZIPOutputStream;
 import org.apache.jute.InputArchive;
 import org.apache.jute.OutputArchive;
 import org.apache.zookeeper.common.AtomicFileOutputStream;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xerial.snappy.SnappyCodec;
 import org.xerial.snappy.SnappyInputStream;
 import org.xerial.snappy.SnappyOutputStream;
@@ -49,7 +49,7 @@ import org.xerial.snappy.SnappyOutputStream;
  */
 public class SnapStream {
 
-    private static final Logger LOG = LogManager.getLogger(SnapStream.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SnapStream.class);
 
     public static final String ZOOKEEPER_SHAPSHOT_STREAM_MODE = "zookeeper.snapshot.compression.method";
 

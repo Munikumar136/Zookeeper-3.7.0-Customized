@@ -35,8 +35,8 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.X509KeyManager;
 import javax.net.ssl.X509TrustManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.common.ClientX509Util;
 import org.apache.zookeeper.common.NettyUtils;
@@ -76,7 +76,7 @@ import io.netty.util.concurrent.GenericFutureListener;
 
 public class NettyServerCnxnFactory extends ServerCnxnFactory {
 
-  private static final Logger LOG = LogManager.getLogger(NettyServerCnxnFactory.class);
+  private static final Logger LOG = LoggerFactory.getLogger(NettyServerCnxnFactory.class);
 
   /**
    * Allow client-server sockets to accept both SSL and plaintext connections

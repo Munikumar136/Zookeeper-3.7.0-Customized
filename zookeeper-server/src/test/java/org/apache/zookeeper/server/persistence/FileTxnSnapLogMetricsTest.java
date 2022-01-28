@@ -24,8 +24,8 @@ import static org.hamcrest.number.OrderingComparison.greaterThanOrEqualTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -41,7 +41,7 @@ import org.junit.jupiter.api.Test;
 
 public class FileTxnSnapLogMetricsTest extends ZKTestCase {
 
-    private static final Logger LOG = LogManager.getLogger(FileTxnSnapLogMetricsTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FileTxnSnapLogMetricsTest.class);
 
     CountDownLatch allCreatedLatch;
 

@@ -26,8 +26,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.TreeSet;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
@@ -40,7 +40,7 @@ import org.apache.zookeeper.server.jersey.cfg.Endpoint;
  */
 public class ZooKeeperService {
 
-   private static Logger LOG = LogManager.getLogger(ZooKeeperService.class);
+   private static Logger LOG = LoggerFactory.getLogger(ZooKeeperService.class);
 
    /** Map base uri to ZooKeeper host:port parameters */
    private static Map<String, Endpoint> contextMap = new HashMap<String, Endpoint>();

@@ -38,8 +38,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.KeeperException.Code;
 import org.apache.zookeeper.Watcher.Event.EventType;
 import org.apache.zookeeper.Watcher.WatcherType;
@@ -57,7 +57,7 @@ import org.junit.jupiter.params.provider.ValueSource;
  */
 public class RemoveWatchesTest extends ClientBase {
 
-    private static final Logger LOG = LogManager.getLogger(RemoveWatchesTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RemoveWatchesTest.class);
     private ZooKeeper zk1 = null;
     private ZooKeeper zk2 = null;
 

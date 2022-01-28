@@ -26,8 +26,8 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.zookeeper.common.Time;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * WorkerService is a worker thread pool for running tasks and is implemented
@@ -45,7 +45,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class WorkerService {
 
-    private static final Logger LOG = LogManager.getLogger(WorkerService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WorkerService.class);
 
     private final ArrayList<ExecutorService> workers = new ArrayList<ExecutorService>();
 

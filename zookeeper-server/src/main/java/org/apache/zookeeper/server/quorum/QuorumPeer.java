@@ -47,8 +47,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import javax.security.sasl.SaslException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.yetus.audience.InterfaceAudience;
 import org.apache.zookeeper.KeeperException.BadArgumentsException;
 import org.apache.zookeeper.common.AtomicFileOutputStream;
@@ -111,7 +111,7 @@ import org.apache.zookeeper.server.util.ZxidUtils;
  */
 public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider {
 
-  private static final Logger LOG = LogManager.getLogger(QuorumPeer.class);
+  private static final Logger LOG = LoggerFactory.getLogger(QuorumPeer.class);
 
   public static final String CONFIG_KEY_KERBEROS_CANONICALIZE_HOST_NAMES =
       "zookeeper.kerberos.canonicalizeHostNames";

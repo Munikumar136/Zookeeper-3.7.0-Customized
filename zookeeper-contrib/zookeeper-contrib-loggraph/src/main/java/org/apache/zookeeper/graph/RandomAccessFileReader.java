@@ -28,11 +28,11 @@ import java.io.DataInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInput;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RandomAccessFileReader extends Reader implements DataInput {
-    private static final Logger LOG = LogManager.getLogger(RandomAccessFileReader.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RandomAccessFileReader.class);
     private RandomAccessFile file;
     private byte[] buffer;
     private int buffersize;

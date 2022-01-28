@@ -32,8 +32,8 @@ import org.apache.jute.InputArchive;
 import org.apache.jute.OutputArchive;
 import org.apache.zookeeper.server.DataTree;
 import org.apache.zookeeper.server.util.SerializeUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class implements the snapshot interface.
@@ -48,7 +48,7 @@ public class FileSnap implements SnapShot {
     private volatile boolean close = false;
     private static final int VERSION = 2;
     private static final long dbId = -1;
-    private static final Logger LOG = LogManager.getLogger(FileSnap.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FileSnap.class);
     public static final int SNAP_MAGIC = ByteBuffer.wrap("ZKSN".getBytes()).getInt();
 
     public static final String SNAPSHOT_FILE_PREFIX = "snapshot";

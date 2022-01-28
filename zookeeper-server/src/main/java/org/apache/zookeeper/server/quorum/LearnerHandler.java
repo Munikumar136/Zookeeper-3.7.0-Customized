@@ -37,8 +37,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
 import javax.security.sasl.SaslException;
 import org.apache.jute.BinaryInputArchive;
 import org.apache.jute.BinaryOutputArchive;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.ZooDefs.OpCode;
 import org.apache.zookeeper.common.Time;
 import org.apache.zookeeper.server.Request;
@@ -60,7 +60,7 @@ import org.apache.zookeeper.server.util.ZxidUtils;
  */
 public class LearnerHandler extends ZooKeeperThread {
 
-  private static final Logger LOG = LogManager.getLogger(LearnerHandler.class);
+  private static final Logger LOG = LoggerFactory.getLogger(LearnerHandler.class);
 
   public static final String LEADER_CLOSE_SOCKET_ASYNC = "zookeeper.leader.closeSocketAsync";
 

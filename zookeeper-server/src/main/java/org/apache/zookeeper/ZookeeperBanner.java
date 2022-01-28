@@ -18,7 +18,7 @@
 
 package org.apache.zookeeper;
 
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 
 /**
  * ZookeeperBanner which writes the 'Zookeeper' banner at the start of zk server.

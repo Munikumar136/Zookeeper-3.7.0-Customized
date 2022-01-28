@@ -28,8 +28,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.regex.Pattern;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.TestableZooKeeper;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.common.IOUtils;
@@ -39,7 +39,7 @@ import org.junit.jupiter.api.Timeout;
 
 public class FourLetterWordsTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(FourLetterWordsTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(FourLetterWordsTest.class);
 
     /** Test the various four letter words */
     @Test

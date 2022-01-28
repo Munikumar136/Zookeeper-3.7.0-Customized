@@ -40,8 +40,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.AsyncCallback.DataCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.DummyWatcher;
@@ -66,7 +66,7 @@ import org.junit.jupiter.api.Test;
 
 public class ReconfigTest extends ZKTestCase implements DataCallback {
 
-    private static final Logger LOG = LogManager.getLogger(ReconfigTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ReconfigTest.class);
 
     private QuorumUtil qu;
     private ZooKeeper[] zkArr;

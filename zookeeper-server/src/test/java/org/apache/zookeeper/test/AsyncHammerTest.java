@@ -23,8 +23,8 @@ import static org.apache.zookeeper.test.ClientBase.verifyThreadTerminated;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.LinkedList;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.AsyncCallback.DataCallback;
 import org.apache.zookeeper.AsyncCallback.StringCallback;
 import org.apache.zookeeper.AsyncCallback.VoidCallback;
@@ -40,7 +40,7 @@ import org.junit.jupiter.api.Test;
 
 public class AsyncHammerTest extends ZKTestCase implements StringCallback, VoidCallback, DataCallback {
 
-    private static final Logger LOG = LogManager.getLogger(AsyncHammerTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AsyncHammerTest.class);
 
     private QuorumBase qb = new QuorumBase();
 

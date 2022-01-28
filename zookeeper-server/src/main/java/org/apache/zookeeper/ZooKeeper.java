@@ -84,8 +84,8 @@ import org.apache.zookeeper.proto.SyncResponse;
 import org.apache.zookeeper.proto.WhoAmIResponse;
 import org.apache.zookeeper.server.DataTree;
 import org.apache.zookeeper.server.EphemeralType;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is the main class of ZooKeeper client library. To use a ZooKeeper
@@ -165,7 +165,7 @@ public class ZooKeeper implements AutoCloseable {
 
     static {
         //Keep these two lines together to keep the initialization order explicit
-        LOG = LogManager.getLogger(ZooKeeper.class);
+        LOG = LoggerFactory.getLogger(ZooKeeper.class);
         Environment.logEnv("Client environment:", LOG);
     }
 

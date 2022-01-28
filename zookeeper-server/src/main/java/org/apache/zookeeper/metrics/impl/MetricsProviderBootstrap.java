@@ -22,15 +22,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 import org.apache.zookeeper.metrics.MetricsProvider;
 import org.apache.zookeeper.metrics.MetricsProviderLifeCycleException;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility for bootstrap process of MetricsProviders
  */
 public abstract class MetricsProviderBootstrap {
 
-    private static final Logger LOG = LogManager.getLogger(MetricsProviderBootstrap.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MetricsProviderBootstrap.class);
 
     public static MetricsProvider startMetricsProvider(
         String metricsProviderClassName,

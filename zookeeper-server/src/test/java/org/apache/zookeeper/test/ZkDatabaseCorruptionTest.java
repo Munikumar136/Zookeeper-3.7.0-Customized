@@ -38,12 +38,12 @@ import org.apache.zookeeper.server.quorum.QuorumPeer.ServerState;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ZkDatabaseCorruptionTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(ZkDatabaseCorruptionTest.class);
+  protected static final Logger LOG = LoggerFactory.getLogger(ZkDatabaseCorruptionTest.class);
     public static final long CONNECTION_TIMEOUT = ClientTest.CONNECTION_TIMEOUT;
 
     private final QuorumBase qb = new QuorumBase();

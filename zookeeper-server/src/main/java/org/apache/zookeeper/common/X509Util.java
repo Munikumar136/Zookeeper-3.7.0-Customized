@@ -44,8 +44,8 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509ExtendedTrustManager;
 import javax.net.ssl.X509KeyManager;
 import javax.net.ssl.X509TrustManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.common.X509Exception.KeyManagerException;
 import org.apache.zookeeper.common.X509Exception.SSLContextException;
 import org.apache.zookeeper.common.X509Exception.TrustManagerException;
@@ -61,7 +61,7 @@ import org.apache.zookeeper.common.X509Exception.TrustManagerException;
  */
 public abstract class X509Util implements Closeable, AutoCloseable {
 
-  private static final Logger LOG = LogManager.getLogger(X509Util.class);
+  private static final Logger LOG = LoggerFactory.getLogger(X509Util.class);
 
   private static final String REJECT_CLIENT_RENEGOTIATION_PROPERTY =
       "jdk.tls.rejectClientInitiatedRenegotiation";

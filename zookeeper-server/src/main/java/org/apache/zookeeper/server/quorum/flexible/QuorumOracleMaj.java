@@ -32,8 +32,8 @@ import org.apache.zookeeper.server.quorum.LearnerHandler;
 import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig;
 import org.apache.zookeeper.server.quorum.SyncedLearnerTracker;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
  *
@@ -44,7 +44,7 @@ import org.apache.logging.log4j.LogManager;
  * number of voting members is greater than 2. QuorumOracleMaj shall function as hook to its super class.
  * */
 public class QuorumOracleMaj extends QuorumMaj {
-    private static final Logger LOG = LogManager.getLogger(QuorumOracleMaj.class);
+    private static final Logger LOG = LoggerFactory.getLogger(QuorumOracleMaj.class);
 
     private String oracle = null;
 

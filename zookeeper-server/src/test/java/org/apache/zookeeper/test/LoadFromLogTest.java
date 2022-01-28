@@ -20,8 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import java.io.File;
 import java.io.IOException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException.NoNodeException;
 import org.apache.zookeeper.ZooDefs.Ids;
@@ -41,7 +41,7 @@ import org.junit.jupiter.api.Test;
 public class LoadFromLogTest extends ClientBase {
 
   private static final int NUM_MESSAGES = 300;
-  protected static final Logger LOG = LogManager.getLogger(LoadFromLogTest.class);
+  protected static final Logger LOG = LoggerFactory.getLogger(LoadFromLogTest.class);
 
   // setting up the quorum has a transaction overhead for creating and closing the session
   private static final int TRANSACTION_OVERHEAD = 2;

@@ -34,8 +34,8 @@ import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests learners configured to use local sessions only. Expected
@@ -45,7 +45,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class LocalSessionsOnlyTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(LocalSessionsOnlyTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(LocalSessionsOnlyTest.class);
     public static final int CONNECTION_TIMEOUT = ClientBase.CONNECTION_TIMEOUT;
 
     private final QuorumBase qb = new QuorumBase();

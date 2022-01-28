@@ -37,11 +37,11 @@ import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.server.Request;
 import org.apache.zookeeper.server.RequestThrottler;
 import org.apache.zookeeper.server.ZooKeeperServer;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ThrottledOpHelper {
-    protected static final Logger LOG = LogManager.getLogger(ThrottledOpHelper.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ThrottledOpHelper.class);
 
     public static final class RequestThrottleMock extends MockUp<RequestThrottler> {
         public static void throttleEveryNthOp(int n) {

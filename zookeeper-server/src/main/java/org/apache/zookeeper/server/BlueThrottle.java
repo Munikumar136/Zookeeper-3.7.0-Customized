@@ -20,8 +20,8 @@ package org.apache.zookeeper.server;
 
 import java.util.Random;
 import org.apache.zookeeper.common.Time;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implements a token-bucket based rate limiting mechanism with optional
@@ -71,7 +71,7 @@ import org.apache.logging.log4j.LogManager;
  **/
 
 public class BlueThrottle {
-    private static final Logger LOG = LogManager.getLogger(BlueThrottle.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BlueThrottle.class);
 
     private int maxTokens;
     private int fillTime;

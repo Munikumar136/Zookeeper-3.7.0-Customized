@@ -16,8 +16,8 @@
 package org.apache.zookeeper.server.controller;
 
 import java.io.IOException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.server.ExitCode;
 import org.apache.zookeeper.server.ServerCnxn;
 import org.apache.zookeeper.server.ServerCnxnFactory;
@@ -37,7 +37,7 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
     justification = "quorum peer is internally synchronized.")
 public class ZooKeeperServerController {
 
-  private static final Logger LOG = LogManager.getLogger(ZooKeeperServerController.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerController.class);
   private static final long DEFAULT_DELAY_MS = 1000;
 
   private QuorumPeer quorumPeer;

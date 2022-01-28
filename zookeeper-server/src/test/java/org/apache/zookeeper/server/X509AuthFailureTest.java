@@ -28,11 +28,11 @@ import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class X509AuthFailureTest extends ZKTestCase {
-    protected static final Logger LOG = LogManager.getLogger(X509AuthFailureTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(X509AuthFailureTest.class);
 
     private static ClientX509Util clientX509Util;
     public static final int TIMEOUT = 5000;

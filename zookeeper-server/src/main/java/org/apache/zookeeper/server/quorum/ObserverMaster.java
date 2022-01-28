@@ -44,8 +44,8 @@ import org.apache.zookeeper.jmx.MBeanRegistry;
 import org.apache.zookeeper.server.Request;
 import org.apache.zookeeper.server.ZKDatabase;
 import org.apache.zookeeper.server.quorum.auth.QuorumAuthServer;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Used by Followers to host Observers. This reduces the network load on the Leader process by pushing
@@ -65,7 +65,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class ObserverMaster extends LearnerMaster implements Runnable {
 
-    private static final Logger LOG = LogManager.getLogger(ObserverMaster.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ObserverMaster.class);
 
     //Follower counter
     private final AtomicLong followerCounter = new AtomicLong(-1);

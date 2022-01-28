@@ -49,8 +49,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This test makes sure that certain operations on a UnifiedServerSocket do not
@@ -59,7 +59,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class UnifiedServerSocketModeDetectionTest extends ZKTestCase {
 
-    private static final Logger LOG = LogManager.getLogger(UnifiedServerSocketModeDetectionTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UnifiedServerSocketModeDetectionTest.class);
 
     private static File tempDir;
     private static X509TestContext x509TestContext;

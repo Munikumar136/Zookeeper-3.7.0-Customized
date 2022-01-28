@@ -21,15 +21,15 @@ package org.apache.zookeeper;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import org.apache.zookeeper.client.ZKClientConfig;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Computes the Server Principal for a SASL client.
  */
 public class SaslServerPrincipal {
 
-    private static final Logger LOG = LogManager.getLogger(SaslServerPrincipal.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SaslServerPrincipal.class);
 
     /**
      * Get the name of the server principal for a SASL client.

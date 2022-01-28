@@ -30,8 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.AfterAll;
@@ -43,7 +43,7 @@ public class FileChangeWatcherTest extends ZKTestCase {
     private static File tempDir;
     private static File tempFile;
 
-    private static final Logger LOG = LogManager.getLogger(FileChangeWatcherTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FileChangeWatcherTest.class);
 
     private static final long FS_TIMEOUT = 30000L;
 

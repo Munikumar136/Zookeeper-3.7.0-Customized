@@ -26,15 +26,15 @@ import javax.management.ObjectName;
 import org.apache.zookeeper.common.Time;
 import org.apache.zookeeper.jmx.MBeanRegistry;
 import org.apache.zookeeper.jmx.ZKMBeanInfo;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implementation of connection MBean interface.
  */
 public class ConnectionBean implements ConnectionMXBean, ZKMBeanInfo {
 
-    private static final Logger LOG = LogManager.getLogger(ConnectionBean.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ConnectionBean.class);
 
     private final ServerCnxn connection;
     private final Stats stats;

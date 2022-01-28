@@ -17,8 +17,8 @@ import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig;
 import org.apache.zookeeper.server.quorum.QuorumPeerMain;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright
@@ -35,7 +35,7 @@ import org.apache.logging.log4j.LogManager;
  */
 class ZooKeeperServerEmbeddedImpl implements ZooKeeperServerEmbedded {
 
-    private static final Logger LOG = LogManager.getLogger(ZooKeeperServerEmbeddedImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerEmbeddedImpl.class);
 
     private final QuorumPeerConfig config;
     private QuorumPeerMain maincluster;

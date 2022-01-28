@@ -33,8 +33,8 @@ import org.apache.zookeeper.KeeperException.SessionMovedException;
 import org.apache.zookeeper.KeeperException.UnknownSessionException;
 import org.apache.zookeeper.server.SessionTrackerImpl;
 import org.apache.zookeeper.server.ZooKeeperServerListener;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The learner session tracker is used by learners (followers and observers) to
@@ -50,7 +50,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class LearnerSessionTracker extends UpgradeableSessionTracker {
 
-    private static final Logger LOG = LogManager.getLogger(LearnerSessionTracker.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LearnerSessionTracker.class);
 
     private final SessionExpirer expirer;
     // Touch table for the global sessions

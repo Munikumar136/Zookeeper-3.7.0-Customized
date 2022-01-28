@@ -39,8 +39,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.apache.jute.BinaryOutputArchive;
 import org.apache.jute.Record;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.KeeperException.SessionExpiredException;
@@ -72,7 +72,7 @@ import org.junit.jupiter.api.Test;
 
 public class PrepRequestProcessorTest extends ClientBase {
 
-    private static final Logger LOG = LogManager.getLogger(PrepRequestProcessorTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PrepRequestProcessorTest.class);
     private static final int CONNECTION_TIMEOUT = 3000;
     private static String HOSTPORT = "127.0.0.1:" + PortAssignment.unique();
     private CountDownLatch pLatch;

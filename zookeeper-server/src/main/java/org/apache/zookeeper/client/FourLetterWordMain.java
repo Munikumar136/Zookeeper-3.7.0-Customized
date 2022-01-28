@@ -34,15 +34,15 @@ import org.apache.yetus.audience.InterfaceAudience;
 import org.apache.zookeeper.common.ClientX509Util;
 import org.apache.zookeeper.common.X509Exception.SSLContextException;
 import org.apache.zookeeper.common.X509Util;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @InterfaceAudience.Public
 public class FourLetterWordMain {
 
     //in milliseconds, socket should connect/read within this period otherwise SocketTimeoutException
     private static final int DEFAULT_SOCKET_TIMEOUT = 5000;
-    protected static final Logger LOG = LogManager.getLogger(FourLetterWordMain.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(FourLetterWordMain.class);
     /**
      * Send the 4letterword
      * @param host the destination host

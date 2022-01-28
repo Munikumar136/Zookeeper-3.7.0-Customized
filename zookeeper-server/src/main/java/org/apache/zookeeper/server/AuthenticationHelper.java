@@ -26,14 +26,14 @@ import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.data.Id;
 import org.apache.zookeeper.proto.ReplyHeader;
 import org.apache.zookeeper.server.auth.ProviderRegistry;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains helper methods to enforce authentication
  */
 public class AuthenticationHelper {
-    private static final Logger LOG = LogManager.getLogger(AuthenticationHelper.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AuthenticationHelper.class);
 
     public static final String ENFORCE_AUTH_ENABLED = "zookeeper.enforce.auth.enabled";
     public static final String ENFORCE_AUTH_SCHEMES = "zookeeper.enforce.auth.schemes";

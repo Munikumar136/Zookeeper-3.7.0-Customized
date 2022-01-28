@@ -25,15 +25,15 @@ import java.util.concurrent.ConcurrentMap;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.server.SessionTracker;
 import org.apache.zookeeper.server.ZooKeeperServerListener;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A session tracker that supports upgradeable local sessions.
  */
 public abstract class UpgradeableSessionTracker implements SessionTracker {
 
-    private static final Logger LOG = LogManager.getLogger(UpgradeableSessionTracker.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UpgradeableSessionTracker.class);
 
     private ConcurrentMap<Long, Integer> localSessionsWithTimeouts;
     private ConcurrentMap<Long, Integer> upgradingSessions;

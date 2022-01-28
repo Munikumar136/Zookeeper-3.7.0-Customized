@@ -24,8 +24,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZKTestCase;
@@ -39,7 +39,7 @@ import org.junit.jupiter.api.Test;
  */
 public class InvalidSnapCountTest extends ZKTestCase implements Watcher {
 
-    protected static final Logger LOG = LogManager.getLogger(InvalidSnapCountTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(InvalidSnapCountTest.class);
 
     public static class MainThread extends Thread {
 

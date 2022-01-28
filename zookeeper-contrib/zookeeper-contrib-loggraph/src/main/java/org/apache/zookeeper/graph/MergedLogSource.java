@@ -21,11 +21,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MergedLogSource implements LogSource {
-    private static final Logger LOG = LogManager.getLogger(MergedLogSource.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MergedLogSource.class);
     protected List<LogSource> sources = new ArrayList<>();
     private long starttime = 0;
     private long endtime = 0;

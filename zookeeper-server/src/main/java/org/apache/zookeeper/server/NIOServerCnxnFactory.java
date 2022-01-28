@@ -35,8 +35,8 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * NIOServerCnxnFactory implements a multi-threaded ServerCnxnFactory using NIO non-blocking socket
@@ -55,7 +55,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class NIOServerCnxnFactory extends ServerCnxnFactory {
 
-  private static final Logger LOG = LogManager.getLogger(NIOServerCnxnFactory.class);
+  private static final Logger LOG = LoggerFactory.getLogger(NIOServerCnxnFactory.class);
 
   /** Default sessionless connection timeout in ms: 10000 (10s) */
   public static final String ZOOKEEPER_NIO_SESSIONLESS_CNXN_TIMEOUT =
