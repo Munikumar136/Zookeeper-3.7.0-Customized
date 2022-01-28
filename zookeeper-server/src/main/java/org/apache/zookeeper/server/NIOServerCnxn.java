@@ -47,8 +47,8 @@ import org.apache.zookeeper.server.command.CommandExecutor;
 import org.apache.zookeeper.server.command.FourLetterCommands;
 import org.apache.zookeeper.server.command.NopCommand;
 import org.apache.zookeeper.server.command.SetTraceMaskCommand;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles communication with clients using NIO. There is one per
@@ -56,7 +56,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class NIOServerCnxn extends ServerCnxn {
 
-    private static final Logger LOG = LogManager.getLogger(NIOServerCnxn.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NIOServerCnxn.class);
 
     private final NIOServerCnxnFactory factory;
 

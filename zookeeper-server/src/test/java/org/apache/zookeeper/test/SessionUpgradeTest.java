@@ -30,8 +30,8 @@ import org.apache.zookeeper.test.ClientBase.CountdownWatcher;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests that session upgrade works from local to global sessions.
@@ -43,7 +43,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class SessionUpgradeTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(SessionUpgradeTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(SessionUpgradeTest.class);
     public static final int CONNECTION_TIMEOUT = ClientBase.CONNECTION_TIMEOUT;
 
     private final QuorumBase qb = new QuorumBase();

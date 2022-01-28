@@ -25,8 +25,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import java.io.IOException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs.Ids;
@@ -38,7 +38,7 @@ import org.junit.jupiter.api.Timeout;
 
 public class NIOServerCnxnTest extends ClientBase {
 
-    private static final Logger LOG = LogManager.getLogger(NIOServerCnxnTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NIOServerCnxnTest.class);
 
     /**
      * Test operations on ServerCnxn after socket closure.

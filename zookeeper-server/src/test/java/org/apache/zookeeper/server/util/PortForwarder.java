@@ -31,8 +31,8 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A utility that does bi-directional forwarding between two ports.
@@ -85,7 +85,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class PortForwarder extends Thread {
 
-    private static final Logger LOG = LogManager.getLogger(PortForwarder.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PortForwarder.class);
 
     private static class PortForwardWorker implements Runnable {
 

@@ -37,8 +37,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.TestableZooKeeper;
@@ -61,7 +61,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 public abstract class ClientBase extends ZKTestCase {
 
-  protected static final Logger LOG = LogManager.getLogger(ClientBase.class);
+  protected static final Logger LOG = LoggerFactory.getLogger(ClientBase.class);
 
   public static int CONNECTION_TIMEOUT = 30000;
 

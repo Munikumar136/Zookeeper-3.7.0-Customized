@@ -28,12 +28,12 @@ import org.apache.zookeeper.metrics.SummarySet;
 import org.apache.zookeeper.metrics.impl.DefaultMetricsProvider;
 import org.apache.zookeeper.metrics.impl.NullMetricsProvider;
 import org.apache.zookeeper.server.util.QuotaMetricsUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ServerMetrics {
 
-    private static final Logger LOG = LogManager.getLogger(ServerMetrics.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ServerMetrics.class);
 
     /**
      * Dummy instance useful for tests.

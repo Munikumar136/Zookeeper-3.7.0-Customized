@@ -31,8 +31,8 @@ import org.apache.yetus.audience.InterfaceAudience;
 import org.apache.zookeeper.server.persistence.FileTxnSnapLog;
 import org.apache.zookeeper.server.persistence.Util;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * this class is used to clean up the
@@ -45,7 +45,7 @@ import org.apache.logging.log4j.LogManager;
 @InterfaceAudience.Public
 public class PurgeTxnLog {
 
-    private static final Logger LOG = LogManager.getLogger(PurgeTxnLog.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PurgeTxnLog.class);
 
     private static final String COUNT_ERR_MSG = "count should be greater than or equal to 3";
 

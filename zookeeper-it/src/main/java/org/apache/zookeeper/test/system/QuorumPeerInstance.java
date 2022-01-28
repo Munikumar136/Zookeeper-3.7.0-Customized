@@ -29,15 +29,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.apache.zookeeper.server.quorum.QuorumPeer.QuorumServer;
 import org.apache.zookeeper.test.TestUtils;
 
 class QuorumPeerInstance implements Instance {
-    final private static Logger LOG = LogManager.getLogger(QuorumPeerInstance.class);
+    final private static Logger LOG = LoggerFactory.getLogger(QuorumPeerInstance.class);
     private static final File testData = new File(
         System.getProperty("test.data.dir", "src/test/resources/data"));
 

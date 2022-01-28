@@ -24,8 +24,8 @@ import java.util.Set;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.server.ServerCnxn;
 import org.apache.zookeeper.server.ServerMetrics;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is not a true AuthenticationProvider in the strict sense. it does
@@ -37,7 +37,7 @@ import org.apache.logging.log4j.LogManager;
 
 public class EnsembleAuthenticationProvider implements AuthenticationProvider {
 
-    private static final Logger LOG = LogManager.getLogger(EnsembleAuthenticationProvider.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EnsembleAuthenticationProvider.class);
 
     public static final String ENSEMBLE_PROPERTY = "zookeeper.ensembleAuthName";
     private static final int MIN_LOGGING_INTERVAL_MS = 1000;

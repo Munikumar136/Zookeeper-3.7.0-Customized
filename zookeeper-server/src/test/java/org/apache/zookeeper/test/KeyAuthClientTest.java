@@ -20,8 +20,8 @@ package org.apache.zookeeper.test;
 
 import static org.junit.jupiter.api.Assertions.fail;
 import java.util.List;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs.Ids;
@@ -31,7 +31,7 @@ import org.junit.jupiter.api.Test;
 
 public class KeyAuthClientTest extends ClientBase {
 
-    private static final Logger LOG = LogManager.getLogger(KeyAuthClientTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(KeyAuthClientTest.class);
 
     static {
         System.setProperty("zookeeper.authProvider.1", "org.apache.zookeeper.server.auth.KeyAuthenticationProvider");

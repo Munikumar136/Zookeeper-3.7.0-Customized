@@ -45,12 +45,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class QuorumTest extends ZKTestCase {
 
-    private static final Logger LOG = LogManager.getLogger(QuorumTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(QuorumTest.class);
     public static final long CONNECTION_TIMEOUT = ClientTest.CONNECTION_TIMEOUT;
 
     private final QuorumBase qb = new QuorumBase();

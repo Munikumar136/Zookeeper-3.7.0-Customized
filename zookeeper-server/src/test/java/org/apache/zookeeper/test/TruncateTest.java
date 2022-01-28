@@ -29,8 +29,8 @@ import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.jute.Record;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.PortAssignment;
@@ -55,7 +55,7 @@ import org.junit.jupiter.api.Test;
 
 public class TruncateTest extends ZKTestCase {
 
-    private static final Logger LOG = LogManager.getLogger(TruncateTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TruncateTest.class);
     File dataDir1, dataDir2, dataDir3;
 
     @BeforeEach

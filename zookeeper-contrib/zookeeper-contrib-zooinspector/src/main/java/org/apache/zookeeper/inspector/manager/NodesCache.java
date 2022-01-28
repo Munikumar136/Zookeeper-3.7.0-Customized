@@ -22,7 +22,8 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
@@ -63,7 +64,7 @@ public class NodesCache {
                 return children;
             }
         } catch (Exception e) {
-            LogManager.getLogger().error(
+            LoggerFactory.getLogger().error(
                     "Error occurred retrieving child of node: " + nodePath, e
             );
         }
@@ -76,7 +77,7 @@ public class NodesCache {
             childNodes = nodes.get(nodePath);
             return childNodes.get(index);
         } catch (ExecutionException e) {
-            LogManager.getLogger().error(
+            LoggerFactory.getLogger().error(
                     "Error occurred retrieving child " + index + "of node: " + nodePath, e
             );
         }

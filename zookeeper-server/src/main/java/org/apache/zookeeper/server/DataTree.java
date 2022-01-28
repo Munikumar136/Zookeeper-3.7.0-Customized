@@ -81,8 +81,8 @@ import org.apache.zookeeper.txn.Txn;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class maintains the tree data structure. It doesn't have any networking
@@ -95,7 +95,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class DataTree {
 
-    private static final Logger LOG = LogManager.getLogger(DataTree.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DataTree.class);
 
     private final RateLogger RATE_LOGGER = new RateLogger(LOG, 15 * 60 * 1000);
 

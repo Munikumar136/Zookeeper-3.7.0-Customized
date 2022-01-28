@@ -23,8 +23,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FilterOutputStream;
 import java.io.IOException;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
  * This code is originally from HDFS, see the similarly named files there
@@ -47,7 +47,7 @@ public class AtomicFileOutputStream extends FilterOutputStream {
 
     public static final String TMP_EXTENSION = ".tmp";
 
-    private static final Logger LOG = LogManager.getLogger(AtomicFileOutputStream.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AtomicFileOutputStream.class);
 
     private final File origFile;
     private final File tmpFile;

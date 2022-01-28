@@ -23,8 +23,8 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionGroup;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.Quotas;
@@ -39,7 +39,7 @@ import org.apache.zookeeper.data.Stat;
  */
 public class SetQuotaCommand extends CliCommand {
 
-  private static final Logger LOG = LogManager.getLogger(SetQuotaCommand.class);
+  private static final Logger LOG = LoggerFactory.getLogger(SetQuotaCommand.class);
   private Options options = new Options();
   private String[] args;
   private CommandLine cl;

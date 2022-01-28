@@ -29,12 +29,12 @@ import org.apache.zookeeper.server.NIOServerCnxnFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ServerCnxnTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(ServerCnxnTest.class);
+  protected static final Logger LOG = LoggerFactory.getLogger(ServerCnxnTest.class);
 
     private static int cnxnTimeout = 1000;
 

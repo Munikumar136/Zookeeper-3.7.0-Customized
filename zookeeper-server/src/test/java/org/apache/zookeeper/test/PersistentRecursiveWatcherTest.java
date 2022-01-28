@@ -36,11 +36,11 @@ import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PersistentRecursiveWatcherTest extends ClientBase {
-    private static final Logger LOG = LogManager.getLogger(PersistentRecursiveWatcherTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PersistentRecursiveWatcherTest.class);
     private BlockingQueue<WatchedEvent> events;
     private Watcher persistentWatcher;
 

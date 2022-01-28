@@ -21,15 +21,15 @@ package org.apache.zookeeper.test;
 import static org.apache.zookeeper.client.FourLetterWordMain.send4LetterWord;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.TestableZooKeeper;
 import org.apache.zookeeper.common.X509Exception.SSLContextException;
 import org.junit.jupiter.api.Test;
 
 public class FourLetterWordsQuorumTest extends QuorumBase {
 
-    protected static final Logger LOG = LogManager.getLogger(FourLetterWordsQuorumTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(FourLetterWordsQuorumTest.class);
 
     /** Test the various four letter words */
     @Test

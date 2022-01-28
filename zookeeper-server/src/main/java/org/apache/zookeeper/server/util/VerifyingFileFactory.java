@@ -19,7 +19,7 @@
 package org.apache.zookeeper.server.util;
 
 import java.io.File;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 
 public final class VerifyingFileFactory {
 

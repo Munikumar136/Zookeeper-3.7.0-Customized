@@ -34,12 +34,12 @@ import org.apache.zookeeper.server.ZooKeeperServer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ResponseCacheTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(ResponseCacheTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ResponseCacheTest.class);
 
     @BeforeEach
     public void setup() throws Exception {

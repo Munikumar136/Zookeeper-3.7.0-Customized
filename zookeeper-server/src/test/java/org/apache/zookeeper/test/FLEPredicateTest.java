@@ -25,8 +25,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.quorum.FastLeaderElection;
@@ -36,7 +36,7 @@ import org.junit.jupiter.api.Test;
 
 public class FLEPredicateTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(FLEPredicateTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(FLEPredicateTest.class);
 
     class MockFLE extends FastLeaderElection {
 

@@ -50,8 +50,8 @@ import org.apache.zookeeper.server.quorum.QuorumPeerConfig.ConfigException;
 import org.apache.zookeeper.test.ClientBase;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Test stand-alone server.
@@ -59,7 +59,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class ZooKeeperServerMainTest extends ZKTestCase implements Watcher {
 
-    protected static final Logger LOG = LogManager.getLogger(ZooKeeperServerMainTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ZooKeeperServerMainTest.class);
 
     private CountDownLatch clientConnected = new CountDownLatch(1);
 

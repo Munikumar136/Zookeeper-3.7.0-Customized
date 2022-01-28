@@ -21,8 +21,8 @@ package org.apache.zookeeper.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs;
@@ -41,7 +41,7 @@ import org.junit.jupiter.api.Test;
  */
 public class DuplicateLocalSessionUpgradeTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(DuplicateLocalSessionUpgradeTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(DuplicateLocalSessionUpgradeTest.class);
 
     private final QuorumBase qb = new QuorumBase();
 

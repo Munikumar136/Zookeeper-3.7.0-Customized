@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.quorum.QuorumPeer;
@@ -41,7 +41,7 @@ import org.junit.jupiter.api.Test;
 
 public class FLEZeroWeightTest extends ZKTestCase {
 
-    private static final Logger LOG = LogManager.getLogger(HierarchicalQuorumTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(HierarchicalQuorumTest.class);
 
     Properties qp;
 

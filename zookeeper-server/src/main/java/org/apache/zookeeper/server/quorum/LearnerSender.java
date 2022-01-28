@@ -17,12 +17,12 @@ package org.apache.zookeeper.server.quorum;
 
 import java.io.IOException;
 import java.util.concurrent.LinkedBlockingQueue;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.server.ZooKeeperCriticalThread;
 
 public class LearnerSender extends ZooKeeperCriticalThread {
-  private static final Logger LOG = LogManager.getLogger(LearnerSender.class);
+  private static final Logger LOG = LoggerFactory.getLogger(LearnerSender.class);
 
   private final LinkedBlockingQueue<QuorumPacket> queuedPackets = new LinkedBlockingQueue<>();
   private final QuorumPacket proposalOfDeath = new QuorumPacket();

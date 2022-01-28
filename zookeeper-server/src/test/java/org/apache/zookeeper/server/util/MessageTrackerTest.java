@@ -23,12 +23,12 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MessageTrackerTest {
     private static final int BUFFERED_MESSAGE_SIZE = 5;
-    private static final Logger LOG = LogManager.getLogger(MessageTrackerTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(MessageTrackerTest.class);
 
     @BeforeEach
     public void setup() {

@@ -21,8 +21,8 @@ package org.apache.zookeeper.server.persistence;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FilePadding {
 
@@ -31,7 +31,7 @@ public class FilePadding {
     private static final ByteBuffer fill = ByteBuffer.allocateDirect(1);
 
     static {
-        LOG = LogManager.getLogger(FileTxnLog.class);
+        LOG = LoggerFactory.getLogger(FileTxnLog.class);
 
         String size = System.getProperty("zookeeper.preAllocSize");
         if (size != null) {

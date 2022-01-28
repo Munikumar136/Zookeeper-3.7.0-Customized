@@ -33,8 +33,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.jute.BinaryOutputArchive;
 import org.apache.jute.Record;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs.Ids;
@@ -54,7 +54,7 @@ import org.junit.jupiter.api.Timeout;
 
 public class CommitProcessorConcurrencyTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(CommitProcessorConcurrencyTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(CommitProcessorConcurrencyTest.class);
 
     BlockingQueue<Request> processedRequests;
     MockCommitProcessor processor;

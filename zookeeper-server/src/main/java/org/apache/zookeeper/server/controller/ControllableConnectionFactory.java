@@ -24,8 +24,8 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
 import org.apache.zookeeper.server.NIOServerCnxn;
 import org.apache.zookeeper.server.NIOServerCnxnFactory;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Extension of NIOServerCnxnFactory which can inject changes per controller commands.
@@ -33,7 +33,7 @@ import org.apache.logging.log4j.LogManager;
  */
 @SuppressFBWarnings(value = "SWL_SLEEP_WITH_LOCK_HELD", justification = "no dead lock")
 public class ControllableConnectionFactory extends NIOServerCnxnFactory {
-    private static final Logger LOG = LogManager.getLogger(ControllableConnectionFactory.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ControllableConnectionFactory.class);
     private long responseDelayInMs = 0;
     private long remainingRequestsToFail = 0;
     private long remainingResponsesToHold = 0;

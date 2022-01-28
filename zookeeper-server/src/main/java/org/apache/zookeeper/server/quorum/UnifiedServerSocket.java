@@ -25,9 +25,9 @@ import java.net.SocketAddress;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.nio.channels.SocketChannel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.net.ssl.SSLSocket;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.zookeeper.common.X509Exception;
 import org.apache.zookeeper.common.X509Util;
 import io.netty.buffer.Unpooled;
@@ -53,7 +53,7 @@ import io.netty.handler.ssl.SslHandler;
  */
 public class UnifiedServerSocket extends ServerSocket {
 
-  private static final Logger LOG = LogManager.getLogger(UnifiedServerSocket.class);
+  private static final Logger LOG = LoggerFactory.getLogger(UnifiedServerSocket.class);
 
   private X509Util x509Util;
   private final boolean allowInsecureConnection;

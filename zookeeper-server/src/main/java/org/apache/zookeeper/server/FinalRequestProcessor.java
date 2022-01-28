@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import org.apache.jute.Record;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.ClientCnxn;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.KeeperException.Code;
@@ -93,7 +93,7 @@ import org.apache.zookeeper.txn.ErrorTxn;
  */
 public class FinalRequestProcessor implements RequestProcessor {
 
-  private static final Logger LOG = LogManager.getLogger(FinalRequestProcessor.class);
+  private static final Logger LOG = LoggerFactory.getLogger(FinalRequestProcessor.class);
 
   private final RequestPathMetricsCollector requestPathMetricsCollector;
 

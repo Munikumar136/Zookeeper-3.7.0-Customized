@@ -29,8 +29,8 @@ import java.util.List;
 import org.apache.jute.BinaryInputArchive;
 import org.apache.jute.BinaryOutputArchive;
 import org.apache.jute.Record;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.common.Time;
@@ -49,7 +49,7 @@ import org.junit.jupiter.api.Test;
 
 public class LoadFromLogNoServerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(LoadFromLogNoServerTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(LoadFromLogNoServerTest.class);
 
     /**
      * For ZOOKEEPER-1046. Verify if cversion and pzxid if incremented

@@ -54,12 +54,12 @@ import org.apache.zookeeper.proto.RequestHeader;
 import org.apache.zookeeper.server.PrepRequestProcessor;
 import org.apache.zookeeper.server.util.OSMXBean;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ClientTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(ClientTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ClientTest.class);
     private boolean skipACL = System.getProperty("zookeeper.skipACL", "no").equals("yes");
 
     /** Verify that pings are sent, keeping the "idle" client alive */

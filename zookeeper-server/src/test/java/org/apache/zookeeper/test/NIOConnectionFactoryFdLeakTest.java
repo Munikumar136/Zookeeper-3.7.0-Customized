@@ -25,8 +25,8 @@ import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.NIOServerCnxnFactory;
 import org.apache.zookeeper.server.util.OSMXBean;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ZOOKEEPER-1620 - Acceptor and Selector thread don't call selector.close()
@@ -34,7 +34,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class NIOConnectionFactoryFdLeakTest extends ZKTestCase {
 
-    private static final Logger LOG = LogManager.getLogger(NIOConnectionFactoryFdLeakTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NIOConnectionFactoryFdLeakTest.class);
 
     @Test
     public void testFileDescriptorLeak() throws Exception {

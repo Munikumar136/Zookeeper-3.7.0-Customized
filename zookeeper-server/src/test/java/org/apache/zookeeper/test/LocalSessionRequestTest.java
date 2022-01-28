@@ -16,8 +16,8 @@
 package org.apache.zookeeper.test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.server.Request;
@@ -36,7 +36,7 @@ import org.junit.jupiter.api.Test;
  */
 public class LocalSessionRequestTest extends ZKTestCase {
 
-  protected static final Logger LOG = LogManager.getLogger(LocalSessionRequestTest.class);
+  protected static final Logger LOG = LoggerFactory.getLogger(LocalSessionRequestTest.class);
   // Need to be short since we need to wait for session to expire
   public static final int CONNECTION_TIMEOUT = 4000;
 

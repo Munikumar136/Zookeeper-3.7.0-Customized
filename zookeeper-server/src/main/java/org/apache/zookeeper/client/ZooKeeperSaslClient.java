@@ -37,8 +37,8 @@ import org.apache.zookeeper.data.Stat;
 import org.apache.zookeeper.proto.GetSASLRequest;
 import org.apache.zookeeper.proto.SetSASLResponse;
 import org.apache.zookeeper.util.SecurityUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages SASL authentication for the client. It
@@ -80,7 +80,7 @@ public class ZooKeeperSaslClient {
         return Boolean.parseBoolean(System.getProperty(ZKClientConfig.ENABLE_CLIENT_SASL_KEY, ZKClientConfig.ENABLE_CLIENT_SASL_DEFAULT));
     }
 
-    private static final Logger LOG = LogManager.getLogger(ZooKeeperSaslClient.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ZooKeeperSaslClient.class);
     private Login login = null;
     private SaslClient saslClient;
     private boolean isSASLConfigured = true;

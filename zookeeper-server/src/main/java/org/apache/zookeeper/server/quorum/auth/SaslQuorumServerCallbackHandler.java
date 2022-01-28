@@ -31,8 +31,8 @@ import javax.security.auth.login.AppConfigurationEntry;
 import javax.security.auth.login.Configuration;
 import javax.security.sasl.AuthorizeCallback;
 import javax.security.sasl.RealmCallback;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is used by the SASL mechanisms to get further information to complete
@@ -43,7 +43,7 @@ import org.apache.logging.log4j.LogManager;
 public class SaslQuorumServerCallbackHandler implements CallbackHandler {
 
     private static final String USER_PREFIX = "user_";
-    private static final Logger LOG = LogManager.getLogger(SaslQuorumServerCallbackHandler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SaslQuorumServerCallbackHandler.class);
 
     private String userName;
     private final Map<String, String> credentials = new HashMap<>();

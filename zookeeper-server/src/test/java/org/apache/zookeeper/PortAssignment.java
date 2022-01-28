@@ -22,13 +22,13 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Assign ports to tests */
 public final class PortAssignment {
 
-    private static final Logger LOG = LogManager.getLogger(PortAssignment.class);
+  private static final Logger LOG = LoggerFactory.getLogger(PortAssignment.class);
 
     // The available port range that we use stays away from the ephemeral port
     // range, which the OS will assign to client socket connections.  We can't

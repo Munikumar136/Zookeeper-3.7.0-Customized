@@ -37,11 +37,11 @@ import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Log4JSource implements LogSource {
-    private static final Logger LOG = LogManager.getLogger(Log4JSource.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Log4JSource.class);
     
     private static final int skipN = 10000;
     private static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss,SSS";

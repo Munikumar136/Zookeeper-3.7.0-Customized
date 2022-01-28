@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.server.quorum.QuorumPeer.QuorumServer;
@@ -36,7 +36,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class FLEMalformedNotificationMessageTest extends ZKTestCase {
-    private static final Logger LOG = LogManager.getLogger(FLEMalformedNotificationMessageTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FLEMalformedNotificationMessageTest.class);
     private static final byte[] CONFIG_BYTES = "my very invalid config string".getBytes();
     private static final int CONFIG_BYTES_LENGTH = CONFIG_BYTES.length;
 

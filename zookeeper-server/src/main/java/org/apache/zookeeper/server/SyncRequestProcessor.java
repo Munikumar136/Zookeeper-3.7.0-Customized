@@ -29,8 +29,8 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import org.apache.zookeeper.common.Time;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This RequestProcessor logs requests to disk. It batches the requests to do
@@ -51,7 +51,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class SyncRequestProcessor extends ZooKeeperCriticalThread implements RequestProcessor {
 
-    private static final Logger LOG = LogManager.getLogger(SyncRequestProcessor.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SyncRequestProcessor.class);
 
     private static final Request REQUEST_OF_DEATH = Request.requestOfDeath;
 

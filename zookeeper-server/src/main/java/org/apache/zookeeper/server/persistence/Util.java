@@ -36,8 +36,8 @@ import org.apache.jute.OutputArchive;
 import org.apache.jute.Record;
 import org.apache.zookeeper.txn.TxnDigest;
 import org.apache.zookeeper.txn.TxnHeader;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A collection of utility methods for dealing with file name parsing,
@@ -45,7 +45,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class Util {
 
-    private static final Logger LOG = LogManager.getLogger(Util.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Util.class);
     private static final String SNAP_DIR = "snapDir";
     private static final String LOG_DIR = "logDir";
     private static final String DB_FORMAT_CONV = "dbFormatConversion";

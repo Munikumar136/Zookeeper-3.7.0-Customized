@@ -53,11 +53,11 @@ import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TxnLogSource implements LogSource {
-    private static final Logger LOG = LogManager.getLogger(TxnLogSource.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TxnLogSource.class);
 
     private LogSkipList skiplist = null;
     private static final int skipN = 10000;

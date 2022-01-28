@@ -25,8 +25,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.TestableZooKeeper;
@@ -38,7 +38,7 @@ import org.junit.jupiter.api.Test;
 
 public class SessionTimeoutTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(SessionTimeoutTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(SessionTimeoutTest.class);
 
     private TestableZooKeeper zk;
 

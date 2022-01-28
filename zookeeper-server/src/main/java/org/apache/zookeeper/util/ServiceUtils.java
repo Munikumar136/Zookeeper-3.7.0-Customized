@@ -21,15 +21,15 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Objects;
 import java.util.function.Consumer;
 import org.apache.zookeeper.server.ExitCode;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for service management.
  */
 public abstract class ServiceUtils {
 
-    private static final Logger LOG = LogManager.getLogger(ServiceUtils.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ServiceUtils.class);
 
     private ServiceUtils() {
     }

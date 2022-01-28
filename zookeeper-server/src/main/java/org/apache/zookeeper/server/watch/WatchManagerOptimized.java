@@ -35,8 +35,8 @@ import org.apache.zookeeper.server.ServerCnxn;
 import org.apache.zookeeper.server.ServerMetrics;
 import org.apache.zookeeper.server.util.BitHashSet;
 import org.apache.zookeeper.server.util.BitMap;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Optimized in memory and time complexity, compared to WatchManager, both the
@@ -53,7 +53,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class WatchManagerOptimized implements IWatchManager, IDeadWatcherListener {
 
-    private static final Logger LOG = LogManager.getLogger(WatchManagerOptimized.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WatchManagerOptimized.class);
 
     private final ConcurrentHashMap<String, BitHashSet> pathWatches = new ConcurrentHashMap<String, BitHashSet>();
 

@@ -19,8 +19,8 @@
 package org.apache.zookeeper.server.watch;
 
 import java.io.IOException;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A factory used to produce the actual watch manager based on the
@@ -28,7 +28,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class WatchManagerFactory {
 
-    private static final Logger LOG = LogManager.getLogger(WatchManagerFactory.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WatchManagerFactory.class);
 
     public static final String ZOOKEEPER_WATCH_MANAGER_NAME = "zookeeper.watchManagerName";
 

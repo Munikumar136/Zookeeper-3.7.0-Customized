@@ -18,8 +18,8 @@
 
 package org.apache.zookeeper.server.quorum;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility class to limit the number of concurrent syncs from a leader to
@@ -30,7 +30,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class LearnerSyncThrottler {
 
-    private static final Logger LOG = LogManager.getLogger(LearnerSyncThrottler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LearnerSyncThrottler.class);
 
     private final Object countSyncObject = new Object();
     private int syncInProgress;

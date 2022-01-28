@@ -47,8 +47,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.common.QuorumX509Util;
@@ -66,7 +66,7 @@ import org.junit.jupiter.api.Test;
 
 public class CnxManagerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(FLENewEpochTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(FLENewEpochTest.class);
     protected static final int THRESHOLD = 4;
 
     int count;

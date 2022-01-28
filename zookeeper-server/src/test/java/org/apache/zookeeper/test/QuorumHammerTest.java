@@ -22,12 +22,12 @@ import org.apache.zookeeper.ZKTestCase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class QuorumHammerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(QuorumHammerTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(QuorumHammerTest.class);
     public static final long CONNECTION_TIMEOUT = ClientTest.CONNECTION_TIMEOUT;
 
     protected final QuorumBase qb = new QuorumBase();

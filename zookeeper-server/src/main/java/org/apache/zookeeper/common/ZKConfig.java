@@ -28,8 +28,8 @@ import java.util.Properties;
 import org.apache.zookeeper.Environment;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig.ConfigException;
 import org.apache.zookeeper.server.util.VerifyingFileFactory;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class is a base class for the configurations of both client and server.
@@ -40,7 +40,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class ZKConfig {
 
-    private static final Logger LOG = LogManager.getLogger(ZKConfig.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ZKConfig.class);
 
     public static final String JUTE_MAXBUFFER = "jute.maxbuffer";
 

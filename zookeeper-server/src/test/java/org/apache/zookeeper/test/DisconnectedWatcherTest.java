@@ -24,8 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher.Event.EventType;
@@ -38,7 +38,7 @@ import org.junit.jupiter.api.Timeout;
 
 public class DisconnectedWatcherTest extends ClientBase {
 
-    protected static final Logger LOG = LogManager.getLogger(DisconnectedWatcherTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(DisconnectedWatcherTest.class);
     final int TIMEOUT = 5000;
 
     private class MyWatcher extends CountdownWatcher {

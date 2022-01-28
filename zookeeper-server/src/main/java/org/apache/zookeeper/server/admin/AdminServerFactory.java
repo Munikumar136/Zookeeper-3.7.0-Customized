@@ -19,15 +19,15 @@
 package org.apache.zookeeper.server.admin;
 
 import java.lang.reflect.InvocationTargetException;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Factory class for creating an AdminServer.
  */
 public class AdminServerFactory {
 
-    private static final Logger LOG = LogManager.getLogger(AdminServerFactory.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AdminServerFactory.class);
 
     /**
      * This method encapsulates the logic for whether we should use a

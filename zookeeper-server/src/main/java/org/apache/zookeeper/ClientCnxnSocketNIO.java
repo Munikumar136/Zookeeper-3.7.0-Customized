@@ -36,12 +36,12 @@ import org.apache.zookeeper.ClientCnxn.EndOfStreamException;
 import org.apache.zookeeper.ClientCnxn.Packet;
 import org.apache.zookeeper.ZooDefs.OpCode;
 import org.apache.zookeeper.client.ZKClientConfig;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ClientCnxnSocketNIO extends ClientCnxnSocket {
 
-    private static final Logger LOG = LogManager.getLogger(ClientCnxnSocketNIO.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ClientCnxnSocketNIO.class);
 
     private final Selector selector = Selector.open();
 

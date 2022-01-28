@@ -22,8 +22,8 @@ import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages the cleanup of snapshots and corresponding transaction
@@ -34,7 +34,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class DatadirCleanupManager {
 
-    private static final Logger LOG = LogManager.getLogger(DatadirCleanupManager.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DatadirCleanupManager.class);
 
     /**
      * Status of the dataDir purge task

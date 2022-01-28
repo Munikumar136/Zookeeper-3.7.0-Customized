@@ -27,8 +27,8 @@ import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.PortAssignment;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooKeeper;
@@ -38,7 +38,7 @@ import org.junit.jupiter.api.Test;
 
 public class ClientPortBindTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(ClientPortBindTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ClientPortBindTest.class);
 
     /**
      * Verify that the server binds to the specified address

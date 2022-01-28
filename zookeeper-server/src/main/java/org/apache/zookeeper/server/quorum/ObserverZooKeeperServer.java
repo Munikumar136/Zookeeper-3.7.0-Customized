@@ -27,8 +27,8 @@ import org.apache.zookeeper.server.RequestProcessor;
 import org.apache.zookeeper.server.SyncRequestProcessor;
 import org.apache.zookeeper.server.ZKDatabase;
 import org.apache.zookeeper.server.persistence.FileTxnSnapLog;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A ZooKeeperServer for the Observer node type. Not much is different, but
@@ -37,7 +37,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class ObserverZooKeeperServer extends LearnerZooKeeperServer {
 
-    private static final Logger LOG = LogManager.getLogger(ObserverZooKeeperServer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ObserverZooKeeperServer.class);
 
     /**
      * Enable since request processor for writing txnlog to disk and

@@ -24,8 +24,8 @@ import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.apache.jute.BinaryOutputArchive;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZKTestCase;
 import org.apache.zookeeper.ZooDefs.Ids;
@@ -47,7 +47,7 @@ import org.junit.jupiter.api.Test;
  */
 public class LeaderSessionTrackerTest extends ZKTestCase {
 
-    protected static final Logger LOG = LogManager.getLogger(LeaderSessionTrackerTest.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(LeaderSessionTrackerTest.class);
 
     QuorumUtil qu;
 

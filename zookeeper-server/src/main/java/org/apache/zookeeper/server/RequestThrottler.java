@@ -22,8 +22,8 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.zookeeper.common.Time;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * When enabled, the RequestThrottler limits the number of outstanding requests
@@ -59,7 +59,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class RequestThrottler extends ZooKeeperCriticalThread {
 
-    private static final Logger LOG = LogManager.getLogger(RequestThrottler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(RequestThrottler.class);
 
     private final LinkedBlockingQueue<Request> submittedRequests = new LinkedBlockingQueue<Request>();
 

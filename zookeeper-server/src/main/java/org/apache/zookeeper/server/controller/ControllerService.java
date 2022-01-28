@@ -24,8 +24,8 @@ import org.apache.zookeeper.server.ServerCnxnFactory;
 import org.apache.zookeeper.server.quorum.QuorumPeer;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig;
 import org.apache.zookeeper.util.ServiceUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Main class which starts a ZooKeeperServer, a ZooKeeperServerController and the ControllerService.
@@ -33,7 +33,7 @@ import org.apache.logging.log4j.LogManager;
  * start and stop a singleton of this class in their test process.
  */
 public class ControllerService {
-    private static final Logger LOG = LogManager.getLogger(ControllerService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ControllerService.class);
 
     private ZooKeeperServerController controller;
     private CommandListener listener;

@@ -30,8 +30,8 @@ import java.util.Set;
 import org.apache.zookeeper.server.quorum.QuorumPeer.LearnerType;
 import org.apache.zookeeper.server.quorum.QuorumPeer.QuorumServer;
 import org.apache.zookeeper.server.quorum.QuorumPeerConfig.ConfigException;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class implements a validator for hierarchical quorums. With this
@@ -64,7 +64,7 @@ import org.apache.logging.log4j.LogManager;
 
 public class QuorumHierarchical implements QuorumVerifier {
 
-    private static final Logger LOG = LogManager.getLogger(QuorumHierarchical.class);
+    private static final Logger LOG = LoggerFactory.getLogger(QuorumHierarchical.class);
 
     private HashMap<Long, Long> serverWeight = new HashMap<Long, Long>();
     private HashMap<Long, Long> serverGroup = new HashMap<Long, Long>();

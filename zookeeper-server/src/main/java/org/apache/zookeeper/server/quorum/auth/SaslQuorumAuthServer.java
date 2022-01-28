@@ -35,12 +35,12 @@ import org.apache.zookeeper.Login;
 import org.apache.zookeeper.common.ZKConfig;
 import org.apache.zookeeper.server.quorum.QuorumAuthPacket;
 import org.apache.zookeeper.util.SecurityUtils;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SaslQuorumAuthServer implements QuorumAuthServer {
 
-    private static final Logger LOG = LogManager.getLogger(SaslQuorumAuthServer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SaslQuorumAuthServer.class);
 
     private static final int MAX_RETRIES = 5;
     private final Login serverLogin;

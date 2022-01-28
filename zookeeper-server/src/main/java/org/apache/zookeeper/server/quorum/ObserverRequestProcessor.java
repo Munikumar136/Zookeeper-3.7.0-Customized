@@ -28,8 +28,8 @@ import org.apache.zookeeper.server.ServerMetrics;
 import org.apache.zookeeper.server.ZooKeeperCriticalThread;
 import org.apache.zookeeper.server.ZooTrace;
 import org.apache.zookeeper.txn.ErrorTxn;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This RequestProcessor forwards any requests that modify the state of the
@@ -37,7 +37,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class ObserverRequestProcessor extends ZooKeeperCriticalThread implements RequestProcessor {
 
-    private static final Logger LOG = LogManager.getLogger(ObserverRequestProcessor.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ObserverRequestProcessor.class);
 
     ObserverZooKeeperServer zks;
 
