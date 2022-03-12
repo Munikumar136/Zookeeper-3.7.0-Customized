@@ -1,7 +1,7 @@
-October-2021: TP customization,
+October-2021: customization,
 1. To set default cert file type ("jks") for keyStoreand trustStore files at client side
 2. To set HostNameVerification to false, if no provided by clients.
-3. Updated file read option to load keyStore and trusStore from classpath (SSLManager) rather than physical disk path.
+3. Updated file read option to load keyStore and trusStore from classpath (a different lib/dependency to centrally manage) rather than physical disk path.
 
 ____________________________________________________________________________________________________________________________________________
 
