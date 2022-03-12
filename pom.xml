@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<!-- /** * Licensed to the Apache Software Foundation (ASF) under one * 
-		or more contributor license agreements. See the NOTICE file * distributed 
-		with this work for additional information * regarding copyright ownership. 
-		The ASF licenses this file * to you under the Apache License, Version 2.0 
-		(the * "License"); you may not use this file except in compliance * with 
-		the License. You may obtain a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 
-		* * Unless required by applicable law or agreed to in writing, software * 
-		distributed under the License is distributed on an "AS IS" BASIS, * WITHOUT 
-		WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. * See the 
-		License for the specific language governing permissions and * limitations 
-		under the License. */ -->
+
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.apache</groupId>
@@ -36,48 +27,34 @@
     change and difficult to manage. Even when done correctly, different implementations of
     these services lead to management complexity when the applications are deployed.
   </description>
-	<url>http://zookeeper.apache.org</url>
-	<inceptionYear>2008</inceptionYear>
-	<!-- Set here so we can consistently use the correct name, even on branches 
-		with an ASF parent pom older than v15. Also uses the url from v18. -->
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
 
 	<modules>
 		<!-- <module>zookeeper-docs</module> -->
 		<module>zookeeper-jute</module>
 		<module>zookeeper-server</module>
-		<!-- <module>zookeeper-metrics-providers</module>
-		<module>zookeeper-client</module>
-		<module>zookeeper-recipes</module>
-		<module>zookeeper-assembly</module>
-		<module>zookeeper-compatibility-tests</module> -->
+		<!-- <module>zookeeper-metrics-providers</module> <module>zookeeper-client</module> 
+			<module>zookeeper-recipes</module> <module>zookeeper-assembly</module> <module>zookeeper-compatibility-tests</module> -->
 	</modules>
 
 	<scm>
-		<connection>scm:git:https://github.com/Travelport-Enterprise/ODT-Zookeeper-3.7.0-TP.git</connection>
-		<url>https://github.com/Travelport-Enterprise/ODT-Zookeeper-3.7.0-TP.git</url>
+		<connection>scm:git:https://github.com/Munikumar136/Zookeeper-3.7.0-Customized.git</connection>
+		<url>https://github.com/Munikumar136/Zookeeper-3.7.0-Customized.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
 		<repository>
-      <id>tvlprt.nexus.repo.releases</id>
-      <name>Travelport ESB Release Repository</name>
-      <url>${tvlprt.nexus.repository.url}/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>tvlprt.nexus.repo.snapshots</id>
-      <name>Travelport ESB Snapshot Repository</name>
-      <url>${tvlprt.nexus.repository.url}/ODTeamSnapshot</url>
-    </snapshotRepository>
+			<id>enterprise.nexus.repo.releases</id>
+			<name>ESB Release Repository</name>
+			<url>${enterprise.nexus.repo.releases.url}/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>enterprise.nexus.repo.snapshots</id>
+			<name>ESB Snapshot Repository</name>
+			<url>${enterprise.nexus.repo.url}/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
- 
+
 	<profiles>
 		<profile>
 			<id>full-build</id>
@@ -354,10 +331,10 @@
 				<version>${slf4j.version}</version>
 			</dependency>
 			<dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-simple</artifactId>
-        <version>${slf4j.version}</version>
-      </dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.jmockit</groupId>
 				<artifactId>jmockit</artifactId>
